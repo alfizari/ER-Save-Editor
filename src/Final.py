@@ -126,7 +126,7 @@ os.chdir(working_directory)
 #Jsons
 def load_and_copy_json(file_name):
     file_path = os.path.join(working_directory, "Resources/Json", file_name)
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file).copy()
     
 goods_and_magic_json= load_and_copy_json("goods.json")
