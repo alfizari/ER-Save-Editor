@@ -137,6 +137,10 @@ aow_json= load_and_copy_json("aow.json")
 graces_json= load_and_copy_json("graces.json")
 weapons_sorted_json = load_and_copy_json("weapons_sorted.json")
 goods_and_magic_sorted_json= load_and_copy_json("goods_sorted.json")
+
+
+
+
 #Helpers
 def find_hex_offset(section_data, hex_pattern):
     try:
@@ -2172,7 +2176,8 @@ goods_category_ranges = {
     "Bell Bearings": (253, 305),
     "Spirit Ashes": (305, 369),
     "Sorceries": (369, 440),
-    "Incantations": (440, 540)
+    "Incantations": (440, 540),
+    "DLC": (540, 2090)
 }
 goods_names = list(goods_and_magic_sorted_json.keys())
 
@@ -2439,7 +2444,8 @@ weapon_categories = {
     "Arrows": (377, 409),
     "Greatarrows": (409, 416),
     "Bolts": (416, 436),
-    "Greatbolts": (436, 440)
+    "Greatbolts": (436, 440),
+    "DLC": (440,942)
 }
 
 tk.Label(weapons_tab, text="Search Weapons:").pack(anchor="w", padx=5, pady=2)
