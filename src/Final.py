@@ -1,10 +1,7 @@
-import json
-import os
+#version 2
+import json, binascii, hashlib, struct, os
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
-import struct
-import hashlib
-import binascii
 
 
 #Distanced and patterns
@@ -12,10 +9,7 @@ souls_distance = -331
 ng_distance=-280
 souls_distance = -331
 from_aob_steam= 44 
-magic_pattern='00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF'
 hex_pattern_ng= 'FF FF FF FF 00 00 00 00 00 00 00 00 00 01'
-AOB_search='00 00 00 00 ?? 00 !! 00 ?? ?? 00 00 00 00 00 00 ??'
-AOB_maybe_worldflag= '00 00 00 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 01 00 00 FF FF FF FF 00 00 00 00 00 00 00 00'
 
 
 
@@ -50,9 +44,9 @@ CLASS_MAP = {
     3: "Bandit",
     4: "Astrologer",
     5: "Prophet",
-    6: "Samurai",
-    7: "Prisoner",
-    8: "Confessor",
+    6: "Confessor",
+    7: "Samurai",
+    8: "Prisoner",
     9: "Wretch"
 }
 REVERSE_CLASS_MAP = {v: k for k, v in CLASS_MAP.items()}
@@ -79,7 +73,7 @@ storage_armors = []
 storage_goods = []
 storage_rings = []
 storage_empty=[]
-
+aow_handle=[]
 
 #GA ITEM HANDLE
 ga_weapons=[]
@@ -89,6 +83,7 @@ ga_empty=[]
 ga_items=[]
 
 #list
+dlc_status_var = tk.StringVar(value="Unknown")
 char_name=tk.StringVar()
 current_name=tk.StringVar()
 current_name_var=tk.StringVar(value="N/A")
@@ -135,6 +130,10 @@ armor_json= load_and_copy_json("armor.json")
 talisman_json= load_and_copy_json("talisman.json")
 aow_json= load_and_copy_json("aow.json")
 graces_json= load_and_copy_json("graces.json")
+cookbooks_json= load_and_copy_json("cookbooks.json")
+whetblades_json= load_and_copy_json("whetblades.json")
+maps_json= load_and_copy_json("maps.json")
+bosses_json= load_and_copy_json("bosses.json")
 weapons_sorted_json = load_and_copy_json("weapons_sorted.json")
 goods_and_magic_sorted_json= load_and_copy_json("goods_sorted.json")
 
@@ -169,57 +168,6 @@ def write_value_at_offset(data, offset, value, byte_size=4):
 def calculate_offset2(offset1, distance):
     return offset1 + distance
 
-
-#AOB
-def aob_to_pattern(aob: str):
-    parts = aob.split()
-    pattern = bytearray()
-    mask = bytearray()
-
-    for p in parts:
-        if p == "??":  
-            # wildcard but must not be 0x00
-            pattern.append(0x00)
-            mask.append(2)   # custom code: 2 = wildcard no-zero
-        elif p == "!!":  
-            # wildcard can be 0x00
-            pattern.append(0x00)
-            mask.append(0)   # 0 = wildcard any byte
-        else:
-            pattern.append(int(p, 16))
-            mask.append(1)   # 1 = exact match
-
-    return bytes(pattern), bytes(mask)
-
-
-def aob_search(data: bytes, aob: str):
-    pattern, mask = aob_to_pattern(aob)
-    L = len(pattern)
-    mv = memoryview(data)
-
-    for i in range(len(data) - L + 1):
-        # skip offsets below 0x1FFD20
-        if i < 0x1FFD20:
-            continue
-
-        ok = True
-        for j in range(L):
-            if mask[j] == 1:  # exact
-                if mv[i + j] != pattern[j]:
-                    ok = False
-                    break
-            elif mask[j] == 2:  # wildcard but not zero
-                if mv[i + j] == 0x00:
-                    ok = False
-                    break
-            # mask[j] == 0 means wildcard (any byte, including 0x00)
-
-        if ok:
-            print([i])  # debug print
-            return [i]
-
-    print([])  # no matches
-    return None
 
 # load and copy JSON data from files in the working directory
 def load_and_copy_json(file_name):
@@ -444,37 +392,69 @@ def open_file():
 
     MODE=None
 
-    file_path = filedialog.askopenfilename(title="Select memory.dat or ER0000.sl2 file", filetypes=[("All files", "*.*"), ("DAT files", "*.dat"), ("SL2 files", "*.sl2") ])
+    file_path = filedialog.askopenfilename(title="Select memory.dat or ER0000.sl2 file or seamless file", filetypes=[("All files", "*.*") ])
     if not file_path:
         return
     file_name = os.path.basename(file_path)
 
     if file_name=='memory.dat':
         MODE= "ps4"
-    elif file_name=='ER0000.sl2':
-        MODE= "PC" 
     else:
-        messagebox.showerror("Error", "Please select a valid memory.dat or ER0000.sl2 file.")
-        return
+        MODE= "PC" 
+
 
     split_files(file_path, "split")
     display_char_name("split")
     return MODE
 
 def find_char_name(data):
-    magic_bytes=bytes.fromhex(magic_pattern)
-    magic_offset=data.find(magic_bytes)
-    if magic_offset == -1:
-        return None
-    
-    name_offset=magic_offset-0x11b
+
+    ga_end=gaprint(data)
+    name_offset=ga_end+0x94
 
 
     max_chars = 16
     raw_name = data[name_offset:name_offset + max_chars * 2]
     char_name = raw_name.decode("utf-16-le", errors="ignore").rstrip("\x00")
+    if char_name=='':
+        return None
+
 
     return char_name
+
+
+def dlc_check(data):
+    _, gamehash, _, _ = save_struct(data)
+
+    dlc_offset = gamehash - 0x80 - 0x32
+
+    dlc_flag = struct.unpack_from('<I', data, dlc_offset)[0]
+
+    if dlc_flag > 0:
+        return "DLC Flag is ON"
+    else:
+        return "DLC Flag is OFF"
+
+
+def remove_dlc(data):
+
+    data=bytearray(data)
+    _, gamehash, _, _ = save_struct(data)
+
+    dlc_offset = gamehash - 0x80 - 0x32
+
+    struct.pack_into('<I', data, dlc_offset, 0)  # write integer 0
+
+    #change map incase
+
+    map_id=301989888
+
+    struct.pack_into('<I', data, 0x4, map_id)
+
+    print('dlc_offset:', hex(dlc_offset))
+
+    return data
+    
 def select_userdata(path, folder_name):
     global userdata_path, import_path, data, imported_data
 
@@ -485,12 +465,18 @@ def select_userdata(path, folder_name):
         userdata_path = path
         load_data()
         gaprint(data)
-        inventoryprint()
+        inventoryprint(data)
         sort_list()
         storage_par()
         init_graces_tab()
         display_inventory("Ash of War")
         display_storage("Talismans")
+        check_dlc_ui()
+        init_graces_tab()
+        init_cookbook_tab()
+        init_whetblade_tab()
+        init_maps_tab()
+        init_bosses_tab()
 
 
     elif folder_name == "imported":
@@ -499,8 +485,10 @@ def select_userdata(path, folder_name):
             imported_data = f.read()
 
         # Replace Steam ID in imported data with my save’s Steam ID
-        my_steam_id, _ = find_steam_id(data, data)
+        my_steam_id, old_offsettt = find_steam_id(data, data)
+        print('old offsettt:', hex(old_offsettt))
         _, steam_offset = find_steam_id(imported_data, imported_data, is_import=True)
+        print('new steam_offset:', hex(steam_offset))
         my_steam_id = bytes.fromhex(my_steam_id)
         steam_offset=steam_offset
 
@@ -511,11 +499,17 @@ def select_userdata(path, folder_name):
         userdata_path = path
         load_data()
         gaprint(data)
-        inventoryprint()
+        inventoryprint(data)
         sort_list()
         init_graces_tab()
         display_inventory("Ash of War")
         display_storage("Talismans")
+        check_dlc_ui()
+        init_graces_tab()
+        init_cookbook_tab()
+        init_whetblade_tab()
+        init_maps_tab()
+        init_bosses_tab()
         messagebox.showinfo("Import Successful", f"Imported character from {import_path} and replaced Steam ID.")
 
 
@@ -605,7 +599,7 @@ def display_char_name(folder_name):
 
 def find_steam_id(section_data, save_data, is_import=False):
     gaprint(save_data)
-    inventoryprint()
+    inventoryprint(save_data)
     sort_list()
 
 
@@ -617,12 +611,12 @@ def find_steam_id(section_data, save_data, is_import=False):
     if is_import==False:
         if MODE=='ps4':
             if steam_id != b'\x00' * 8:  # 8 bytes of zero
-                print('Issue with steam id not being zero for PS4')
+                messagebox.showerror('Steam ID Error', 'Issue with steam id not being zero for PS4')
                 return
             
         elif MODE == 'PC':
             if steam_id == b'\x00' * 8:
-                print('Issue with steam id being zero for PC')
+                messagebox.showerror('Steam ID Error', 'Issue with steam id being zero for PC')
                 return
 
 
@@ -663,7 +657,8 @@ def load_data():
     current_ng_var.set(current_ng)
 
     # Stats
-    magic_offset = data.find(bytes.fromhex(magic_pattern))
+    end_ga=gaprint(data)
+    magic_offset = end_ga + 0x1af
     for stats, distance in stats_offsets_for_stats_tap.items():
         stats_offset = magic_offset + distance
         byte_size = 2 if stats == "Level" else 1
@@ -702,7 +697,8 @@ def load_data():
 def update_name(new_name):
     global data
 
-    magic_offset = data.find(bytes.fromhex(magic_pattern))
+    end_ga=gaprint(data)
+    magic_offset = end_ga + 0x1af
     offset = magic_offset - 0x11B
 
     # Encode to UTF-16 LE
@@ -710,10 +706,10 @@ def update_name(new_name):
     # Pad or trim to 32 bytes (16 characters)
     new_name_utf16 = new_name_utf16[:32].ljust(32, b"\x00")
 
-    # Write the new name into the save data
+
     data = data[:offset] + new_name_utf16 + data[offset+32:]
 
-    # Update the Tkinter variable → this refreshes the label
+
     current_name_var.set(new_name)
 
     return data
@@ -722,6 +718,7 @@ def update_name(new_name):
 def update_runes(new_runes):
     global data
 
+    data = bytearray(data)
     # Convert safely
     new_runes = int(new_runes)  # convert from string to int
     if new_runes > 4294967295:
@@ -732,8 +729,15 @@ def update_runes(new_runes):
     new_runes_bytes = new_runes.to_bytes(length=4, byteorder="little")
 
     # Find offset
-    magic_offset = data.find(bytes.fromhex(magic_pattern))
+    end_ga=gaprint(data)
+    magic_offset = end_ga + 0x1af
     offset = magic_offset + souls_distance
+
+    soul_memory=find_value_at_offset(data, offset + 4, byte_size=4)
+
+    new_soul_memory = (soul_memory + new_runes ) % 4294967296
+
+    struct.pack_into('<I', data, offset + 4, new_soul_memory)
 
     # Overwrite 4 bytes
     data = data[:offset] + new_runes_bytes + data[offset+4:]
@@ -799,8 +803,8 @@ def update_stat(stat):
         messagebox.showerror("Invalid Input", str(e))
         return
     
-    
-    offset1 = find_hex_offset(data, magic_pattern)
+    end_ga=gaprint(data)
+    offset1 = end_ga +0x1af
     if offset1 is not None:
 
         relative_offset = calculate_offset2(offset1, stats_offsets_for_stats_tap[stat])
@@ -884,17 +888,18 @@ class Item:
         return cls(gaitem_handle, item_id, offset, extra, size)
     
 
-
-def parse_items(data_type, start_offset, end_offset):
+def parse_items(data_type, start_offset, slots=5120):
     items = []
     offset = start_offset
 
-    while offset < end_offset:
+    for _ in range(slots):
         item = Item.from_bytes(data_type, offset)
         items.append(item)
-        offset += item.size  
+        offset += item.size
 
-    return items
+
+    return items, offset
+
 
 def gaprint(data_type):
     global ga_weapons, ga_armors, ga_aow, ga_empty, ga_items
@@ -908,11 +913,8 @@ def gaprint(data_type):
 
     start_offset = 0x20
 
-    magic_offset=save_data.find(bytes.fromhex(magic_pattern))
 
-    end_offset = magic_offset- 432
-
-    items = parse_items(save_data, start_offset, end_offset)
+    items , end_offset= parse_items(save_data, start_offset)
 
     for item in items:
         type_bits = item.gaitem_handle & 0xF0000000
@@ -925,6 +927,9 @@ def gaprint(data_type):
             ga_aow.append((item.gaitem_handle, item.item_id, item.offset))
         elif type_bits == ITEM_TYPE_EMPTY:
             ga_empty.append((item.gaitem_handle, item.item_id, item.offset))
+
+
+    return end_offset
 
 # iNVENTORY section
 
@@ -964,8 +969,7 @@ def parse_inventory(data, start_offset, end_offset):
 
     return inventory_item
 
-def inventoryprint():
-    global data
+def inventoryprint(data):
     global weapons, aow, armors, goods, rings, empty, inventory_items
     
     inventory_items=[]
@@ -976,9 +980,11 @@ def inventoryprint():
     rings = []
     empty=[]
 
-    start_offset = find_hex_offset(data, magic_pattern) + 505
+    ga_end=gaprint(data)
+    start_offset = ga_end + 505 + 0x1af
 
-    end_offset = find_hex_offset(data, magic_pattern)+37365
+    end_offset = ga_end +37365 + 0x1af
+
 
 
     items = parse_inventory(data, start_offset, end_offset)
@@ -1007,7 +1013,9 @@ def inventoryprint():
 import struct
 
 def inventory_counters(data):
-    magic_offset = data.find(bytes.fromhex(magic_pattern))
+
+    ga_end=gaprint(data)
+    magic_offset = ga_end + 0x1af
 
     first_counter_offset = magic_offset + 501
     second_counter_offset = magic_offset + 37373
@@ -1029,6 +1037,43 @@ def inventory_counters(data):
     return data
 
 
+def increment_storage_counter(data, storage_offset_start):
+
+    data = bytearray(data)
+
+    counter_offset=storage_offset_start
+    print(f"Storage counter offset: {counter_offset:#x}")
+    print(f"Current counter value: {struct.unpack_from('<I', data, counter_offset)[0]}")
+
+    counter_1=struct.unpack_from('<I', data, counter_offset)[0]
+    counter_2=struct.unpack_from('<I', data, counter_offset + 0x6008)[0]
+    print(f"Counter 1 before increment: {counter_1}")
+    print(f"Counter 2 before increment: {counter_2}")
+    counter_3=struct.unpack_from('<I', data, counter_offset + 0x600c)[0]
+    print(f"Counter 3 before increment: {counter_3}")
+
+
+    counter_1 +=1
+
+    if counter_2== 0:
+        counter_2= 0x80
+
+    else:
+        counter_2 += 1
+
+    counter_3 += 1
+
+
+
+    struct.pack_into('<I', data, counter_offset, counter_1)
+    struct.pack_into('<I', data, counter_offset + 0x6008, counter_2)
+    struct.pack_into('<I', data, counter_offset + 0x600c, counter_3)
+
+
+
+    return data
+
+
 def sort_list():
     global inventory_items, ga_items
 
@@ -1037,6 +1082,8 @@ def sort_list():
 
     # Then sort by gaitem_handle (1st element)
     ga_items.sort(key=lambda x: x[0])
+
+    storage_inventory_items.sort(key=lambda x: x[2])
 
 
 def spawn_goods(item_name, item_quantity, item_type, Stack=False):
@@ -1050,20 +1097,21 @@ def spawn_goods(item_name, item_quantity, item_type, Stack=False):
     if item_type == 'goods':
         item_id = goods_and_magic_json.get(item_name)
         if not item_id:
+            print(f' missing id for {item_name}')
             print('no id found')
-            return
+            return None, False
         
     elif item_type == 'talisman':
         item_id = talisman_json.get(item_name)
         item_quantity= 1
         if not item_id:
             print('no id found')
-            return
+            return None, False
 
     item_id_bytes = bytes.fromhex(item_id)
     if len(item_id_bytes) != 4:
         print('length error')
-        return
+        return None, False
     
     item_id_int= int.from_bytes(item_id_bytes, 'little')
 
@@ -1085,14 +1133,18 @@ def spawn_goods(item_name, item_quantity, item_type, Stack=False):
                     inventory_items[i] = (gaitem_handle, new_quantity, index, offset)
 
 
-                    return
+                    return data, False
          
 
         
     # If item not found, we will add it
     last_offset = empty[0][3]
 
-    highest_index= inventory_items[-2][2]  
+    end_offset = gaprint(data) + 0x1af + 0x1f9 + 0x7e00
+
+
+
+    highest_index= inventory_items[-1][2]  
 
     highest_index +=2
 
@@ -1103,50 +1155,112 @@ def spawn_goods(item_name, item_quantity, item_type, Stack=False):
         highest_index.to_bytes(4, 'little')
     )
 
+    if len(empty) <2 or last_offset >= end_offset:
+        item_id_int_bytes = item_id_int.to_bytes(4, 'little')
+        data, STORAGE_FULL_FLAG, storage_used = add_item_to_storage(data, item_id_int_bytes, item_quantity)
+        if STORAGE_FULL_FLAG:
+            messagebox.showinfo("Error", "No storage slots available.")
+            return data, True
+
+        return data, STORAGE_FULL_FLAG
+
 
     data = data[:last_offset] + goods_slot + data[last_offset+12:]
 
     data=inventory_counters(data)
 
-    slot_bytes = data[last_offset:last_offset+12]
-    aob_str = " ".join(f"{b:02X}" for b in slot_bytes)
-
-
-
 
     gaprint(data)
-    inventoryprint()
+    inventoryprint(data)
     sort_list()
 
+    return data, False
+
+
+def add_item_to_storage(data, item_handle, item_quantity):
+    global storage_empty
+
+    storage_par()
+
+    original_data = data
+
+    _, _, _, start_offset = save_struct(data)
+    start_offset = start_offset + 4
+
+    end_storage_offset = start_offset + 0x5a00
+
+    last_offset = storage_empty[0][3]
+
+    if len(storage_empty) < 2 or last_offset >= end_storage_offset:
+        print('no storage slots')
+        return original_data, True, False
+
+    # storage builds its own correct index
+    highest_indexs = storage_inventory_items[-1][2]
+    print(f"Current highest storage index: {highest_indexs}")
+    highest_indexs += 2
+
+    item_slot = (
+        item_handle +
+        item_quantity.to_bytes(4, 'little') +
+        highest_indexs.to_bytes(4, 'little')
+    )
+
+    data = increment_storage_counter(data, start_offset - 4)
+
+    _, _, _, first_empty_offset = storage_empty[0]
+
+    data = (
+        data[:first_empty_offset]
+        + item_slot
+        + data[first_empty_offset + 12:]
+    )
+    storage_par()
+
+    return data, False, True
 #weapons spawn
 
 def spawn_weapons(item_name, item_type):
     global data
-    global inventory_items, ga_items, ga_weapons, ga_empty
+    global inventory_items, ga_items, ga_weapons, ga_empty, aow_handle
+
+
+    original_data=data
+
+    FULL_GA_FLAG=False
+    STORAGE_USED_FLAG=False
 
     if item_type == 'weapons':
         item_id = weapons_sorted_json.get(item_name)
         if not item_id:
+            print(f' missing id for weapon {item_name}')
             print('no id found')
-            return
+            return None, False
         
     elif item_type == 'armors':
         item_id = armor_json.get(item_name)
         if not item_id:
+            print(f' missing id for armor {item_name}')
             print('no id found')
-            return
+            return None, False
         
     elif item_type == 'aow':
         item_id = aow_json.get(item_name)
         if not item_id:
+            print(f' missing id for aow {item_name}')
             print('no id found')
-            return
+            return None, False
         
 
     item_id_bytes = bytes.fromhex(item_id)
     if len(item_id_bytes) != 4:
         print('length error')
-        return
+        return None, False
+    
+    if ga_empty is None or len(ga_empty) < 2:
+        FULL_GA_FLAG=True
+        messagebox.showinfo("Error", "No empty slot on GA handle")
+        return original_data, FULL_GA_FLAG
     
 
     #weapons slot
@@ -1208,86 +1322,96 @@ def spawn_weapons(item_name, item_type):
 
 
 
-    # in inventory
-    
-
-
-    last_offset = empty[0][3]
-
-    highest_index= inventory_items[-2][2]  
-
-    highest_index +=2
-
-
-    item_quantity=1
-
-    goods_slot = (
-        item_handle+
-        item_quantity.to_bytes(4, 'little') +
-        highest_index.to_bytes(4, 'little')
-    )
-
-
-    data = data[:last_offset] + goods_slot + data[last_offset+12:]
-    data = inventory_counters(data)
+        last_offset = empty[0][3]
+        
+        end_offset = gaprint(data) + 0x1af + 0x1f9 + 0x7e00
+        # in inventory
+        
+        if len(empty) < 2 or last_offset >= end_offset:
+            data, storage_full, STORAGE_USED_FLAG = add_item_to_storage(data, item_handle, item_quantity=1)
+            if storage_full:
+                messagebox.showinfo("Error", "No storage slots available.")
+                return original_data, True
 
 
 
-    slot_bytes = data[last_offset:last_offset+12]
-    aob_str = " ".join(f"{b:02X}" for b in slot_bytes)
+        
 
 
+        if STORAGE_USED_FLAG is False:
+            last_offset = empty[0][3]
+
+            highest_index= inventory_items[-1][2]  
+
+            highest_index +=2
 
 
+            item_quantity=1
 
-    # 21 total new bytes. delete 8 from GA handle
-    # delete 13 from end of file
-    if item_type == 'weapons' or item_type == 'armors':
+            goods_slot = (
+                item_handle+
+                item_quantity.to_bytes(4, 'little') +
+                highest_index.to_bytes(4, 'little')
+            )
 
-        last_ga_empty= 0
-        for _,_, offset_empty in ga_empty:
-            if last_ga_empty < offset_empty:
-                last_ga_empty=offset_empty
-
-        empty_value_at_offset= b'\x00\x00\x00\x00\xFF\xFF\xFF\xFF'
-        if empty_value_at_offset == data[last_ga_empty:last_ga_empty+8]:
-            lenght=len(data)
-            _,critical,wwws,_=save_struct(data)
-            if critical>lenght:
-                messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
-                return
-
-            data = data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset:]
-            data = data[:last_ga_empty] + data[last_ga_empty+8:]
+            data = data[:last_offset] + goods_slot + data[last_offset+12:]
+            data = inventory_counters(data)
 
 
-            if item_type=='weapons':
+        # 21 total new bytes. delete 8 from GA handle
+        # delete 13 from end of file
+        if item_type == 'weapons' or item_type == 'armors':
 
+            last_ga_empty= 0
+            for _,_, offset_empty in ga_empty:
+                if last_ga_empty < offset_empty:
+                    last_ga_empty=offset_empty
+
+            empty_value_at_offset= b'\x00\x00\x00\x00\xFF\xFF\xFF\xFF'
+            if empty_value_at_offset == data[last_ga_empty:last_ga_empty+8]:
                 lenght=len(data)
                 _,critical,wwws,_=save_struct(data)
                 if critical>lenght:
                     messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
-                    return
-                data = data[:-13]
-                
-            if item_type=='armors':
-                lenght=len(data)
-                _,critical,_,_=save_struct(data)
-                
-                if critical>lenght:
-                    messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
-                    return
-                data= data[:-8]
-    
-    if item_type== 'aow': # no deletion is needed
+                    return original_data, False
 
-        data= data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset+8:]
+                data = data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset:]
+                data = data[:last_ga_empty] + data[last_ga_empty+8:]
 
+
+                if item_type=='weapons':
+
+                    lenght=len(data)
+                    _,critical,wwws,_=save_struct(data)
+                    if critical>lenght:
+                        messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
+                        return original_data, False
+                    data = data[:-13]
+                    
+                if item_type=='armors':
+                    lenght=len(data)
+                    _,critical,_,_=save_struct(data)
+                    
+                    if critical>lenght:
+                        messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
+                        return original_data, False
+                    data= data[:-8]
+        
+        if item_type== 'aow': # no deletion is needed
+
+            data= data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset+8:]
+
+        
+        gaprint(data)
+        inventoryprint(data)
+        sort_list()
+        aow_handle=item_handle
+
+        return data, False
     
-    gaprint(data)
-    inventoryprint()
-    sort_list()
-    return item_handle
+    return original_data, False
+
+
 
 ###IMPORTING SAVES
 
@@ -1389,6 +1513,106 @@ def toggle_grace(name):
 
     data = bytes(data)
 
+
+def toggle_cookbook(name):
+    """Toggle cookbook unlocked state in save data."""
+    global data
+    data = bytearray(data)
+    event_flag_start_offset = save_struct(data)
+
+    for cookbook in cookbooks_json:
+        if cookbook["Cookbook_name"] != name:
+            continue
+
+        offset = int(cookbook["offset"], 16) + event_flag_start_offset[0]
+        index = cookbook["index"]
+
+        current_value = data[offset]
+        if cookbook_vars[name].get():  # checked → unlock
+            new_value = current_value | (1 << index)
+        else:  # unchecked → lock
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into('B', data, offset, new_value)
+
+
+    data = bytes(data)
+
+
+def toggle_whetblade(name):
+    """Toggle whetblade unlocked state in save data."""
+    global data
+    data = bytearray(data)
+    event_flag_start_offset = save_struct(data)
+
+    for whetblade in whetblades_json:
+        if whetblade["Whetblade_name"] != name:
+            continue
+
+        offset = int(whetblade["offset"], 16) + event_flag_start_offset[0]
+        index = whetblade["index"]
+
+        current_value = data[offset]
+        if whetblade_vars[name].get():  # checked → unlock
+            new_value = current_value | (1 << index)
+        else:  # unchecked → lock
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into('B', data, offset, new_value)
+
+
+    data = bytes(data)
+
+def toggle_map(name):
+    """Toggle map unlocked state in save data."""
+    global data
+    data = bytearray(data)
+    event_flag_start_offset = save_struct(data)
+
+    for map in maps_json:
+        if map["Map_name"] != name:
+            continue
+
+        offset = int(map["offset"], 16) + event_flag_start_offset[0]
+        index = map["index"]
+
+        current_value = data[offset]
+        if map_vars[name].get():  # checked → unlock
+            new_value = current_value | (1 << index)
+        else:  # unchecked → lock
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into('B', data, offset, new_value)
+
+
+    data = bytes(data)
+
+
+def toggle_boss(name):
+    """Toggle boss defeated state in save data."""
+    global data
+    data = bytearray(data)
+    event_flag_start_offset = save_struct(data)
+
+    for boss in bosses_json:
+        if boss["Boss_name"] != name:
+            continue
+
+        offset = int(boss["offset"], 16) + event_flag_start_offset[0]
+        index = boss["index"]
+
+        current_value = data[offset]
+        if boss_vars[name].get():  # checked → unlock
+            new_value = current_value | (1 << index)
+        else:  # unchecked → lock
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into('B', data, offset, new_value)
+
+
+    data = bytes(data)
+
+
 def storage_par():
     global data
     global storage_weapons, storage_aow, storage_armors, storage_goods, storage_rings, storage_empty, storage_inventory_items
@@ -1404,6 +1628,7 @@ def storage_par():
     _,_,_,start_offset = save_struct(data)
     start_offset=start_offset+4
     end_offset = start_offset+ 0x6006
+
 
 
     items = parse_inventory(data, start_offset, end_offset)
@@ -1427,6 +1652,7 @@ def storage_par():
 
 
 
+
     
 
 
@@ -1436,7 +1662,7 @@ def save_struct(save_data):
     The defined variable is the end of that struct
     """
     gaprint(save_data)
-    inventoryprint()
+    inventoryprint(save_data)
     sort_list()
     ga_item_sorted = sorted(ga_items, key=lambda x: x[2])
     GA_item_handle_size= ga_item_sorted [-1][2] + 8
@@ -1516,7 +1742,25 @@ def save_struct(save_data):
     return ingame_timer, PlayerGameDataHash, BaseCharacterVersion, face_data
 
     
+def check_dlc_ui():
+    global data
 
+    if data:
+        try:
+            status = dlc_check(data)
+            dlc_status_var.set(status)
+        except Exception as e:
+            dlc_status_var.set(f"Error: {e}")
+    else:
+        dlc_status_var.set("No file loaded")
+
+
+def reset_dlc_ui():
+    global data
+
+    if data:
+        data = remove_dlc(data)
+        check_dlc_ui()  # auto refresh status
         
 file_open_frame = tk.Frame(window)
 file_open_frame.pack(side="left", fill="y", padx=10, pady=5)
@@ -1576,6 +1820,16 @@ ttk.Button(
     command=lambda: update_runes(new_runes_var.get())
 ).grid(row=8, column=0, columnspan=2, pady=10)
 
+
+# === DLC Section ===
+ttk.Label(name_tab, text="DLC Status:").grid(row=9, column=0, padx=10, pady=10, sticky="e")
+ttk.Label(name_tab, textvariable=dlc_status_var).grid(row=9, column=1, padx=10, pady=10)
+
+ttk.Button(
+    name_tab,
+    text="Disable DLC Flag",
+    command=lambda: reset_dlc_ui()
+).grid(row=11, column=0, columnspan=2, pady=5)
 
 
 # Stats Tab
@@ -1640,7 +1894,7 @@ filter_storage_frame.pack(side="top", fill="x", padx=10, pady=5)
 
 tk.Label(filter_storage_frame, text="Filter by Type:").pack(side="left", padx=5)
 storage_type_var = tk.StringVar(value="Talismans")  # default to Goods
-type_optionss = ["Talismans","Goods" ]
+type_optionss = ["Ash of War", "Weapons", "Armors", "Goods", "Talismans"]
 type_menus = ttk.OptionMenu(filter_storage_frame, storage_type_var, type_optionss[0], *type_optionss)
 type_menus.pack(side="left", padx=5)
 
@@ -1659,29 +1913,117 @@ scrollbar.pack(side="right", fill="y")
 ####
 def display_storage(item_type=None):
     global data
+
     if item_type is None:
         item_type = storage_type_var.get()
 
     # Clear previous rows
     storage_tree.delete(*storage_tree.get_children())
 
+    # ✅ Build valid gaitem handles from storage inventory
+    valid_handles = {g for g, _, _, _ in storage_inventory_items}
+
+    # =========================
+    # GOODS
+    # =========================
     if item_type == "Goods":
         source_json = goods_and_magic_json
-        source_items = storage_inventory_items
+
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-            for item_id, quantity, _, _ in source_items:
-                if id_int == item_id:
-                    storage_tree.insert("", "end", values=(item_type, name, quantity))
 
+            for item_id, quantity, _, _ in storage_inventory_items:
+                if id_int == item_id:
+                    storage_tree.insert(
+                        "", "end",
+                        values=(item_type, name, quantity)
+                    )
+
+    # =========================
+    # TALISMANS
+    # =========================
     elif item_type == "Talismans":
         source_json = talisman_json
-        source_items = storage_inventory_items
+
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-            for item_id, quantity, _, _ in source_items:
+
+            for item_id, quantity, _, _ in storage_inventory_items:
                 if id_int == item_id:
-                    storage_tree.insert("", "end", values=(item_type, name, 1))
+                    storage_tree.insert(
+                        "", "end",
+                        values=(item_type, name, 1)
+                    )
+
+    # =========================
+    # WEAPONS (FIXED)
+    # =========================
+    elif item_type == "Weapons":
+        source_json = weapons_json
+
+        for name, id_hex in source_json.items():
+            base_id = int.from_bytes(bytes.fromhex(id_hex), "little")
+
+            for gaitem_handle, item_id, offset in ga_items:
+
+                # ✅ ONLY if exists in storage
+                if gaitem_handle not in valid_handles:
+                    continue
+
+                if (item_id & 0xFFFFFF00) == (base_id & 0xFFFFFF00):
+                    if name == "Unarmed":
+                        continue
+
+                    level = item_id - base_id
+
+                    aow_id = int.from_bytes(data[offset+16:offset+20], "little")
+                    aow_name = next(
+                        (n for n, h in aow_json.items()
+                         if int.from_bytes(bytes.fromhex(h), "little") == aow_id),
+                        "None"
+                    )
+
+                    storage_tree.insert(
+                        "", "end",
+                        values=(item_type, name, 1, level, aow_name),
+                        tags=(str(offset), str(item_id))
+                    )
+
+
+    elif item_type == "Armors":
+        source_json = armor_json
+
+        for name, id_hex in source_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+
+            for gaitem_handle, item_id, offset in ga_items:
+
+                if gaitem_handle not in valid_handles:
+                    continue
+
+                if id_int == item_id:
+                    storage_tree.insert(
+                        "", "end",
+                        values=(item_type, name, 1, "-", "-")
+                    )
+
+
+    elif item_type == "Ash of War":
+        source_json = aow_json
+
+        for name, id_hex in source_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+
+            for gaitem_handle, item_id, offset in ga_items:
+
+                if gaitem_handle not in valid_handles:
+                    continue
+
+                if id_int == item_id:
+                    storage_tree.insert(
+                        "", "end",
+                        values=(item_type, name, 1, "-", "-")
+                    )
 
     return data
 
@@ -1691,6 +2033,9 @@ def display_storage(item_type=None):
 # --- Display inventory with weapon Level & AOW ---
 def display_inventory(item_type=None):
     global data
+
+    valid_handles = {gaitem_handle for gaitem_handle, _, _, _ in inventory_items}
+
     if item_type is None:
         item_type = inventory_type_var.get()
     inventory_tree.delete(*inventory_tree.get_children())
@@ -1707,18 +2052,29 @@ def display_inventory(item_type=None):
     elif item_type == "Weapons":
         source_json = weapons_json
         source_items = ga_items
+
         for name, id_hex in source_json.items():
             base_id = int.from_bytes(bytes.fromhex(id_hex), "little")
 
             for gaitem_handle, item_id, offset in source_items:
+
+                #Only show if actually in inventory
+                if gaitem_handle not in valid_handles:
+                    continue
+
                 if (item_id & 0xFFFFFF00) == (base_id & 0xFFFFFF00):
                     if name == "Unarmed":
                         continue
+
                     level = item_id - base_id
                     aow_id = int.from_bytes(data[offset+16:offset+20], "little")
-                    aow_name = next((n for n, h in aow_json.items() if int.from_bytes(bytes.fromhex(h), "little") == aow_id), "None")
 
-                    # Insert row with offset and current item_id as tags
+                    aow_name = next(
+                        (n for n, h in aow_json.items()
+                        if int.from_bytes(bytes.fromhex(h), "little") == aow_id),
+                        "None"
+                    )
+
                     inventory_tree.insert(
                         "", "end",
                         values=(item_type, name, 1, level, aow_name),
@@ -1728,21 +2084,42 @@ def display_inventory(item_type=None):
     elif item_type == "Armors":
         source_json = armor_json
         source_items = ga_items
+
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+
             for gaitem_handle, item_id, offset in source_items:
+
+                if gaitem_handle not in valid_handles:
+                    continue
+
                 if id_int == item_id:
-                    inventory_tree.insert("", "end", values=(item_type, name, 1, "-", "-"))
+                    inventory_tree.insert(
+                        "", "end",
+                        values=(item_type, name, 1, "-", "-")
+                    )
 
     elif item_type == "Ash of War":
         source_json = aow_json
         source_items = ga_items
+        counter=0
+
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-            for gaitem_handle, item_id, offset in source_items:
-                if id_int == item_id:
-                    inventory_tree.insert("", "end", values=(item_type, name, 1, "-", "-"))
 
+            for gaitem_handle, item_id, offset in source_items:
+
+                if gaitem_handle not in valid_handles:
+                    counter+=1
+                    
+                    continue
+
+                if id_int == item_id:
+                    inventory_tree.insert(
+                        "", "end",
+                        values=(item_type, name, 1, "-", "-")
+                    )
+    
     elif item_type == "Talismans":
         source_json = talisman_json
         source_items = inventory_items
@@ -1751,11 +2128,15 @@ def display_inventory(item_type=None):
             for item_id, quantity, _, _ in source_items:
                 if id_int == item_id:
                     inventory_tree.insert("", "end", values=(item_type, name, 1, "-", "-"))
+
+    
+
     return data
 
 
 
 def update_weapon():
+    global aow_handle
     selected = inventory_tree.selection()
     if not selected:
         print("No weapon selected")
@@ -1787,7 +2168,10 @@ def update_weapon():
         new_aow_id = 0
     else:
         # spawn handle safely
-        aow_handle = spawn_weapons(new_aow_name, "aow")
+        _, no_more_slots = spawn_weapons(new_aow_name, "aow")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {new_aow_name} Cannot apply Ash of War.")
+            return
         new_aow_id = int.from_bytes(aow_handle, "little")
 
     # --- Apply updates ---
@@ -1808,7 +2192,7 @@ def update_weapon():
 
 
     gaprint(data)         
-    inventoryprint()   
+    inventoryprint(data)   
     sort_list()        
 
     # Update Treeview row directly
@@ -1856,7 +2240,7 @@ def update_selected_quantity():
             quantity_offset = offset + 4
             
             data = data[:quantity_offset] + new_quantity.to_bytes(4, "little") + data[quantity_offset+4:]
-            inventoryprint()
+            inventoryprint(data)
             display_inventory()
             return data
 
@@ -1874,7 +2258,7 @@ def delete_selected_item():
         return
     
     delete_goods(item_name)
-    inventoryprint()
+    inventoryprint(data)
     display_inventory()
 
 ##
@@ -1954,8 +2338,21 @@ weapon_level_entry.pack(side="left", padx=5)
 tk.Label(weapon_frame, text="Ash of War:").pack(side="left", padx=5)
 aow_options = ["None"] + list(aow_json.keys())
 aow_var = tk.StringVar(value="None")
-aow_menu = ttk.OptionMenu(weapon_frame, aow_var, *aow_options)
-aow_menu.pack(side="left", padx=5)
+
+aow_combo = ttk.Combobox(weapon_frame, textvariable=aow_var, values=aow_options, width=30)
+aow_combo.pack(side="left", padx=5)
+
+def filter_aow(event):
+    typed = aow_var.get().lower()
+    if typed == "":
+        aow_combo["values"] = aow_options
+    else:
+        filtered = [item for item in aow_options if typed in item.lower()]
+        aow_combo["values"] = filtered
+    aow_combo.event_generate("<Down>")  # auto-open dropdown
+
+aow_combo.bind("<KeyRelease>", filter_aow)
+
 tk.Button(weapon_frame, text="Update Weapon", command=update_weapon).pack(side="left", padx=5)
 
 # --- Function to show correct controls ---
@@ -2005,16 +2402,66 @@ world_flags_tab = ttk.Frame(notebook)
 notebook.add(world_flags_tab, text="World Flags")
 
 # --- Main Container with Better Padding ---
-main_container = ttk.Frame(world_flags_tab)
-main_container.pack(fill="both", expand=True, padx=15, pady=15)
+# --- Sub Notebook inside World Flags ---
+flags_notebook = ttk.Notebook(world_flags_tab)
+flags_notebook.pack(fill="both", expand=True, padx=10, pady=10)
+
+# Sub tabs
+graces_subtab = ttk.Frame(flags_notebook)
+cookbooks_subtab = ttk.Frame(flags_notebook)
+whetblades_subtab = ttk.Frame(flags_notebook)
+map_subtab = ttk.Frame(flags_notebook)
+bosses_subtab = ttk.Frame(flags_notebook)
+
+flags_notebook.add(graces_subtab, text="Graces")
+flags_notebook.add(cookbooks_subtab, text="Cookbooks")
+flags_notebook.add(whetblades_subtab, text="Whetblades")
+flags_notebook.add(map_subtab, text="Map Fragments")
+flags_notebook.add(bosses_subtab, text="Bosses")
+
+# --- Cookbook Container ---
+main_container_cb = ttk.Frame(cookbooks_subtab)
+main_container_cb.pack(fill="both", expand=True, padx=15, pady=15)
+
+# Controls
+controls_frame_cb = ttk.LabelFrame(main_container_cb, text="Quick Actions", padding=10)
+controls_frame_cb.pack(fill="x", pady=(0, 10))
+
+unlock_all_cookbooks_var = tk.IntVar()
+
+ttk.Checkbutton(
+    controls_frame_cb,
+    text="📖 Unlock All Cookbooks",
+    variable=unlock_all_cookbooks_var,
+    command=lambda: toggle_all_cookbooks(unlock_all_cookbooks_var.get())
+).pack(anchor="w", padx=10, pady=5)
+cookbooks_frame = ttk.LabelFrame(main_container_cb, text="Cookbooks", padding=5)
+cookbooks_frame.pack(fill="both", expand=True)
+
+canvas_cb = tk.Canvas(cookbooks_frame, highlightthickness=0, bg='white')
+scrollbar_cb = ttk.Scrollbar(cookbooks_frame, orient="vertical", command=canvas_cb.yview)
+scrollable_frame_cb = tk.Frame(canvas_cb, bg='white')
+
+scrollable_frame_cb.bind(
+    "<Configure>",
+    lambda e: canvas_cb.configure(scrollregion=canvas_cb.bbox("all"))
+)
+
+canvas_cb.create_window((0, 0), window=scrollable_frame_cb, anchor="nw")
+canvas_cb.configure(yscrollcommand=scrollbar_cb.set)
+
+canvas_cb.pack(side="left", fill="both", expand=True)
+scrollbar_cb.pack(side="right", fill="y")
 
 # --- Controls Frame (Top Section) ---
-controls_frame = ttk.LabelFrame(main_container, text="Quick Actions", padding=10)
+controls_frame = ttk.LabelFrame(graces_subtab, text="Quick Actions", padding=10)
 controls_frame.pack(fill="x", pady=(0, 10))
 
 # Unlock All checkboxes in a grid layout
 unlock_base_var = tk.IntVar()
 unlock_dlc_var = tk.IntVar()
+
+
 
 ttk.Checkbutton(
     controls_frame, 
@@ -2031,7 +2478,7 @@ ttk.Checkbutton(
 ).grid(row=0, column=1, sticky="w", padx=10, pady=5)
 
 # --- Graces List Frame ---
-graces_frame = ttk.LabelFrame(main_container, text="Grace Sites", padding=5)
+graces_frame = ttk.LabelFrame(graces_subtab, text="Grace Sites", padding=5)
 graces_frame.pack(fill="both", expand=True)
 
 # --- Canvas with Scrollbar ---
@@ -2056,6 +2503,110 @@ canvas.bind_all("<MouseWheel>", _on_mousewheel)
 canvas.pack(side="left", fill="both", expand=True)
 scrollbar.pack(side="right", fill="y")
 
+
+
+#whetblades
+main_container_wb = ttk.Frame(whetblades_subtab)
+main_container_wb.pack(fill="both", expand=True, padx=15, pady=15)
+
+# Controls
+controls_frame_wb = ttk.LabelFrame(main_container_wb, text="Quick Actions", padding=10)
+controls_frame_wb.pack(fill="x", pady=(0, 10))
+
+unlock_all_whetblades_var = tk.IntVar()
+
+ttk.Checkbutton(
+    controls_frame_wb,
+    text="⚔️ Unlock All Whetblades",
+    variable=unlock_all_whetblades_var,
+    command=lambda: toggle_all_whetblades(unlock_all_whetblades_var.get())
+).pack(anchor="w", padx=10, pady=5)
+whetblades_frame = ttk.LabelFrame(main_container_wb, text="Whetblades", padding=5)
+whetblades_frame.pack(fill="both", expand=True)
+
+canvas_wb = tk.Canvas(whetblades_frame, highlightthickness=0, bg='white')
+scrollbar_wb = ttk.Scrollbar(whetblades_frame, orient="vertical", command=canvas_wb.yview)
+scrollable_frame_wb = tk.Frame(canvas_wb, bg='white')
+
+scrollable_frame_wb.bind(
+    "<Configure>",
+    lambda e: canvas_wb.configure(scrollregion=canvas_wb.bbox("all"))
+)
+
+canvas_wb.create_window((0, 0), window=scrollable_frame_wb, anchor="nw")
+canvas_wb.configure(yscrollcommand=scrollbar_wb.set)
+
+canvas_wb.pack(side="left", fill="both", expand=True)
+scrollbar_wb.pack(side="right", fill="y")
+
+#map
+main_container_map = ttk.Frame(map_subtab)
+main_container_map.pack(fill="both", expand=True, padx=15, pady=15)
+
+# Controls
+controls_frame_map = ttk.LabelFrame(main_container_map, text="Quick Actions", padding=10)
+controls_frame_map.pack(fill="x", pady=(0, 10))
+
+unlock_all_maps_var = tk.IntVar()
+
+ttk.Checkbutton(
+    controls_frame_map,
+    text="🗺️ Unlock All Map Fragments",
+    variable=unlock_all_maps_var,
+    command=lambda: toggle_all_maps(unlock_all_maps_var.get())
+).pack(anchor="w", padx=10, pady=5)
+maps_frame = ttk.LabelFrame(main_container_map, text="Map Fragments", padding=5)
+maps_frame.pack(fill="both", expand=True)
+
+canvas_map = tk.Canvas(maps_frame, highlightthickness=0, bg='white')
+scrollbar_map = ttk.Scrollbar(maps_frame, orient="vertical", command=canvas_map.yview)
+scrollable_frame_map = tk.Frame(canvas_map, bg='white')
+
+scrollable_frame_map.bind(
+    "<Configure>",
+    lambda e: canvas_map.configure(scrollregion=canvas_map.bbox("all"))
+)
+
+canvas_map.create_window((0, 0), window=scrollable_frame_map, anchor="nw")
+canvas_map.configure(yscrollcommand=scrollbar_map.set)
+
+canvas_map.pack(side="left", fill="both", expand=True)
+scrollbar_map.pack(side="right", fill="y")
+
+
+#bosses
+main_container_boss = ttk.Frame(bosses_subtab)
+main_container_boss.pack(fill="both", expand=True, padx=15, pady=15)
+
+# Controls
+controls_frame_boss = ttk.LabelFrame(main_container_boss, text="Quick Actions", padding=10)
+controls_frame_boss.pack(fill="x", pady=(0, 10))
+
+unlock_all_bosses_var = tk.IntVar()
+
+ttk.Checkbutton(
+    controls_frame_boss,
+    text="� Kill All Bosses",
+    variable=unlock_all_bosses_var,
+    command=lambda: toggle_all_bosses(unlock_all_bosses_var.get())
+).pack(anchor="w", padx=10, pady=5)
+bosses_frame = ttk.LabelFrame(main_container_boss, text="Bosses", padding=5)
+bosses_frame.pack(fill="both", expand=True)
+
+canvas_boss = tk.Canvas(bosses_frame, highlightthickness=0, bg='white')
+scrollbar_boss = ttk.Scrollbar(bosses_frame, orient="vertical", command=canvas_boss.yview)
+scrollable_frame_boss = tk.Frame(canvas_boss, bg='white')
+
+scrollable_frame_boss.bind(
+    "<Configure>",
+    lambda e: canvas_boss.configure(scrollregion=canvas_boss.bbox("all"))
+)
+
+canvas_boss.create_window((0, 0), window=scrollable_frame_boss, anchor="nw")
+canvas_boss.configure(yscrollcommand=scrollbar_boss.set)
+
+canvas_boss.pack(side="left", fill="both", expand=True)
+scrollbar_boss.pack(side="right", fill="y")
 
 # --- Populate checkboxes ---
 def init_graces_tab():
@@ -2098,6 +2649,281 @@ def init_graces_tab():
         )
         cb.pack(anchor="w", padx=10, pady=3)
 
+
+
+def init_cookbook_tab():
+    global cookbook_vars
+
+    for child in scrollable_frame_cb.winfo_children():
+        child.destroy()
+
+    cookbook_vars = {}
+
+    event_offset = save_struct(data)[0]
+
+    for cookbook in cookbooks_json:
+        name = cookbook["Cookbook_name"]
+        raw_offset = cookbook["offset"]
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset  # already int
+
+        offset += event_offset
+        index = cookbook["index"]
+
+        unlocked = (data[offset] & (1 << index)) != 0
+
+        var = tk.IntVar(value=1 if unlocked else 0)
+        cookbook_vars[name] = var
+
+        cb = tk.Checkbutton(
+            scrollable_frame_cb,
+            text=name,
+            variable=var,
+            command=lambda n=name: toggle_cookbook(n)
+        )
+        cb.pack(anchor="w", padx=10, pady=3)
+
+def init_whetblade_tab():
+    global whetblade_vars
+
+    for child in scrollable_frame_wb.winfo_children():
+        child.destroy()
+
+    whetblade_vars = {}
+
+    event_offset = save_struct(data)[0]
+
+    for whetblade in whetblades_json:
+        name = whetblade["Whetblade_name"]
+        raw_offset = whetblade["offset"]
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset  # already int
+
+        offset += event_offset
+        index = whetblade["index"]
+
+        unlocked = (data[offset] & (1 << index)) != 0
+
+        var = tk.IntVar(value=1 if unlocked else 0)
+        whetblade_vars[name] = var
+
+        cb = tk.Checkbutton(
+            scrollable_frame_wb,
+            text=name,
+            variable=var,
+            command=lambda n=name: toggle_whetblade(n)
+        )
+        cb.pack(anchor="w", padx=10, pady=3)
+
+def init_maps_tab():
+    global map_vars
+
+    for child in scrollable_frame_map.winfo_children():
+        child.destroy()
+
+    map_vars = {}
+
+    event_offset = save_struct(data)[0]
+
+    for map in maps_json:
+        name = map["Map_name"]
+        raw_offset = map["offset"]
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset  # already int
+
+        offset += event_offset
+        index = map["index"]
+
+        unlocked = (data[offset] & (1 << index)) != 0
+
+        var = tk.IntVar(value=1 if unlocked else 0)
+        map_vars[name] = var
+
+        cb = tk.Checkbutton(
+            scrollable_frame_map,
+            text=name,
+            variable=var,
+            command=lambda n=name: toggle_map(n)
+        )
+        cb.pack(anchor="w", padx=10, pady=3)
+
+
+def init_bosses_tab():
+    global boss_vars
+
+    for child in scrollable_frame_boss.winfo_children():
+        child.destroy()
+
+    boss_vars = {}
+
+    event_offset = save_struct(data)[0]
+
+    for boss in bosses_json:
+        name = boss["Boss_name"]
+        raw_offset = boss["offset"]
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset  # already int
+
+        offset += event_offset
+        index = boss["index"]
+
+        unlocked = (data[offset] & (1 << index)) != 0
+
+        var = tk.IntVar(value=1 if unlocked else 0)
+        boss_vars[name] = var
+
+        cb = tk.Checkbutton(
+            scrollable_frame_boss,
+            text=name,
+            variable=var,
+            command=lambda n=name: toggle_boss(n)
+        )
+        cb.pack(anchor="w", padx=10, pady=3)
+
+def toggle_all_maps(value):
+    global data
+
+    data = bytearray(data)
+    event_offset = save_struct(data)[0]
+
+    for map in maps_json:
+        name = map.get("map_name") or map.get("Map_name")
+        raw_offset = map.get("offset")
+        index = map.get("index")
+
+        if name is None or raw_offset is None or index is None:
+            continue
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset
+
+        offset += event_offset
+
+        map_vars[name].set(value)
+
+        current_value = data[offset]
+        if value:
+            new_value = current_value | (1 << index)
+        else:
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into("B", data, offset, new_value)
+
+    data = bytes(data)
+
+
+def toggle_all_bosses(value):
+    global data
+
+    data = bytearray(data)
+    event_offset = save_struct(data)[0]
+
+    for boss in bosses_json:
+        name = boss.get("boss_name") or boss.get("Boss_name")
+        raw_offset = boss.get("offset")
+        index = boss.get("index")
+
+        if name is None or raw_offset is None or index is None:
+            continue
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset
+
+        offset += event_offset
+
+        boss_vars[name].set(value)
+
+        current_value = data[offset]
+        if value:
+            new_value = current_value | (1 << index)
+        else:
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into("B", data, offset, new_value)
+
+    data = bytes(data)
+
+def toggle_all_whetblades(value):
+    global data
+
+    data = bytearray(data)
+    event_offset = save_struct(data)[0]
+
+    for whetblade in whetblades_json:
+        name = whetblade.get("whetblade_name") or whetblade.get("Whetblade_name")
+        raw_offset = whetblade.get("offset")
+        index = whetblade.get("index")
+
+        if name is None or raw_offset is None or index is None:
+            continue
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset
+
+        offset += event_offset
+
+        whetblade_vars[name].set(value)
+
+        current_value = data[offset]
+        if value:
+            new_value = current_value | (1 << index)
+        else:
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into("B", data, offset, new_value)
+
+    data = bytes(data)
+
+def toggle_all_cookbooks(value):
+    global data
+
+    data = bytearray(data)
+    event_offset = save_struct(data)[0]
+
+    for cookbook in cookbooks_json:
+        name = cookbook.get("cookbook_name") or cookbook.get("Cookbook_name")
+        raw_offset = cookbook.get("offset")
+        index = cookbook.get("index")
+
+        if name is None or raw_offset is None or index is None:
+            continue
+
+        if isinstance(raw_offset, str):
+            offset = int(raw_offset, 16)
+        else:
+            offset = raw_offset
+
+        offset += event_offset
+
+        cookbook_vars[name].set(value)
+
+        current_value = data[offset]
+        if value:
+            new_value = current_value | (1 << index)
+        else:
+            new_value = current_value & ~(1 << index)
+
+        struct.pack_into("B", data, offset, new_value)
+
+    data = bytes(data)
 
 def toggle_all_graces(category, value):
     global data
@@ -2327,7 +3153,10 @@ def add_selected_goods():
     quantity = int(goods_quantity_entry.get())
     for item_name, var in item_vars.items():
         if var.get():
-            spawn_goods(item_name, quantity, "goods")
+            _, no_more_slots = spawn_goods(item_name, quantity, "goods")
+            if no_more_slots:
+                messagebox.showinfo("Info", f"No more slots available for {item_name}")
+                break       
     messagebox.showinfo("Info", "Selected Goods added to inventory.")
 
 tk.Button(goods_tab, text="Add Selected Goods", command=add_selected_goods).pack(padx=5, pady=2)
@@ -2336,7 +3165,10 @@ def add_selected_goods_stack():
     quantity = int(goods_quantity_entry.get())
     for item_name, var in item_vars.items():
         if var.get():
-            spawn_goods(item_name, quantity, "goods", Stack=True)
+            _, no_more_slots = spawn_goods(item_name, quantity, "goods", Stack=True)
+            
+            if no_more_slots:
+                messagebox.showinfo("Info", f"No more slots available for {item_name}")
     messagebox.showinfo("Info", "Selected Goods added to inventory.")
 
 tk.Button(goods_tab, text="Stack Selected Goods", command=add_selected_goods_stack).pack(padx=6, pady=3)
@@ -2394,14 +3226,20 @@ talisman_search_var.trace_add("write", debounced_talisman_filter)
 def add_selected_talismans():
     for i in talisman_listbox.curselection():
         name = talisman_listbox.get(i)
-        spawn_goods(name, 1, "talisman")
+        _, no_more_slots = spawn_goods(name, 1, "talisman")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", "Selected Talismans added to inventory.")
 tk.Button(talisman_tab, text="Add Selected Talismans", command=add_selected_talismans).pack(padx=5, pady=2)
 
 # --- Add All Talismans ---
 def add_all_talismans():
     for name in talisman_names:  # Use cached list
-        spawn_goods(name, 1, "talisman")
+        _, no_more_slots = spawn_goods(name, 1, "talisman")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", "All Talismans added to inventory.")
 tk.Button(talisman_tab, text="Add All Talismans", command=add_all_talismans).pack(padx=5, pady=2)
 
@@ -2517,7 +3355,11 @@ category_dropdown.bind("<<ComboboxSelected>>", update_weapon_list)
 def add_selected_weapons():
     for i in weapons_listbox.curselection():
         name = weapons_listbox.get(i)
-        spawn_weapons(name, "weapons")
+        _, no_more_slots = spawn_weapons(name, "weapons")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
+
     messagebox.showinfo("Info", "Selected Weapons added to inventory.")
 tk.Button(weapons_tab, text="Add Selected Weapons", command=add_selected_weapons).pack(padx=5, pady=2)
 
@@ -2529,7 +3371,10 @@ def add_all_weapons():
         names_to_add = weapons_names[start:end]
 
     for name in names_to_add:
-        spawn_weapons(name, "weapons")
+        _, no_more_slots = spawn_weapons(name, "weapons")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", f"All {selected_category.get()} Weapons added to inventory.")
 tk.Button(weapons_tab, text="Add All Weapons in selected category", command=add_all_weapons).pack(padx=5, pady=2)
 
@@ -2583,13 +3428,19 @@ armors_search_var.trace_add("write", debounced_armors_filter)
 def add_selected_armors():
     for i in armors_listbox.curselection():
         name = armors_listbox.get(i)
-        spawn_weapons(name, "armors")
+        _, no_more_slots = spawn_weapons(name, "armors")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", "Selected Armors added to inventory.")
 tk.Button(armors_tab, text="Add Selected Armors", command=add_selected_armors).pack(padx=5, pady=2)
 
 def add_all_armors():
     for name in armors_names:
-        spawn_weapons(name, "armors")
+        _, no_more_slots = spawn_weapons(name, "armors")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", "All Armors added to inventory.")
 tk.Button(armors_tab, text="Add All Armors", command=add_all_armors).pack(padx=5, pady=2)
 
@@ -2643,16 +3494,23 @@ aow_search_var.trace_add("write", debounced_aow_filter)
 def add_selected_aow():
     for i in aow_listbox.curselection():
         name = aow_listbox.get(i)
-        spawn_weapons(name, "aow")
+        _, no_more_slots = spawn_weapons(name, "aow")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", "Selected Ashes of War added to inventory.")
 tk.Button(aow_tab, text="Add Selected Ashes of War", command=add_selected_aow).pack(padx=5, pady=2)
 
 def add_all_aow():
     for name in aow_names:
-        spawn_weapons(name, "aow")
+        _, no_more_slots = spawn_weapons(name, "aow")
+        if no_more_slots:
+            messagebox.showinfo("Info", f"No more slots available for {name}")
+            break
     messagebox.showinfo("Info", "All Ashes of War added to inventory.")
 
 tk.Button(aow_tab, text="Add All Ashes of War", command=add_all_aow).pack(padx=5, pady=2)
 ###
-
+footer = ttk.Label(window, text="Made by Alfazari911", anchor="center")
+footer.pack(side="bottom", pady=5)
 window.mainloop()
