@@ -1,35 +1,66 @@
-Elden Ring Save Editor (PS4/PC)
-A powerful and easy-to-use save editor for Elden Ring (Latest Update) on PS4 and PC.
+# 🌑 Elden Ring Save Editor (PS4 / PC)
 
-✨ Features
-🔧 Add or modify in-game items:
+A powerful and user-friendly save editor for **Elden Ring (latest update)** on **PS4 and PC**.  
+Easily modify your save files to customize your gameplay experience.
 
-Weapons
+---
 
-Goods
+## ✨ Features
 
-Talismans
+### 🧰 Item Management
+- Spawn and edit in-game items instantly
+- Add or modify:
+  - ⚔️ Weapons
+  - 🍖 Goods
+  - 🛡️ Armor
+  - 💍 Talismans
+  - 🔥 Ashes of War (AoW)
+  - 📖 Cookbooks
+  - 🗡️ Whetblades
 
-Armor
+---
 
-Ashes of War (AoW)
+### 🎮 Gameplay Editing
+- 💀 Kill / revive bosses
+- 🗺️ Unlock graces
+- 🌍 Unlock map regions
+- 🔁 Change New Game+ cycle
+- 💎 Edit rune values
+- ⚙️ Customize player stats
+- 👤 Edit character type
 
-Cookbooks
+---
 
-🔁 Change New Game+ cycle
+## 🛡️ Checksum Support
 
-💎 Edit Runes
+This tool uses checksum logic based on:  
+- Ariescyn — Elden Ring Save Manager
 
-⚙️ Customize Player Stats
+---
 
-👤 Edit Character Type
+## ⚠️ Disclaimer
 
-🛡️ Checksum Support
-This tool utilizes the checksum implementation from:
-🔗 Ariescyn/EldenRing-Save-Manager
+Modifying save files can:
+- Corrupt your save data
+- Break game progression
+- Potentially result in bans if used online
 
-⚠️ Disclaimer
-
-Modifying save files can lead to data corruption or bans if used online. Use at your own risk.
+**Use at your own risk.**
 
 Always back up your save files before making any changes.
+
+---
+
+## 🙏 Credits
+
+- Item IDs, sorting, and flag research based on:  
+  https://github.com/ClayAmore/ER-Save-Editor
+
+- Original reference and checksum implementation inspired by:
+  Ariescyn — Elden Ring Save Manager
+
+---
+
+## ⭐ Note
+
+This project is intended for **offline / educational use only**.  
