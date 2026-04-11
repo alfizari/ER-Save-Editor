@@ -56,7 +56,7 @@ Always back up your save files before making any changes.
 - Item IDs, sorting, and flag research based on:  
   https://github.com/ClayAmore/ER-Save-Editor
 
-- Original reference and checksum implementation inspired by:
+- Checksum implementation by:
   Ariescyn — Elden Ring Save Manager
 
 ---
