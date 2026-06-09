@@ -1,0 +1,8449 @@
+{
+  "version": 1,
+  "description": "Max modded loadout: max goods quantities plus 1 of each talisman, weapon, armor, and ash of war. Unknown items removed; weapon affinity/imbued variants removed while preserving base/unique weapons.",
+  "goods": [
+    {
+      "name": "About New Inventory Features",
+      "id_hex": "4A A8 1E B0",
+      "quantity": 1
+    },
+    {
+      "name": "Aeonian Butterfly",
+      "id_hex": "41 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Albinauric Bloodclot",
+      "id_hex": "3C 3C 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Altus Bloom",
+      "id_hex": "C9 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Arteria Leaf",
+      "id_hex": "D3 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Beast Blood",
+      "id_hex": "B6 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Beast Horn",
+      "id_hex": "18 BF 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Beast Liver",
+      "id_hex": "A2 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Bewitching Branch",
+      "id_hex": "16 0D 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Black Pyrefly",
+      "id_hex": "A6 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Blessed Bone Shard",
+      "id_hex": "BF D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Blessing of Marika",
+      "id_hex": "04 88 1E B0",
+      "quantity": 601
+    },
+    {
+      "name": "Blood Grease",
+      "id_hex": "A0 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Blood-Tainted Excrement",
+      "id_hex": "5F 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Bloodrose",
+      "id_hex": "F3 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Boiled Crab",
+      "id_hex": "34 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Boiled Prawn",
+      "id_hex": "3E 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Bone Dart",
+      "id_hex": "AE 06 00 B0",
+      "quantity": 640
+    },
+    {
+      "name": "Broken Rune",
+      "id_hex": "07 90 1E B0",
+      "quantity": 3385134
+    },
+    {
+      "name": "Budding Cave Moss",
+      "id_hex": "69 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Budding Horn",
+      "id_hex": "CA 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Call of Tibia",
+      "id_hex": "CE 90 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Cave Moss",
+      "id_hex": "68 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Charming Branch",
+      "id_hex": "96 91 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Clarifying Boluses",
+      "id_hex": "C0 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Clarifying Cured Meat",
+      "id_hex": "6A 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Clarifying White Cured Meat",
+      "id_hex": "32 05 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Congealed Putrescence",
+      "id_hex": "BA D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Crab Eggs",
+      "id_hex": "1A 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Cracked Crystal",
+      "id_hex": "2C 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Crystal Bud",
+      "id_hex": "0E 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Crystal Cave Moss",
+      "id_hex": "6A 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Crystal Dart",
+      "id_hex": "CC 06 00 B0",
+      "quantity": 640
+    },
+    {
+      "name": "Cuckoo Glintstone",
+      "id_hex": "D6 0B 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Dappled Cured Meat",
+      "id_hex": "74 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Dappled White Cured Meat",
+      "id_hex": "3C 05 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Deep-Purple Lily",
+      "id_hex": "AE D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Dewgem",
+      "id_hex": "A5 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Dewkissed Herba",
+      "id_hex": "E6 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Dragon Communion Flesh",
+      "id_hex": "CC 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Dragon Communion Grease",
+      "id_hex": "48 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Dragon Communion Harpoon",
+      "id_hex": "2E 8B 1E B0",
+      "quantity": 605
+    },
+    {
+      "name": "Dragon's Calorbloom",
+      "id_hex": "B7 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Dragonbolt Grease",
+      "id_hex": "02 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Dragonscale Flesh",
+      "id_hex": "D1 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Dragonwound Grease",
+      "id_hex": "C8 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Blood Grease",
+      "id_hex": "04 06 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Dragonbolt Grease",
+      "id_hex": "66 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Eternal Sleep Grease",
+      "id_hex": "8E 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Fire Grease",
+      "id_hex": "DC 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Golden Grease",
+      "id_hex": "7A 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Holy Grease",
+      "id_hex": "FA 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Lightning Grease",
+      "id_hex": "E6 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Magic Grease",
+      "id_hex": "F0 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Messmerfire Grease",
+      "id_hex": "5C 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Poison Grease",
+      "id_hex": "18 06 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Rot Grease",
+      "id_hex": "36 06 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Royal Magic Grease",
+      "id_hex": "70 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Drawstring Soporific Grease",
+      "id_hex": "0E 06 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Ember of Messmer",
+      "id_hex": "BE D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Empyrean-Blood Burgeon",
+      "id_hex": "B9 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Erdleaf Flower",
+      "id_hex": "C8 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Eternal Sleep Grease",
+      "id_hex": "2A 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Exalted Flesh",
+      "id_hex": "BA 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Explosive Stone",
+      "id_hex": "26 07 00 B0",
+      "quantity": 620
+    },
+    {
+      "name": "Explosive Stone Clump",
+      "id_hex": "27 07 00 B0",
+      "quantity": 620
+    },
+    {
+      "name": "Eye of Yelough",
+      "id_hex": "04 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Faded Erdleaf Flower",
+      "id_hex": "B4 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Fan Daggers",
+      "id_hex": "D6 06 00 B0",
+      "quantity": 640
+    },
+    {
+      "name": "Festive Grease",
+      "id_hex": "C0 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Finger Mimic",
+      "id_hex": "B8 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Fingerprint Nostrum",
+      "id_hex": "D6 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Fire Blossom",
+      "id_hex": "CA 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Fire Coil",
+      "id_hex": "EC 90 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Fire Grease",
+      "id_hex": "78 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Fire Spritestone",
+      "id_hex": "F6 90 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Fireproof Dried Liver",
+      "id_hex": "88 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Fireproof Pickled Liver",
+      "id_hex": "EA 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Flight Pinion",
+      "id_hex": "D4 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Fly Mold",
+      "id_hex": "40 BF 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Formic Rock",
+      "id_hex": "74 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Four-Toed Fowl Foot",
+      "id_hex": "E8 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Freezing Grease",
+      "id_hex": "BE 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Frenzyflame Stone",
+      "id_hex": "EF 0C 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Frozen Maggot",
+      "id_hex": "AD D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Frozen Raisin",
+      "id_hex": "2C 03 00 B0",
+      "quantity": 630
+    },
+    {
+      "name": "Fulgurbloom",
+      "id_hex": "AC 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Furnace Visage",
+      "id_hex": "C3 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Gas Stone",
+      "id_hex": "B4 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Ghostflame Bloom",
+      "id_hex": "B5 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Glass Shard",
+      "id_hex": "10 27 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Glinting Nail",
+      "id_hex": "00 91 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Glintslab Firefly",
+      "id_hex": "A7 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Glintstone Firefly",
+      "id_hex": "4C 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Glintstone Scrap",
+      "id_hex": "EA 0B 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Glowstone",
+      "id_hex": "EE 07 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Gold Firefly",
+      "id_hex": "4B 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Gold-Pickled Fowl Foot",
+      "id_hex": "B0 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Gold-Tinged Excrement",
+      "id_hex": "5E 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Golden Centipede",
+      "id_hex": "54 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Golden Grease",
+      "id_hex": "16 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Golden Horn Tender",
+      "id_hex": "4E 89 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Golden Rowa",
+      "id_hex": "F1 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Golden Rune [10]",
+      "id_hex": "5D 0B 00 B0",
+      "quantity": 338514
+    },
+    {
+      "name": "Golden Rune [11]",
+      "id_hex": "5E 0B 00 B0",
+      "quantity": 270811
+    },
+    {
+      "name": "Golden Rune [12]",
+      "id_hex": "5F 0B 00 B0",
+      "quantity": 225676
+    },
+    {
+      "name": "Golden Rune [13]",
+      "id_hex": "60 0B 00 B0",
+      "quantity": 169257
+    },
+    {
+      "name": "Golden Rune [1]",
+      "id_hex": "54 0B 00 B0",
+      "quantity": 8462835
+    },
+    {
+      "name": "Golden Rune [2]",
+      "id_hex": "55 0B 00 B0",
+      "quantity": 4231418
+    },
+    {
+      "name": "Golden Rune [3]",
+      "id_hex": "56 0B 00 B0",
+      "quantity": 2115709
+    },
+    {
+      "name": "Golden Rune [4]",
+      "id_hex": "57 0B 00 B0",
+      "quantity": 1410473
+    },
+    {
+      "name": "Golden Rune [5]",
+      "id_hex": "58 0B 00 B0",
+      "quantity": 1057855
+    },
+    {
+      "name": "Golden Rune [6]",
+      "id_hex": "59 0B 00 B0",
+      "quantity": 846284
+    },
+    {
+      "name": "Golden Rune [7]",
+      "id_hex": "5A 0B 00 B0",
+      "quantity": 677027
+    },
+    {
+      "name": "Golden Rune [8]",
+      "id_hex": "5B 0B 00 B0",
+      "quantity": 564189
+    },
+    {
+      "name": "Golden Rune [9]",
+      "id_hex": "5C 0B 00 B0",
+      "quantity": 445413
+    },
+    {
+      "name": "Golden Sunflower",
+      "id_hex": "CB 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Gourmet Scorpion Stew",
+      "id_hex": "33 89 1E B0",
+      "quantity": 2
+    },
+    {
+      "name": "Grace Mimic",
+      "id_hex": "02 08 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Grave Cricket",
+      "id_hex": "B6 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Grave Keeper's Brainpan",
+      "id_hex": "B2 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Grave Violet",
+      "id_hex": "AE 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Gravel Stone",
+      "id_hex": "77 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Gravity Stone Chunk",
+      "id_hex": "FE 0B 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Gravity Stone Fan",
+      "id_hex": "F4 0B 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Great Dragonfly Head",
+      "id_hex": "06 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Hefty Beast Bone",
+      "id_hex": "ED 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Herba",
+      "id_hex": "D2 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Hero's Rune [1]",
+      "id_hex": "62 0B 00 B0",
+      "quantity": 112838
+    },
+    {
+      "name": "Hero's Rune [2]",
+      "id_hex": "63 0B 00 B0",
+      "quantity": 84629
+    },
+    {
+      "name": "Hero's Rune [3]",
+      "id_hex": "64 0B 00 B0",
+      "quantity": 67703
+    },
+    {
+      "name": "Hero's Rune [4]",
+      "id_hex": "65 0B 00 B0",
+      "quantity": 56419
+    },
+    {
+      "name": "Hero's Rune [5]",
+      "id_hex": "66 0B 00 B0",
+      "quantity": 48360
+    },
+    {
+      "name": "Holy Grease",
+      "id_hex": "96 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Holyproof Dried Liver",
+      "id_hex": "9C 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Holyproof Pickled Liver",
+      "id_hex": "FE 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Horn-Strewn Excrement",
+      "id_hex": "B3 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Human Bone Shard",
+      "id_hex": "FC 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Immunizing Cured Meat",
+      "id_hex": "56 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Immunizing White Cured Meat",
+      "id_hex": "1E 05 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Innard Meat",
+      "id_hex": "24 8B 1E B0",
+      "quantity": 640
+    },
+    {
+      "name": "Invigorating Cured Meat",
+      "id_hex": "60 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Invigorating White Cured Meat",
+      "id_hex": "28 05 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Knot Resin",
+      "id_hex": "A4 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Kukri",
+      "id_hex": "C2 06 00 B0",
+      "quantity": 640
+    },
+    {
+      "name": "Land Octopus Ovary",
+      "id_hex": "24 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Lands Between Rune",
+      "id_hex": "AE 0B 00 B0",
+      "quantity": 564189
+    },
+    {
+      "name": "Large Glintstone Scrap",
+      "id_hex": "EB 0B 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Leda's Rune",
+      "id_hex": "06 90 1E B0",
+      "quantity": 42315
+    },
+    {
+      "name": "Lightning Grease",
+      "id_hex": "82 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Lightningproof Dried Liver",
+      "id_hex": "92 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Lightningproof Pickled Liver",
+      "id_hex": "F4 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Living Jar Shard",
+      "id_hex": "32 3C 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Lord's Rune",
+      "id_hex": "67 0B 00 B0",
+      "quantity": 33852
+    },
+    {
+      "name": "Lulling Branch",
+      "id_hex": "0E 88 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Lump of Flesh",
+      "id_hex": "AC 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Magic Grease",
+      "id_hex": "8C 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Marika's Rune",
+      "id_hex": "10 90 1E B0",
+      "quantity": 21158
+    },
+    {
+      "name": "Melted Mushroom",
+      "id_hex": "19 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Memory of Grace",
+      "id_hex": "73 00 00 B0",
+      "quantity": 1
+    },
+    {
+      "name": "Messmerfire Grease",
+      "id_hex": "F8 89 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Miquella's Lily",
+      "id_hex": "AD 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Miranda Powder",
+      "id_hex": "2E 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Mushroom",
+      "id_hex": "18 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Nailstone",
+      "id_hex": "C1 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Nascent Butterfly",
+      "id_hex": "40 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Nectarblood Burgeon",
+      "id_hex": "AF D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Neutralizing Boluses",
+      "id_hex": "84 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Numen's Rune",
+      "id_hex": "61 0B 00 B0",
+      "quantity": 135406
+    },
+    {
+      "name": "Old Fang",
+      "id_hex": "C0 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Opaline Pickled Liver",
+      "id_hex": "08 89 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Pearlescent Scale",
+      "id_hex": "2C BF 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Pickled Turtle Neck",
+      "id_hex": "4C 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Poison Grease",
+      "id_hex": "B4 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Poisonbloom",
+      "id_hex": "AA 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Poisonbone Dart",
+      "id_hex": "B8 06 00 B0",
+      "quantity": 640
+    },
+    {
+      "name": "Poisoned Stone",
+      "id_hex": "30 07 00 B0",
+      "quantity": 620
+    },
+    {
+      "name": "Poisoned Stone Clump",
+      "id_hex": "31 07 00 B0",
+      "quantity": 620
+    },
+    {
+      "name": "Polter Stone",
+      "id_hex": "50 8C 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Preserving Boluses",
+      "id_hex": "AC 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Rada Fruit",
+      "id_hex": "A1 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rainbow Stone",
+      "id_hex": "E4 07 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Rauh Burrow",
+      "id_hex": "BD D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Raw Meat Dumpling",
+      "id_hex": "D3 04 00 B0",
+      "quantity": 1002
+    },
+    {
+      "name": "Red Fulgurbloom",
+      "id_hex": "C0 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Redflesh Mushroom",
+      "id_hex": "A2 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rejuvenating Boluses",
+      "id_hex": "B6 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Rimed Crystal Bud",
+      "id_hex": "0F 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rimed Rowa",
+      "id_hex": "F2 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Root Resin",
+      "id_hex": "27 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rot Grease",
+      "id_hex": "D2 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Roundrock",
+      "id_hex": "BB D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rowa Fruit",
+      "id_hex": "F0 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rowa Raisin",
+      "id_hex": "2A 03 00 B0",
+      "quantity": 630
+    },
+    {
+      "name": "Royal Magic Grease",
+      "id_hex": "0C 8A 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Ruin Fragment",
+      "id_hex": "E0 06 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Rune Arc",
+      "id_hex": "BE 00 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Rune of an Unsung Hero",
+      "id_hex": "0F 90 1E B0",
+      "quantity": 33852
+    },
+    {
+      "name": "Sacramental Bud",
+      "id_hex": "11 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Sacred Bloody Flesh",
+      "id_hex": "3A 89 1E B0",
+      "quantity": 1009
+    },
+    {
+      "name": "Sanctuary Stone",
+      "id_hex": "3B 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Sanguine Amaryllis",
+      "id_hex": "AC D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Scarlet Bud",
+      "id_hex": "AB D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Scorpion Liver",
+      "id_hex": "36 BF 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Scorpion Stew",
+      "id_hex": "32 89 1E B0",
+      "quantity": 2
+    },
+    {
+      "name": "Scriptstone",
+      "id_hex": "F8 0C 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Shadow Realm Rune [1]",
+      "id_hex": "08 90 1E B0",
+      "quantity": 225676
+    },
+    {
+      "name": "Shadow Realm Rune [2]",
+      "id_hex": "09 90 1E B0",
+      "quantity": 169257
+    },
+    {
+      "name": "Shadow Realm Rune [3]",
+      "id_hex": "0A 90 1E B0",
+      "quantity": 135406
+    },
+    {
+      "name": "Shadow Realm Rune [4]",
+      "id_hex": "0B 90 1E B0",
+      "quantity": 112838
+    },
+    {
+      "name": "Shadow Realm Rune [5]",
+      "id_hex": "0C 90 1E B0",
+      "quantity": 96719
+    },
+    {
+      "name": "Shadow Realm Rune [6]",
+      "id_hex": "0D 90 1E B0",
+      "quantity": 75226
+    },
+    {
+      "name": "Shadow Realm Rune [7]",
+      "id_hex": "0E 90 1E B0",
+      "quantity": 56419
+    },
+    {
+      "name": "Shadow Sunflower",
+      "id_hex": "A9 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Sharp Gravel Stone",
+      "id_hex": "C2 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Shield Grease",
+      "id_hex": "9A 06 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Silver Firefly",
+      "id_hex": "4A 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Silver Horn Tender",
+      "id_hex": "44 89 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Silver Tear Husk",
+      "id_hex": "59 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Silver-Pickled Fowl Foot",
+      "id_hex": "A6 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Sliver of Meat",
+      "id_hex": "98 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Slumbering Egg",
+      "id_hex": "10 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Smoldering Butterfly",
+      "id_hex": "42 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Soap",
+      "id_hex": "48 08 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Soft Cotton",
+      "id_hex": "34 08 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Soporific Grease",
+      "id_hex": "AA 05 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Spellproof Dried Liver",
+      "id_hex": "7E 04 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Spellproof Pickled Liver",
+      "id_hex": "E0 88 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Spirit Calculus",
+      "id_hex": "22 BF 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Spirit Raisin",
+      "id_hex": "A0 87 1E B0",
+      "quantity": 630
+    },
+    {
+      "name": "Spiritgrave Stone",
+      "id_hex": "BC D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Spritestone",
+      "id_hex": "39 90 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Stanching Boluses",
+      "id_hex": "8E 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Starlight Shards",
+      "id_hex": "0A 05 00 B0",
+      "quantity": 1009
+    },
+    {
+      "name": "Stimulating Boluses",
+      "id_hex": "A2 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Stormhawk Feather",
+      "id_hex": "46 3C 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "String",
+      "id_hex": "28 3C 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Strip of White Flesh",
+      "id_hex": "38 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Sunwarmth Stone",
+      "id_hex": "6E 91 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Surging Frenzied Flame",
+      "id_hex": "D8 90 1E B0",
+      "quantity": 610
+    },
+    {
+      "name": "Sweet Raisin",
+      "id_hex": "2B 03 00 B0",
+      "quantity": 630
+    },
+    {
+      "name": "Swollen Grape",
+      "id_hex": "B1 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Tarnished Golden Sunflower",
+      "id_hex": "CD 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Tarnished's Wizened Finger",
+      "id_hex": "6A 00 00 B0",
+      "quantity": 1
+    },
+    {
+      "name": "Thawfrost Boluses",
+      "id_hex": "98 03 00 B0",
+      "quantity": 699
+    },
+    {
+      "name": "Thin Beast Bones",
+      "id_hex": "EC 3B 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Throwing Dagger",
+      "id_hex": "A4 06 00 B0",
+      "quantity": 640
+    },
+    {
+      "name": "Toxic Mossling",
+      "id_hex": "AA D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Toxic Mushroom",
+      "id_hex": "22 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Trina's Lily",
+      "id_hex": "AB 50 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Turtle Neck Meat",
+      "id_hex": "F2 3A 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Volcanic Stone",
+      "id_hex": "72 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Warming Stone",
+      "id_hex": "EE 0C 00 B0",
+      "quantity": 610
+    },
+    {
+      "name": "Well-Pickled Turtle Neck",
+      "id_hex": "12 89 1E B0",
+      "quantity": 699
+    },
+    {
+      "name": "Whiteflesh Mushroom",
+      "id_hex": "A3 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Winter-Lantern Fly",
+      "id_hex": "B0 D2 1E B0",
+      "quantity": 999
+    },
+    {
+      "name": "Yellow Ember",
+      "id_hex": "6D 51 00 B0",
+      "quantity": 999
+    },
+    {
+      "name": "Yellow Fulgurbloom",
+      "id_hex": "A8 D2 1E B0",
+      "quantity": 999
+    }
+  ],
+  "talismans": [
+    {
+      "name": "Aged One's Exultation",
+      "id_hex": "7C 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Ailment Talisman",
+      "id_hex": "B8 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Ancestral Spirit's Horn",
+      "id_hex": "DE 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Arrow's Reach Talisman",
+      "id_hex": "34 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Arrow's Soaring Sting Talisman",
+      "id_hex": "86 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Arrow's Sting Talisman",
+      "id_hex": "66 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Arsenal Charm",
+      "id_hex": "06 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Arsenal Charm +1",
+      "id_hex": "07 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Assassin's Cerulean Dagger",
+      "id_hex": "C4 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Assassin's Crimson Dagger",
+      "id_hex": "BA 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Axe Talisman",
+      "id_hex": "52 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Beloved Stardust",
+      "id_hex": "FE 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Blade of Mercy",
+      "id_hex": "26 20 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Blessed Blue Dew Talisman",
+      "id_hex": "40 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Blessed Dew Talisman",
+      "id_hex": "9C 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Dancer Charm",
+      "id_hex": "3E 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Blue-Feathered Branchsword",
+      "id_hex": "F0 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Boltdrake Talisman",
+      "id_hex": "BE 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Boltdrake Talisman +1",
+      "id_hex": "BF 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Boltdrake Talisman +2",
+      "id_hex": "C0 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Boltdrake Talisman +3",
+      "id_hex": "C6 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Bull-Goat's Talisman",
+      "id_hex": "BA 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Filigreed Crest",
+      "id_hex": "84 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Amber Medallion",
+      "id_hex": "F2 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Amber Medallion +1",
+      "id_hex": "F3 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Amber Medallion +2",
+      "id_hex": "F4 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Amber Medallion +3",
+      "id_hex": "62 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Seed Talisman",
+      "id_hex": "92 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Seed Talisman +1",
+      "id_hex": "EE 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Clarifying Horn Charm",
+      "id_hex": "9C 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Clarifying Horn Charm +1",
+      "id_hex": "9D 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Clarifying Horn Charm +2",
+      "id_hex": "94 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Claw Talisman",
+      "id_hex": "84 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Companion Jar",
+      "id_hex": "A2 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Concealing Veil",
+      "id_hex": "7A 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crepus's Vial",
+      "id_hex": "70 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Amber Medallion",
+      "id_hex": "E8 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Amber Medallion +1",
+      "id_hex": "E9 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Amber Medallion +2",
+      "id_hex": "EA 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Amber Medallion +3",
+      "id_hex": "58 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Seed Talisman",
+      "id_hex": "88 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Seed Talisman +1",
+      "id_hex": "E4 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Feather Talisman",
+      "id_hex": "E6 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Knot Talisman",
+      "id_hex": "0E 10 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Scale Talisman",
+      "id_hex": "DC 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Crusade Insignia",
+      "id_hex": "72 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Curved Sword Talisman",
+      "id_hex": "98 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Daedicar's Woe",
+      "id_hex": "AC 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Dagger Talisman",
+      "id_hex": "2A 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Dragoncrest Greatshield Talisman",
+      "id_hex": "A3 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Dragoncrest Shield Talisman",
+      "id_hex": "A0 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Dragoncrest Shield Talisman +1",
+      "id_hex": "A1 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Dragoncrest Shield Talisman +2",
+      "id_hex": "A2 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Dried Bouquet",
+      "id_hex": "A4 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Enraged Divine Beast",
+      "id_hex": "F4 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree's Favor",
+      "id_hex": "10 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree's Favor +1",
+      "id_hex": "11 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree's Favor +2",
+      "id_hex": "12 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Faithful's Canvas Talisman",
+      "id_hex": "E0 0B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Fine Crucible Feather Talisman",
+      "id_hex": "4A 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Scorpion Charm",
+      "id_hex": "E4 07 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Flamedrake Talisman",
+      "id_hex": "B4 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Flamedrake Talisman +1",
+      "id_hex": "B5 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Flamedrake Talisman +2",
+      "id_hex": "B6 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Flamedrake Talisman +3",
+      "id_hex": "BC 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Flock's Canvas Talisman",
+      "id_hex": "EA 0B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Furled Finger's Trick-Mirror",
+      "id_hex": "C0 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Godfrey Icon",
+      "id_hex": "12 0C 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Swaddling Cloth",
+      "id_hex": "B0 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Gold Scarab",
+      "id_hex": "56 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Braid",
+      "id_hex": "D0 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Graven-Mass Talisman",
+      "id_hex": "B9 0B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Graven-School Talisman",
+      "id_hex": "B8 0B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Great-Jar's Arsenal",
+      "id_hex": "08 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Greatshield Talisman",
+      "id_hex": "04 10 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Green Turtle Talisman",
+      "id_hex": "7E 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Haligdrake Talisman",
+      "id_hex": "C8 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Haligdrake Talisman +1",
+      "id_hex": "C9 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Haligdrake Talisman +2",
+      "id_hex": "CA 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Hammer Talisman",
+      "id_hex": "16 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Host's Trick-Mirror",
+      "id_hex": "CA 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Immunizing Horn Charm",
+      "id_hex": "92 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Immunizing Horn Charm +1",
+      "id_hex": "93 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Immunizing Horn Charm +2",
+      "id_hex": "8A 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Kindred of Rot's Exultation",
+      "id_hex": "7A 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Lacerating Crossed-Tree",
+      "id_hex": "CC 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Lance Talisman",
+      "id_hex": "5C 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Lightning Scorpion Charm",
+      "id_hex": "DA 07 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Longtail Cat Talisman",
+      "id_hex": "98 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Lord of Blood's Exultation",
+      "id_hex": "70 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Magic Scorpion Charm",
+      "id_hex": "D0 07 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Marika's Scarseal",
+      "id_hex": "C4 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Marika's Soreseal",
+      "id_hex": "C5 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Millicent's Prosthesis",
+      "id_hex": "E2 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Moon of Nokstella",
+      "id_hex": "74 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Mottled Necklace",
+      "id_hex": "B0 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Mottled Necklace +1",
+      "id_hex": "B1 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Mottled Necklace +2",
+      "id_hex": "A8 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Old Lord's Talisman",
+      "id_hex": "F4 0B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Outer God Heirloom",
+      "id_hex": "54 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Pearl Shield Talisman",
+      "id_hex": "9A 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Pearldrake Talisman",
+      "id_hex": "D2 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Pearldrake Talisman +1",
+      "id_hex": "D3 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Pearldrake Talisman +2",
+      "id_hex": "D4 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Pearldrake Talisman +3",
+      "id_hex": "DA 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer's Talisman",
+      "id_hex": "AC 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Primal Glintstone Blade",
+      "id_hex": "08 0C 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Prince of Death's Cyst",
+      "id_hex": "A7 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Prince of Death's Pustule",
+      "id_hex": "A6 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Prosthesis-Wearer Heirloom",
+      "id_hex": "2E 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Radagon Icon",
+      "id_hex": "FE 0B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Radagon's Scarseal",
+      "id_hex": "1A 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Radagon's Soreseal",
+      "id_hex": "1B 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Red-Feathered Branchsword",
+      "id_hex": "F8 07 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Rellana's Cameo",
+      "id_hex": "1C 20 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Retaliatory Crossed-Tree",
+      "id_hex": "C2 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Ritual Shield Talisman",
+      "id_hex": "FA 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Ritual Sword Talisman",
+      "id_hex": "02 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Roar Medallion",
+      "id_hex": "8E 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Winged Sword Insignia",
+      "id_hex": "21 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Sacred Scorpion Charm",
+      "id_hex": "EE 07 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Sacrificial Twig",
+      "id_hex": "B6 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Shabriri's Woe",
+      "id_hex": "A2 17 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Shard of Alexander",
+      "id_hex": "CF 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Sharpshot Talisman",
+      "id_hex": "D6 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Shattered Stone Talisman",
+      "id_hex": "5E 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Silver Scarab",
+      "id_hex": "4C 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Smithing Talisman",
+      "id_hex": "AE 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Spear Talisman",
+      "id_hex": "0C 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Spelldrake Talisman",
+      "id_hex": "AA 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Spelldrake Talisman +1",
+      "id_hex": "AB 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Spelldrake Talisman +2",
+      "id_hex": "AC 0F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Spelldrake Talisman +3",
+      "id_hex": "B2 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "St. Trina's Smile",
+      "id_hex": "E0 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Stalwart Horn Charm",
+      "id_hex": "88 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Stalwart Horn Charm +1",
+      "id_hex": "89 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Stalwart Horn Charm +2",
+      "id_hex": "80 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Stargazer Heirloom",
+      "id_hex": "38 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Starscourge Heirloom",
+      "id_hex": "24 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Taker's Cameo",
+      "id_hex": "A6 13 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Talisman of All Crucibles",
+      "id_hex": "30 20 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Talisman of Lord's Bestowal",
+      "id_hex": "08 20 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Talisman of the Dread",
+      "id_hex": "EA 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Twinblade Talisman",
+      "id_hex": "48 08 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Two Fingers Heirloom",
+      "id_hex": "42 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Two-Handed Sword Talisman",
+      "id_hex": "68 1F 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Two-Headed Turtle Talisman",
+      "id_hex": "76 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Verdigris Discus",
+      "id_hex": "12 20 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Viridian Amber Medallion",
+      "id_hex": "FC 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Viridian Amber Medallion +1",
+      "id_hex": "FD 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Viridian Amber Medallion +2",
+      "id_hex": "FE 03 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Viridian Amber Medallion +3",
+      "id_hex": "6C 1B 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Warrior Jar Shard",
+      "id_hex": "CE 04 00 A0",
+      "quantity": 1
+    },
+    {
+      "name": "Winged Sword Insignia",
+      "id_hex": "20 08 00 A0",
+      "quantity": 1
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Academy Glintstone Staff",
+      "id_hex": "80 97 FA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Alabaster Lord's Sword",
+      "id_hex": "30 D8 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Albinauric Bow",
+      "id_hex": "50 C3 71 02",
+      "quantity": 1
+    },
+    {
+      "name": "Albinauric Shield",
+      "id_hex": "00 A2 D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Albinauric Staff",
+      "id_hex": "70 70 FA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Ancient Meteoric Ore Greatsword",
+      "id_hex": "20 AA 44 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ansbach's Longbow",
+      "id_hex": "70 64 79 02",
+      "quantity": 1
+    },
+    {
+      "name": "Ant's Skull Plate",
+      "id_hex": "60 A3 EB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Antspur Rapier",
+      "id_hex": "80 E7 4C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Anvil Hammer",
+      "id_hex": "30 E3 BE 00",
+      "quantity": 1
+    },
+    {
+      "name": "Arbalest",
+      "id_hex": "40 59 91 02",
+      "quantity": 1
+    },
+    {
+      "name": "Arrow",
+      "id_hex": "80 F0 FA 02",
+      "quantity": 1
+    },
+    {
+      "name": "Astrologer's Staff",
+      "id_hex": "10 86 F9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Axe of Godfrey",
+      "id_hex": "10 B7 5F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Axe of Godrick",
+      "id_hex": "00 7E E5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Azur's Glintstone Staff",
+      "id_hex": "B0 0C FB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Backhand Blade",
+      "id_hex": "20 31 D8 03",
+      "quantity": 1
+    },
+    {
+      "name": "Ballista Bolt",
+      "id_hex": "40 B7 28 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bandit's Curved Sword",
+      "id_hex": "00 6C 6B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight's Greatsword",
+      "id_hex": "40 FF 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight's Halberd",
+      "id_hex": "B0 1D 13 01",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight's Shield",
+      "id_hex": "F0 7A D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Barbed Staff-Spear",
+      "id_hex": "80 55 0B 01",
+      "quantity": 1
+    },
+    {
+      "name": "Bastard Sword",
+      "id_hex": "C0 C6 2D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bastard's Stars",
+      "id_hex": "70 D2 C6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Battle Axe",
+      "id_hex": "80 9F D5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Battle Hammer",
+      "id_hex": "20 69 B7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Beast Claw",
+      "id_hex": "20 3A 15 04",
+      "quantity": 1
+    },
+    {
+      "name": "Beast Crest Heater Shield",
+      "id_hex": "80 4B DD 01",
+      "quantity": 1
+    },
+    {
+      "name": "Beast-Repellent Torch",
+      "id_hex": "60 20 6F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Beastclaw Greathammer",
+      "id_hex": "F0 64 B9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Beastman's Cleaver",
+      "id_hex": "80 4A 7B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Beastman's Curved Sword",
+      "id_hex": "D0 F6 6A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Beastman's Jar-Shield",
+      "id_hex": "E0 AD CA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Black Bow",
+      "id_hex": "B0 AD 72 02",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knife",
+      "id_hex": "50 69 0F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Black Leather Shield",
+      "id_hex": "E0 35 DE 01",
+      "quantity": 1
+    },
+    {
+      "name": "Black Steel Greathammer",
+      "id_hex": "40 0A BF 00",
+      "quantity": 1
+    },
+    {
+      "name": "Black Steel Greatshield",
+      "id_hex": "20 E9 EF 01",
+      "quantity": 1
+    },
+    {
+      "name": "Black Steel Twinblade",
+      "id_hex": "B0 5E A0 00",
+      "quantity": 1
+    },
+    {
+      "name": "Black-Key Bolt",
+      "id_hex": "30 EA 19 03",
+      "quantity": 1
+    },
+    {
+      "name": "Blade of Calling",
+      "id_hex": "40 B3 11 00",
+      "quantity": 1
+    },
+    {
+      "name": "Blasphemous Blade",
+      "id_hex": "A0 E9 2F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodbone Arrow",
+      "id_hex": "70 AB FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodbone Arrow (Fletched)",
+      "id_hex": "60 84 FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodbone Bolt",
+      "id_hex": "F0 BE 1B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodfiend's Arm",
+      "id_hex": "50 31 BF 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodfiend's Fork",
+      "id_hex": "60 61 FC 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodfiend's Sacred Spear",
+      "id_hex": "70 88 FC 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodhound Claws",
+      "id_hex": "A0 FF 4F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodhound's Fang",
+      "id_hex": "30 87 7A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodstained Dagger",
+      "id_hex": "20 65 11 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bloody Helice",
+      "id_hex": "80 8D 5B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Crest Heater Shield",
+      "id_hex": "A0 99 DD 01",
+      "quantity": 1
+    },
+    {
+      "name": "Blue-Gold Kite Shield",
+      "id_hex": "60 8C DA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Blue-White Wooden Shield",
+      "id_hex": "20 4A CB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Bolt",
+      "id_hex": "00 75 19 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bolt of Gransax",
+      "id_hex": "90 83 F5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Arrow",
+      "id_hex": "30 9E FC 02",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Arrow (Fletched)",
+      "id_hex": "B0 65 FB 02",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Ballista Bolt",
+      "id_hex": "70 2C 29 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Bolt",
+      "id_hex": "90 D4 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Bow",
+      "id_hex": "20 FB 69 02",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Great Arrow",
+      "id_hex": "20 1D 0B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bone Great Arrow (Fletched)",
+      "id_hex": "10 F6 0A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Bonny Butchering Knife",
+      "id_hex": "F0 A9 EC 00",
+      "quantity": 1
+    },
+    {
+      "name": "Brass Shield",
+      "id_hex": "90 01 DB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Briar Greatshield",
+      "id_hex": "50 0B E9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Brick Hammer",
+      "id_hex": "30 01 BA 00",
+      "quantity": 1
+    },
+    {
+      "name": "Broadsword",
+      "id_hex": "A0 D2 1E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Buckler",
+      "id_hex": "80 C3 C9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Burred Bolt",
+      "id_hex": "40 11 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Butchering Knife",
+      "id_hex": "80 B6 E6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Caestus",
+      "id_hex": "40 6F 40 01",
+      "quantity": 1
+    },
+    {
+      "name": "Candletree Wooden Shield",
+      "id_hex": "50 D6 DC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Cane Sword",
+      "id_hex": "D0 B8 21 00",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Glintblade Staff",
+      "id_hex": "50 22 FA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Glintstone Staff",
+      "id_hex": "90 BE FA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Knight's Shield",
+      "id_hex": "F0 EB DB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Knight's Sword",
+      "id_hex": "A0 43 21 00",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Regal Scepter",
+      "id_hex": "D0 E9 F8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Sorcery Sword",
+      "id_hex": "D0 9A 26 00",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Thrusting Shield",
+      "id_hex": "B0 D3 B9 03",
+      "quantity": 1
+    },
+    {
+      "name": "Celebrant's Cleaver",
+      "id_hex": "E0 89 D6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Celebrant's Rib-Rake",
+      "id_hex": "60 0E F5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Celebrant's Sickle",
+      "id_hex": "A0 2C 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Celebrant's Skull",
+      "id_hex": "D0 16 B9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Chainlink Flail",
+      "id_hex": "80 F9 C6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Chilling Perfume Bottle",
+      "id_hex": "70 91 AA 03",
+      "quantity": 1
+    },
+    {
+      "name": "Cinquedea",
+      "id_hex": "F0 EF 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Cipher Pata",
+      "id_hex": "10 6B 42 01",
+      "quantity": 1
+    },
+    {
+      "name": "Clawmark Seal",
+      "id_hex": "C0 68 07 02",
+      "quantity": 1
+    },
+    {
+      "name": "Claws of Night",
+      "id_hex": "A0 52 57 01",
+      "quantity": 1
+    },
+    {
+      "name": "Clayman's Harpoon",
+      "id_hex": "30 99 F4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Claymore",
+      "id_hex": "E0 85 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Cleanrot Knight's Sword",
+      "id_hex": "50 72 4C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Cleanrot Spear",
+      "id_hex": "40 C0 F4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Clinging Bone",
+      "id_hex": "F0 1C 42 01",
+      "quantity": 1
+    },
+    {
+      "name": "Club",
+      "id_hex": "D0 FF A7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Coded Sword",
+      "id_hex": "30 32 20 00",
+      "quantity": 1
+    },
+    {
+      "name": "Coil Shield",
+      "id_hex": "C0 D0 CC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Coldbone Arrow",
+      "id_hex": "90 F9 FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Coldbone Arrow (Fletched)",
+      "id_hex": "80 D2 FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Coldbone Bolt",
+      "id_hex": "00 E6 1B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Commander's Standard",
+      "id_hex": "C0 44 13 01",
+      "quantity": 1
+    },
+    {
+      "name": "Composite Bow",
+      "id_hex": "50 1D 63 02",
+      "quantity": 1
+    },
+    {
+      "name": "Cranial Vessel Candlestand",
+      "id_hex": "10 B3 B9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Crepus's Black-Key Crossbow",
+      "id_hex": "70 CE 91 02",
+      "quantity": 1
+    },
+    {
+      "name": "Crescent Moon Axe",
+      "id_hex": "F0 56 E5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Cross-Naginata",
+      "id_hex": "B0 D1 F5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Crossed-Tree Towershield",
+      "id_hex": "40 55 EB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Hornshield",
+      "id_hex": "30 BD E8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Crystal Knife",
+      "id_hex": "90 05 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Crystal Spear",
+      "id_hex": "20 72 F4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Crystal Staff",
+      "id_hex": "80 26 F8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Crystal Sword",
+      "id_hex": "70 CE 20 00",
+      "quantity": 1
+    },
+    {
+      "name": "Cuckoo Greatshield",
+      "id_hex": "90 18 EC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Curseblade's Cirque",
+      "id_hex": "40 7F D8 03",
+      "quantity": 1
+    },
+    {
+      "name": "Curved Club",
+      "id_hex": "F0 4D A8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Curved Great Club",
+      "id_hex": "80 53 B8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Dagger",
+      "id_hex": "40 42 0F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Dancing Blade of Ranah",
+      "id_hex": "00 BF 72 00",
+      "quantity": 1
+    },
+    {
+      "name": "Dane's Footwork",
+      "id_hex": "30 4F 9B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Dark Moon Greatsword",
+      "id_hex": "50 26 2F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Deadly Poison Perfume Bottle",
+      "id_hex": "A0 06 AB 03",
+      "quantity": 1
+    },
+    {
+      "name": "Death Knight's Longhaft Axe",
+      "id_hex": "E0 82 EC 00",
+      "quantity": 1
+    },
+    {
+      "name": "Death Knight's Twin Axes",
+      "id_hex": "B0 67 DD 00",
+      "quantity": 1
+    },
+    {
+      "name": "Death Ritual Spear",
+      "id_hex": "C0 F8 F5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Death's Poker",
+      "id_hex": "00 D4 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Demi-Human Queen's Staff",
+      "id_hex": "A0 74 F8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Devonia's Hammer",
+      "id_hex": "E0 94 66 01",
+      "quantity": 1
+    },
+    {
+      "name": "Devourer's Scepter",
+      "id_hex": "40 28 BA 00",
+      "quantity": 1
+    },
+    {
+      "name": "Digger's Staff",
+      "id_hex": "00 5F F9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dismounter",
+      "id_hex": "20 60 7A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Distinguished Greatshield",
+      "id_hex": "20 96 E8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dragon Communion Seal",
+      "id_hex": "00 05 08 02",
+      "quantity": 1
+    },
+    {
+      "name": "Dragon Greatclaw",
+      "id_hex": "20 DE 5F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dragon Halberd",
+      "id_hex": "60 CB 14 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dragon King's Cragblade",
+      "id_hex": "C0 29 5C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Dragon Towershield",
+      "id_hex": "00 48 E8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dragon-Hunter's Great Katana",
+      "id_hex": "B0 DC F6 03",
+      "quantity": 1
+    },
+    {
+      "name": "Dragonclaw Shield",
+      "id_hex": "40 E4 E8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dragonscale Blade",
+      "id_hex": "B0 65 8A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Dryleaf Arts",
+      "id_hex": "20 28 9B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Dryleaf Seal",
+      "id_hex": "A0 6D 0E 02",
+      "quantity": 1
+    },
+    {
+      "name": "Dueling Shield",
+      "id_hex": "A0 AC B9 03",
+      "quantity": 1
+    },
+    {
+      "name": "Duelist Greataxe",
+      "id_hex": "00 90 5F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Dwelling Arrow",
+      "id_hex": "20 77 FC 02",
+      "quantity": 1
+    },
+    {
+      "name": "Eclipse Crest Greatshield",
+      "id_hex": "80 F1 EB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Eclipse Crest Heater Shield",
+      "id_hex": "B0 C0 DD 01",
+      "quantity": 1
+    },
+    {
+      "name": "Eclipse Shotel",
+      "id_hex": "60 56 6C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Eleonora's Poleblade",
+      "id_hex": "D0 59 99 00",
+      "quantity": 1
+    },
+    {
+      "name": "Envoy's Greathorn",
+      "id_hex": "F0 68 5F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Envoy's Horn",
+      "id_hex": "60 5F A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Envoy's Long Horn",
+      "id_hex": "00 8C B9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Erdsteel Dagger",
+      "id_hex": "30 8C 11 00",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree Bow",
+      "id_hex": "70 11 72 02",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree Greatbow",
+      "id_hex": "B0 53 81 02",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree Greatshield",
+      "id_hex": "80 80 E9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree Seal",
+      "id_hex": "F0 DD 07 02",
+      "quantity": 1
+    },
+    {
+      "name": "Estoc",
+      "id_hex": "40 4B 4C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Euporia",
+      "id_hex": "A0 37 A0 00",
+      "quantity": 1
+    },
+    {
+      "name": "Executioner's Greataxe",
+      "id_hex": "40 1A E6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Explosive Bolt",
+      "id_hex": "60 5F 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Explosive Greatbolt",
+      "id_hex": "60 05 29 03",
+      "quantity": 1
+    },
+    {
+      "name": "Falchion",
+      "id_hex": "C0 CF 6A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Fallingstar Beast Jaw",
+      "id_hex": "40 2C 60 01",
+      "quantity": 1
+    },
+    {
+      "name": "Falx",
+      "id_hex": "F0 97 72 00",
+      "quantity": 1
+    },
+    {
+      "name": "Family Heads",
+      "id_hex": "60 AB C6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Finger Seal",
+      "id_hex": "80 CC 06 02",
+      "quantity": 1
+    },
+    {
+      "name": "Fingerprint Stone Shield",
+      "id_hex": "D0 43 EA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Knight's Seal",
+      "id_hex": "B0 94 0E 02",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Knight's Shortsword",
+      "id_hex": "70 0A 17 00",
+      "quantity": 1
+    },
+    {
+      "name": "Firebone Arrow",
+      "id_hex": "60 13 FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Firebone Arrow (Fletched)",
+      "id_hex": "50 EC FC 02",
+      "quantity": 1
+    },
+    {
+      "name": "Firebone Bolt",
+      "id_hex": "A0 FB 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Firespark Perfume Bottle",
+      "id_hex": "60 6A AA 03",
+      "quantity": 1
+    },
+    {
+      "name": "Flail",
+      "id_hex": "50 84 C6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Flamberge",
+      "id_hex": "10 8A 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Flame Crest Wooden Shield",
+      "id_hex": "60 FD DC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Flaming Bolt",
+      "id_hex": "30 5B 1C 03",
+      "quantity": 1
+    },
+    {
+      "name": "Flowerstone Gavel",
+      "id_hex": "E0 79 AF 00",
+      "quantity": 1
+    },
+    {
+      "name": "Flowing Curved Sword",
+      "id_hex": "20 BA 6B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Forked Greatsword",
+      "id_hex": "D0 ED 2D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Forked Hatchet",
+      "id_hex": "90 C6 D5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Forked-Tongue Hatchet",
+      "id_hex": "E0 DC DD 00",
+      "quantity": 1
+    },
+    {
+      "name": "Frenzied Flame Seal",
+      "id_hex": "10 2C 08 02",
+      "quantity": 1
+    },
+    {
+      "name": "Frenzyflame Perfume Bottle",
+      "id_hex": "80 B8 AA 03",
+      "quantity": 1
+    },
+    {
+      "name": "Freyja's Greatsword",
+      "id_hex": "30 DA 81 00",
+      "quantity": 1
+    },
+    {
+      "name": "Frozen Needle",
+      "id_hex": "90 0E 4D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Full Moon Crossbow",
+      "id_hex": "20 0B 91 02",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Black Axe",
+      "id_hex": "A0 04 E7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Black Blades",
+      "id_hex": "10 F6 99 00",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Black Halberd",
+      "id_hex": "80 19 15 01",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Blackblade",
+      "id_hex": "10 FB 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Great Axe",
+      "id_hex": "90 DD E6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Greatsword",
+      "id_hex": "F0 AC 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Halberd",
+      "id_hex": "70 F2 14 01",
+      "quantity": 1
+    },
+    {
+      "name": "Gargoyle's Twinblade",
+      "id_hex": "00 CF 99 00",
+      "quantity": 1
+    },
+    {
+      "name": "Gazing Finger",
+      "id_hex": "00 E3 66 01",
+      "quantity": 1
+    },
+    {
+      "name": "Gelmir Glintstone Staff",
+      "id_hex": "90 4D F8 01",
+      "quantity": 1
+    },
+    {
+      "name": "Ghiza's Wheel",
+      "id_hex": "60 7A 60 01",
+      "quantity": 1
+    },
+    {
+      "name": "Ghostflame Torch",
+      "id_hex": "50 F9 6E 01",
+      "quantity": 1
+    },
+    {
+      "name": "Giant's Red Braid",
+      "id_hex": "60 17 32 01",
+      "quantity": 1
+    },
+    {
+      "name": "Giant's Seal",
+      "id_hex": "A0 1A 07 02",
+      "quantity": 1
+    },
+    {
+      "name": "Giant-Crusher",
+      "id_hex": "70 A1 60 01",
+      "quantity": 1
+    },
+    {
+      "name": "Gilded Greatshield",
+      "id_hex": "B0 66 EC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Gilded Iron Shield",
+      "id_hex": "50 BF CB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Glaive",
+      "id_hex": "10 08 14 01",
+      "quantity": 1
+    },
+    {
+      "name": "Glintstone Kris",
+      "id_hex": "B0 53 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Glintstone Staff",
+      "id_hex": "40 8A F7 01",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Peeler",
+      "id_hex": "90 BD 98 00",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Stitcher",
+      "id_hex": "90 B4 5B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Godslayer's Greatsword",
+      "id_hex": "70 1A 3E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Godslayer's Seal",
+      "id_hex": "90 F3 06 02",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Arrow",
+      "id_hex": "10 50 FC 02",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Beast Crest Shield",
+      "id_hex": "90 A7 E9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Bolt",
+      "id_hex": "70 86 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Epitaph",
+      "id_hex": "F0 95 1F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Great Arrow",
+      "id_hex": "E0 80 0A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Greatshield",
+      "id_hex": "A0 3F EC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Halberd",
+      "id_hex": "00 E1 13 01",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Lion Shield",
+      "id_hex": "10 1C E1 01",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Order Greatsword",
+      "id_hex": "D0 5E 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Order Seal",
+      "id_hex": "E0 B6 07 02",
+      "quantity": 1
+    },
+    {
+      "name": "Golem Fist",
+      "id_hex": "A0 AC 48 01",
+      "quantity": 1
+    },
+    {
+      "name": "Golem Greatbow",
+      "id_hex": "90 05 81 02",
+      "quantity": 1
+    },
+    {
+      "name": "Golem's Great Arrow",
+      "id_hex": "D0 59 0A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Golem's Halberd",
+      "id_hex": "80 C8 60 01",
+      "quantity": 1
+    },
+    {
+      "name": "Grafted Blade Greatsword",
+      "id_hex": "A0 8F 3E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Grafted Dragon",
+      "id_hex": "A0 59 41 01",
+      "quantity": 1
+    },
+    {
+      "name": "Grave Scythe",
+      "id_hex": "D0 11 22 01",
+      "quantity": 1
+    },
+    {
+      "name": "Gravel Stone Seal",
+      "id_hex": "B0 41 07 02",
+      "quantity": 1
+    },
+    {
+      "name": "Great Arrow",
+      "id_hex": "C0 32 0A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Great Club",
+      "id_hex": "E0 41 5F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Great Katana",
+      "id_hex": "A0 B5 F6 03",
+      "quantity": 1
+    },
+    {
+      "name": "Great Knife",
+      "id_hex": "D0 A1 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Great Mace",
+      "id_hex": "60 05 B8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Great Omenkiller Cleaver",
+      "id_hex": "E0 2F E5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Great Stars",
+      "id_hex": "20 DA B9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Great Turtle Shell",
+      "id_hex": "A0 28 DB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Greataxe",
+      "id_hex": "C0 E1 E4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Greatbow",
+      "id_hex": "C0 7A 81 02",
+      "quantity": 1
+    },
+    {
+      "name": "Greathorn Hammer",
+      "id_hex": "10 42 B7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Greatsword",
+      "id_hex": "00 09 3D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Greatsword of Damnation",
+      "id_hex": "F0 8E 35 00",
+      "quantity": 1
+    },
+    {
+      "name": "Greatsword of Radahn (Light)",
+      "id_hex": "70 6D 45 00",
+      "quantity": 1
+    },
+    {
+      "name": "Greatsword of Radahn (Lord)",
+      "id_hex": "50 1F 45 00",
+      "quantity": 1
+    },
+    {
+      "name": "Greatsword of Solitude",
+      "id_hex": "30 2B 36 00",
+      "quantity": 1
+    },
+    {
+      "name": "Grossmesser",
+      "id_hex": "B0 19 6D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Guardian's Swordspear",
+      "id_hex": "30 56 14 01",
+      "quantity": 1
+    },
+    {
+      "name": "Halberd",
+      "id_hex": "80 A8 12 01",
+      "quantity": 1
+    },
+    {
+      "name": "Haligbone Arrow",
+      "id_hex": "50 5D FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Haligbone Arrow (Fletched)",
+      "id_hex": "40 36 FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Haligbone Bolt",
+      "id_hex": "D0 70 1B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Crest Greatshield",
+      "id_hex": "C0 8D EC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Halo Scythe",
+      "id_hex": "E0 38 22 01",
+      "quantity": 1
+    },
+    {
+      "name": "Hammer",
+      "id_hex": "40 11 A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Hand Axe",
+      "id_hex": "A0 ED D5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Hand Ballista",
+      "id_hex": "00 63 9F 02",
+      "quantity": 1
+    },
+    {
+      "name": "Hand of Malenia",
+      "id_hex": "60 A2 89 00",
+      "quantity": 1
+    },
+    {
+      "name": "Harp Bow",
+      "id_hex": "30 CF 62 02",
+      "quantity": 1
+    },
+    {
+      "name": "Hawk Crest Wooden Shield",
+      "id_hex": "70 24 DD 01",
+      "quantity": 1
+    },
+    {
+      "name": "Heater Shield",
+      "id_hex": "D0 0E DE 01",
+      "quantity": 1
+    },
+    {
+      "name": "Heavy Crossbow",
+      "id_hex": "F0 95 90 02",
+      "quantity": 1
+    },
+    {
+      "name": "Helphen's Steeple",
+      "id_hex": "90 C2 2F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Highland Axe",
+      "id_hex": "20 26 D7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Hookclaws",
+      "id_hex": "80 B1 4F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Horn Bow",
+      "id_hex": "60 EA 71 02",
+      "quantity": 1
+    },
+    {
+      "name": "Horned Warrior's Greatsword",
+      "id_hex": "40 01 82 00",
+      "quantity": 1
+    },
+    {
+      "name": "Horned Warrior's Sword",
+      "id_hex": "10 E6 72 00",
+      "quantity": 1
+    },
+    {
+      "name": "Horse Crest Wooden Shield",
+      "id_hex": "40 AF DC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Hoslow's Petal Whip",
+      "id_hex": "50 F0 31 01",
+      "quantity": 1
+    },
+    {
+      "name": "Ice Crest Shield",
+      "id_hex": "60 E6 CB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Icerind Hatchet",
+      "id_hex": "00 D8 D6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Icon Shield",
+      "id_hex": "E0 6A EA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Igon's Greatbow",
+      "id_hex": "A0 7F 88 02",
+      "quantity": 1
+    },
+    {
+      "name": "Igon's Harpoon",
+      "id_hex": "E0 D3 11 03",
+      "quantity": 1
+    },
+    {
+      "name": "Inquisitor's Girandole",
+      "id_hex": "D0 1F F6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Inseparable Sword",
+      "id_hex": "10 E4 1F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Inverted Hawk Heater Shield",
+      "id_hex": "C0 E7 DD 01",
+      "quantity": 1
+    },
+    {
+      "name": "Inverted Hawk Towershield",
+      "id_hex": "50 7C EB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Ball",
+      "id_hex": "B0 80 41 01",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Cleaver",
+      "id_hex": "C0 3B D6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Greatsword",
+      "id_hex": "E0 14 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Roundshield",
+      "id_hex": "40 98 CB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Spear",
+      "id_hex": "F0 6D F6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ivory Sickle",
+      "id_hex": "10 3E 11 00",
+      "quantity": 1
+    },
+    {
+      "name": "Jar Cannon",
+      "id_hex": "10 8A 9F 02",
+      "quantity": 1
+    },
+    {
+      "name": "Jawbone Axe",
+      "id_hex": "B0 14 D6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Jellyfish Shield",
+      "id_hex": "C0 1C EA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Katar",
+      "id_hex": "E0 F5 41 01",
+      "quantity": 1
+    },
+    {
+      "name": "Kite Shield",
+      "id_hex": "C0 05 D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Knight's Greatsword",
+      "id_hex": "00 63 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Lamenting Visage",
+      "id_hex": "30 FE 75 01",
+      "quantity": 1
+    },
+    {
+      "name": "Lance",
+      "id_hex": "A0 50 04 01",
+      "quantity": 1
+    },
+    {
+      "name": "Large Club",
+      "id_hex": "00 1B B7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Large Leather Shield",
+      "id_hex": "30 88 DC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Lazuli Glintstone Sword",
+      "id_hex": "10 55 22 00",
+      "quantity": 1
+    },
+    {
+      "name": "Leda's Sword",
+      "id_hex": "F0 1E 06 04",
+      "quantity": 1
+    },
+    {
+      "name": "Light Crossbow",
+      "id_hex": "E0 6E 90 02",
+      "quantity": 1
+    },
+    {
+      "name": "Lightning Perfume Bottle",
+      "id_hex": "90 DF AA 03",
+      "quantity": 1
+    },
+    {
+      "name": "Lightningbone Arrow",
+      "id_hex": "D0 24 FE 02",
+      "quantity": 1
+    },
+    {
+      "name": "Lightningbone Arrow (Fletched)",
+      "id_hex": "C0 FD FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Lightningbone Bolt",
+      "id_hex": "B0 22 1B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Lion Greatbow",
+      "id_hex": "80 DE 80 02",
+      "quantity": 1
+    },
+    {
+      "name": "Lizard Greatsword",
+      "id_hex": "00 B6 35 00",
+      "quantity": 1
+    },
+    {
+      "name": "Longbow",
+      "id_hex": "40 9C 71 02",
+      "quantity": 1
+    },
+    {
+      "name": "Longhaft Axe",
+      "id_hex": "10 A5 E5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Longsword",
+      "id_hex": "80 84 1E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Lordsworn's Bolt",
+      "id_hex": "80 AD 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Lordsworn's Greatsword",
+      "id_hex": "F0 3B 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Lordsworn's Shield",
+      "id_hex": "E0 DB EC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Lordsworn's Straight Sword",
+      "id_hex": "C0 20 1F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Loretta's War Sickle",
+      "id_hex": "20 2F 14 01",
+      "quantity": 1
+    },
+    {
+      "name": "Lucerne",
+      "id_hex": "A0 F6 12 01",
+      "quantity": 1
+    },
+    {
+      "name": "Lusat's Glintstone Staff",
+      "id_hex": "C0 33 FB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Mace",
+      "id_hex": "C0 D8 A7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Madding Hand",
+      "id_hex": "90 85 48 01",
+      "quantity": 1
+    },
+    {
+      "name": "Magicbone Arrow",
+      "id_hex": "30 0F FF 02",
+      "quantity": 1
+    },
+    {
+      "name": "Magicbone Arrow (Fletched)",
+      "id_hex": "20 E8 FE 02",
+      "quantity": 1
+    },
+    {
+      "name": "Magicbone Bolt",
+      "id_hex": "C0 49 1B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Magma Blade",
+      "id_hex": "10 93 6B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Magma Whip Candlestick",
+      "id_hex": "30 A2 31 01",
+      "quantity": 1
+    },
+    {
+      "name": "Magma Wyrm's Scalesword",
+      "id_hex": "40 AE 7A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Main-gauche",
+      "id_hex": "60 E3 16 00",
+      "quantity": 1
+    },
+    {
+      "name": "Maliketh's Black Blade",
+      "id_hex": "20 57 3D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Man-Serpent's Shield",
+      "id_hex": "A0 11 CA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Manor Towershield",
+      "id_hex": "30 2E EB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Mantis Blade",
+      "id_hex": "80 A4 6C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Marais Executioner's Sword",
+      "id_hex": "B0 10 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Marika's Hammer",
+      "id_hex": "B0 22 AA 00",
+      "quantity": 1
+    },
+    {
+      "name": "Marred Leather Shield",
+      "id_hex": "D0 2C D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Marred Wooden Shield",
+      "id_hex": "E0 53 D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Maternal Staff",
+      "id_hex": "80 79 FF 01",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier Shield",
+      "id_hex": "E0 A6 E0 01",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier's Axe",
+      "id_hex": "C0 8E DD 00",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier's Spear",
+      "id_hex": "70 2E 0B 01",
+      "quantity": 1
+    },
+    {
+      "name": "Meteor Bolt",
+      "id_hex": "50 38 1A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Meteoric Ore Blade",
+      "id_hex": "70 C9 89 00",
+      "quantity": 1
+    },
+    {
+      "name": "Meteorite Staff",
+      "id_hex": "D0 5A FB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Milady",
+      "id_hex": "E0 F7 05 04",
+      "quantity": 1
+    },
+    {
+      "name": "Miquellan Knight's Sword",
+      "id_hex": "C0 91 21 00",
+      "quantity": 1
+    },
+    {
+      "name": "Misbegotten Shortbow",
+      "id_hex": "10 81 62 02",
+      "quantity": 1
+    },
+    {
+      "name": "Misricorde",
+      "id_hex": "70 B7 0F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Monk's Flameblade",
+      "id_hex": "70 23 7B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Monk's Flamemace",
+      "id_hex": "50 38 A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Moonrithyll's Knight Sword",
+      "id_hex": "60 46 45 00",
+      "quantity": 1
+    },
+    {
+      "name": "Moonveil",
+      "id_hex": "A0 3E 8A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Morgott's Cursed Sword",
+      "id_hex": "A0 98 7B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Morning Star",
+      "id_hex": "10 9C A8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Nagakiba",
+      "id_hex": "50 7B 89 00",
+      "quantity": 1
+    },
+    {
+      "name": "Nanaya's Torch",
+      "id_hex": "20 D7 75 01",
+      "quantity": 1
+    },
+    {
+      "name": "Nightrider Flail",
+      "id_hex": "40 5D C6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Nightrider Glaive",
+      "id_hex": "D0 6B 13 01",
+      "quantity": 1
+    },
+    {
+      "name": "Noble's Estoc",
+      "id_hex": "A0 35 4D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Noble's Slender Sword",
+      "id_hex": "F0 06 22 00",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Flowing Hammer",
+      "id_hex": "80 AD A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Flowing Sword",
+      "id_hex": "00 BD 1F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Obsidian Lamina",
+      "id_hex": "E0 8B 29 01",
+      "quantity": 1
+    },
+    {
+      "name": "Omen Cleaver",
+      "id_hex": "60 FC 7A 00",
+      "quantity": 1
+    },
+    {
+      "name": "One-Eyed Shield",
+      "id_hex": "F0 91 EA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Onyx Lord's Greatsword",
+      "id_hex": "10 39 7A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ordovis's Greatsword",
+      "id_hex": "20 B1 2E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ornamental Straight Sword",
+      "id_hex": "E0 6E 1F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Parrying Dagger",
+      "id_hex": "60 90 0F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Partisan",
+      "id_hex": "50 E7 F4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Pata",
+      "id_hex": "70 37 48 01",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer's Bolt",
+      "id_hex": "20 C3 19 03",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer's Shield",
+      "id_hex": "90 EA C9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Pest's Glaive",
+      "id_hex": "90 CF 12 01",
+      "quantity": 1
+    },
+    {
+      "name": "Pickaxe",
+      "id_hex": "E0 3D B9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Pike",
+      "id_hex": "70 35 F5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Pillory Shield",
+      "id_hex": "C0 5F CA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Piquebone Arrow",
+      "id_hex": "F0 54 03 03",
+      "quantity": 1
+    },
+    {
+      "name": "Piquebone Arrow (Fletched)",
+      "id_hex": "E0 2D 03 03",
+      "quantity": 1
+    },
+    {
+      "name": "Piquebone Bolt",
+      "id_hex": "40 64 21 03",
+      "quantity": 1
+    },
+    {
+      "name": "Poisonbone Arrow",
+      "id_hex": "80 61 FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Poisonbone Arrow (Fletched)",
+      "id_hex": "70 3A FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Poisonbone Bolt",
+      "id_hex": "E0 97 1B 03",
+      "quantity": 1
+    },
+    {
+      "name": "Poisoned Hand",
+      "id_hex": "80 5E 48 01",
+      "quantity": 1
+    },
+    {
+      "name": "Poleblade of the Bud",
+      "id_hex": "B0 70 1A 01",
+      "quantity": 1
+    },
+    {
+      "name": "Prelate's Inferno Crozier",
+      "id_hex": "C0 F3 5E 01",
+      "quantity": 1
+    },
+    {
+      "name": "Prince of Death's Staff",
+      "id_hex": "60 49 FA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Pulley Bow",
+      "id_hex": "A0 86 72 02",
+      "quantity": 1
+    },
+    {
+      "name": "Pulley Crossbow",
+      "id_hex": "10 E4 90 02",
+      "quantity": 1
+    },
+    {
+      "name": "Putrescence Cleaver",
+      "id_hex": "20 B3 81 00",
+      "quantity": 1
+    },
+    {
+      "name": "Queelign's Greatsword",
+      "id_hex": "A0 2E 63 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rabbath's Cannon",
+      "id_hex": "20 04 A7 02",
+      "quantity": 1
+    },
+    {
+      "name": "Rabbath's Greatbolt",
+      "id_hex": "60 58 30 03",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn's Spear",
+      "id_hex": "00 CF 0A 03",
+      "quantity": 1
+    },
+    {
+      "name": "Rainbow Stone Arrow",
+      "id_hex": "E0 4B FE 02",
+      "quantity": 1
+    },
+    {
+      "name": "Rainbow Stone Arrow (Fletched)",
+      "id_hex": "00 29 FC 02",
+      "quantity": 1
+    },
+    {
+      "name": "Rakshasa's Great Katana",
+      "id_hex": "C0 03 F7 03",
+      "quantity": 1
+    },
+    {
+      "name": "Rapier",
+      "id_hex": "60 99 4C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Raptor Talons",
+      "id_hex": "B0 26 50 01",
+      "quantity": 1
+    },
+    {
+      "name": "Red Bear's Claw",
+      "id_hex": "30 61 15 04",
+      "quantity": 1
+    },
+    {
+      "name": "Red Branch Shortbow",
+      "id_hex": "20 A8 62 02",
+      "quantity": 1
+    },
+    {
+      "name": "Red Crest Heater Shield",
+      "id_hex": "90 72 DD 01",
+      "quantity": 1
+    },
+    {
+      "name": "Red Thorn Roundshield",
+      "id_hex": "F0 D4 CA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Redmane Greatshield",
+      "id_hex": "70 CA EB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Reduvia",
+      "id_hex": "80 DE 0F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Regalia of Eochaid",
+      "id_hex": "E0 DF 21 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rellana's Twin Blades",
+      "id_hex": "00 46 06 04",
+      "quantity": 1
+    },
+    {
+      "name": "Repeating Crossbow",
+      "id_hex": "E0 C1 97 02",
+      "quantity": 1
+    },
+    {
+      "name": "Rickety Shield",
+      "id_hex": "B0 38 CA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Rift Shield",
+      "id_hex": "30 71 CB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Ringed Finger",
+      "id_hex": "90 D4 A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ripple Blade",
+      "id_hex": "D0 62 D6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ripple Crescent Halberd",
+      "id_hex": "E0 92 13 01",
+      "quantity": 1
+    },
+    {
+      "name": "Rivers of Blood",
+      "id_hex": "80 F0 89 00",
+      "quantity": 1
+    },
+    {
+      "name": "Riveted Wooden Shield",
+      "id_hex": "10 23 CB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Rogier's Rapier",
+      "id_hex": "70 C0 4C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rosus' Axe",
+      "id_hex": "40 74 D7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rotbone Arrow",
+      "id_hex": "B0 47 00 03",
+      "quantity": 1
+    },
+    {
+      "name": "Rotbone Arrow (Fletched)",
+      "id_hex": "A0 20 00 03",
+      "quantity": 1
+    },
+    {
+      "name": "Rotbone Bolt",
+      "id_hex": "10 0D 1C 03",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Battle Hammer",
+      "id_hex": "50 4F BA 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Crystal Spear",
+      "id_hex": "00 95 F6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Crystal Staff",
+      "id_hex": "F0 A8 FB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Crystal Sword",
+      "id_hex": "20 7C 22 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Greataxe",
+      "id_hex": "B0 3D 61 01",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Staff",
+      "id_hex": "A0 16 61 01",
+      "quantity": 1
+    },
+    {
+      "name": "Round Shield",
+      "id_hex": "30 17 DA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Greatsword",
+      "id_hex": "60 F3 3D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Ruins Greatsword",
+      "id_hex": "80 41 3E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Rusted Anchor",
+      "id_hex": "20 CC E5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sacrificial Axe",
+      "id_hex": "30 4D D7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Scavenger's Curved Sword",
+      "id_hex": "40 08 6C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Scepter of the All-Knowing",
+      "id_hex": "70 86 A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Scimitar",
+      "id_hex": "A0 F2 6C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Scorpion Kite Shield",
+      "id_hex": "40 3E DA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Scorpion's Stinger",
+      "id_hex": "C0 7A 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Scripture Wooden Shield",
+      "id_hex": "00 FC CA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Scythe",
+      "id_hex": "C0 EA 21 01",
+      "quantity": 1
+    },
+    {
+      "name": "Sentry's Torch",
+      "id_hex": "70 47 6F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Serpent Arrow",
+      "id_hex": "A0 3E FB 02",
+      "quantity": 1
+    },
+    {
+      "name": "Serpent Bow",
+      "id_hex": "80 38 72 02",
+      "quantity": 1
+    },
+    {
+      "name": "Serpent Crest Shield",
+      "id_hex": "00 F5 E0 01",
+      "quantity": 1
+    },
+    {
+      "name": "Serpent Flail",
+      "id_hex": "60 FE CD 00",
+      "quantity": 1
+    },
+    {
+      "name": "Serpent-God's Curved Sword",
+      "id_hex": "70 7D 6C 00",
+      "quantity": 1
+    },
+    {
+      "name": "Serpent-Hunter",
+      "id_hex": "70 DB 03 01",
+      "quantity": 1
+    },
+    {
+      "name": "Serpentbone Blade",
+      "id_hex": "C0 8C 8A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Shadow Sunflower Blossom",
+      "id_hex": "F0 BB 66 01",
+      "quantity": 1
+    },
+    {
+      "name": "Shamshir",
+      "id_hex": "F0 44 6B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Shattershard Arrow",
+      "id_hex": "F0 72 FE 02",
+      "quantity": 1
+    },
+    {
+      "name": "Shattershard Arrow (Fletched)",
+      "id_hex": "E0 DA FB 02",
+      "quantity": 1
+    },
+    {
+      "name": "Shield of Night",
+      "id_hex": "B0 D3 48 01",
+      "quantity": 1
+    },
+    {
+      "name": "Shield of the Guilty",
+      "id_hex": "D0 9D DB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Short Spear",
+      "id_hex": "00 24 F4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Short Sword",
+      "id_hex": "90 AB 1E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Shortbow",
+      "id_hex": "00 5A 62 02",
+      "quantity": 1
+    },
+    {
+      "name": "Shotel",
+      "id_hex": "E0 1D 6B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Siluria's Tree",
+      "id_hex": "60 B4 03 01",
+      "quantity": 1
+    },
+    {
+      "name": "Silver Mirrorshield",
+      "id_hex": "20 F0 D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Sleepbone Arrow",
+      "id_hex": "A0 AF FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Sleepbone Arrow (Fletched)",
+      "id_hex": "90 88 FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Sleepbone Bolt",
+      "id_hex": "20 34 1C 03",
+      "quantity": 1
+    },
+    {
+      "name": "Smithscript Axe",
+      "id_hex": "A0 40 DD 00",
+      "quantity": 1
+    },
+    {
+      "name": "Smithscript Cirque",
+      "id_hex": "30 58 D8 03",
+      "quantity": 1
+    },
+    {
+      "name": "Smithscript Dagger",
+      "id_hex": "E0 EE C8 03",
+      "quantity": 1
+    },
+    {
+      "name": "Smithscript Greathammer",
+      "id_hex": "20 BC BE 00",
+      "quantity": 1
+    },
+    {
+      "name": "Smithscript Shield",
+      "id_hex": "B0 8B D1 01",
+      "quantity": 1
+    },
+    {
+      "name": "Smithscript Spear",
+      "id_hex": "20 C5 FB 00",
+      "quantity": 1
+    },
+    {
+      "name": "Smoldering Shield",
+      "id_hex": "70 0D CC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Soldier's Crossbow",
+      "id_hex": "C0 20 90 02",
+      "quantity": 1
+    },
+    {
+      "name": "Spear",
+      "id_hex": "10 4B F4 00",
+      "quantity": 1
+    },
+    {
+      "name": "Spear of the Impaler",
+      "id_hex": "60 07 0B 01",
+      "quantity": 1
+    },
+    {
+      "name": "Spiked Caestus",
+      "id_hex": "50 96 40 01",
+      "quantity": 1
+    },
+    {
+      "name": "Spiked Club",
+      "id_hex": "30 EA A8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Spiked Palisade Shield",
+      "id_hex": "10 E0 EA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Spiked Spear",
+      "id_hex": "E0 46 F6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Spiralhorn Shield",
+      "id_hex": "B0 A9 CC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Spiraltree Seal",
+      "id_hex": "C0 BB 0E 02",
+      "quantity": 1
+    },
+    {
+      "name": "Spirit Glaive",
+      "id_hex": "A0 49 1A 01",
+      "quantity": 1
+    },
+    {
+      "name": "Spirit Sword",
+      "id_hex": "E0 70 72 00",
+      "quantity": 1
+    },
+    {
+      "name": "Spiritflame Arrow",
+      "id_hex": "00 9A FE 02",
+      "quantity": 1
+    },
+    {
+      "name": "Spread Crossbow",
+      "id_hex": "F0 E8 97 02",
+      "quantity": 1
+    },
+    {
+      "name": "St. Trina's Arrow",
+      "id_hex": "C0 8C FB 02",
+      "quantity": 1
+    },
+    {
+      "name": "St. Trina's Torch",
+      "id_hex": "40 D2 6E 01",
+      "quantity": 1
+    },
+    {
+      "name": "Staff of Loss",
+      "id_hex": "00 D0 FB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Staff of the Avatar",
+      "id_hex": "30 05 60 01",
+      "quantity": 1
+    },
+    {
+      "name": "Staff of the Great Beyond",
+      "id_hex": "70 52 FF 01",
+      "quantity": 1
+    },
+    {
+      "name": "Staff of the Guilty",
+      "id_hex": "E0 81 FB 01",
+      "quantity": 1
+    },
+    {
+      "name": "Star Fist",
+      "id_hex": "C0 A7 41 01",
+      "quantity": 1
+    },
+    {
+      "name": "Star-Lined Sword",
+      "id_hex": "C0 73 26 00",
+      "quantity": 1
+    },
+    {
+      "name": "Starscourge Greatsword",
+      "id_hex": "50 CC 3D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Steel-Wire Torch",
+      "id_hex": "20 84 6E 01",
+      "quantity": 1
+    },
+    {
+      "name": "Stone Club",
+      "id_hex": "A0 FB A9 00",
+      "quantity": 1
+    },
+    {
+      "name": "Stone-Sheathed Sword",
+      "id_hex": "E0 C1 26 00",
+      "quantity": 1
+    },
+    {
+      "name": "Stormhawk Axe",
+      "id_hex": "60 C2 D7 00",
+      "quantity": 1
+    },
+    {
+      "name": "Stormwing Bone Arrow",
+      "id_hex": "B0 D6 FD 02",
+      "quantity": 1
+    },
+    {
+      "name": "Sun Realm Shield",
+      "id_hex": "10 C9 D9 01",
+      "quantity": 1
+    },
+    {
+      "name": "Swift Spear",
+      "id_hex": "40 13 FC 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword Lance",
+      "id_hex": "E0 67 35 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword of Darkness",
+      "id_hex": "00 10 27 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword of Light",
+      "id_hex": "F0 E8 26 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword of Milos",
+      "id_hex": "C0 37 30 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword of Night",
+      "id_hex": "60 F5 90 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword of Night and Flame",
+      "id_hex": "60 A7 20 00",
+      "quantity": 1
+    },
+    {
+      "name": "Sword of St. Trina",
+      "id_hex": "B0 6A 21 00",
+      "quantity": 1
+    },
+    {
+      "name": "Thiollier's Hidden Needle",
+      "id_hex": "60 10 48 01",
+      "quantity": 1
+    },
+    {
+      "name": "Thorned Whip",
+      "id_hex": "20 7B 31 01",
+      "quantity": 1
+    },
+    {
+      "name": "Tooth Whip",
+      "id_hex": "20 CE 38 01",
+      "quantity": 1
+    },
+    {
+      "name": "Torch",
+      "id_hex": "00 36 6E 01",
+      "quantity": 1
+    },
+    {
+      "name": "Torchpole",
+      "id_hex": "80 5C F5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Treespear",
+      "id_hex": "B0 77 04 01",
+      "quantity": 1
+    },
+    {
+      "name": "Troll Knight's Sword",
+      "id_hex": "B0 B6 3E 00",
+      "quantity": 1
+    },
+    {
+      "name": "Troll's Golden Sword",
+      "id_hex": "30 7E 3D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Troll's Hammer",
+      "id_hex": "90 EF 60 01",
+      "quantity": 1
+    },
+    {
+      "name": "Twinbird Kite Shield",
+      "id_hex": "50 65 DA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Twinblade",
+      "id_hex": "80 96 98 00",
+      "quantity": 1
+    },
+    {
+      "name": "Twinned Knight Swords",
+      "id_hex": "B0 0B 99 00",
+      "quantity": 1
+    },
+    {
+      "name": "Uchigatana",
+      "id_hex": "40 54 89 00",
+      "quantity": 1
+    },
+    {
+      "name": "Urumi",
+      "id_hex": "70 3E 32 01",
+      "quantity": 1
+    },
+    {
+      "name": "Varr's Bouquet",
+      "id_hex": "20 C3 A8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Velvet Sword of St. Trina",
+      "id_hex": "B0 4C 26 00",
+      "quantity": 1
+    },
+    {
+      "name": "Venomous Fang",
+      "id_hex": "90 D8 4F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Verdigris Greatshield",
+      "id_hex": "40 37 F0 01",
+      "quantity": 1
+    },
+    {
+      "name": "Veteran's Prosthesis",
+      "id_hex": "00 44 42 01",
+      "quantity": 1
+    },
+    {
+      "name": "Visage Shield",
+      "id_hex": "00 B9 EA 01",
+      "quantity": 1
+    },
+    {
+      "name": "Vulgar Militia Saw",
+      "id_hex": "F0 B9 13 01",
+      "quantity": 1
+    },
+    {
+      "name": "Vulgar Militia Shotel",
+      "id_hex": "50 A4 14 01",
+      "quantity": 1
+    },
+    {
+      "name": "Vyke's War Spear",
+      "id_hex": "90 29 04 01",
+      "quantity": 1
+    },
+    {
+      "name": "Wakizashi",
+      "id_hex": "E0 C8 10 00",
+      "quantity": 1
+    },
+    {
+      "name": "Warhawk's Talon",
+      "id_hex": "00 2E 22 00",
+      "quantity": 1
+    },
+    {
+      "name": "Warped Axe",
+      "id_hex": "D0 08 E5 00",
+      "quantity": 1
+    },
+    {
+      "name": "Warpick",
+      "id_hex": "00 75 A8 00",
+      "quantity": 1
+    },
+    {
+      "name": "Watchdog's Greatsword",
+      "id_hex": "10 30 3D 00",
+      "quantity": 1
+    },
+    {
+      "name": "Watchdog's Staff",
+      "id_hex": "D0 1A 5F 01",
+      "quantity": 1
+    },
+    {
+      "name": "Weathered Straight Sword",
+      "id_hex": "D0 47 1F 00",
+      "quantity": 1
+    },
+    {
+      "name": "Whip",
+      "id_hex": "00 2D 31 01",
+      "quantity": 1
+    },
+    {
+      "name": "Wing of Astel",
+      "id_hex": "30 E1 6B 00",
+      "quantity": 1
+    },
+    {
+      "name": "Winged Greathorn",
+      "id_hex": "70 8F E6 00",
+      "quantity": 1
+    },
+    {
+      "name": "Winged Scythe",
+      "id_hex": "20 D5 22 01",
+      "quantity": 1
+    },
+    {
+      "name": "Wolf Crest Shield",
+      "id_hex": "F0 CD E0 01",
+      "quantity": 1
+    },
+    {
+      "name": "Wooden Greatshield",
+      "id_hex": "D0 B4 EC 01",
+      "quantity": 1
+    },
+    {
+      "name": "Zamor Curved Sword",
+      "id_hex": "50 D5 7A 00",
+      "quantity": 1
+    },
+    {
+      "name": "Zweihander",
+      "id_hex": "40 A5 3D 00",
+      "quantity": 1
+    }
+  ],
+  "armor": [
+    {
+      "name": "Alberich's Bracers",
+      "id_hex": "88 D5 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Alberich's Pointed Hat",
+      "id_hex": "C0 D4 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Alberich's Robe",
+      "id_hex": "24 D5 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Alberich's Trousers",
+      "id_hex": "EC D5 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Albinauric Mask",
+      "id_hex": "A0 2C 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "All-Knowing Armor",
+      "id_hex": "14 01 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "All-Knowing Gauntlets",
+      "id_hex": "78 01 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "All-Knowing Greaves",
+      "id_hex": "DC 01 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "All-Knowing Helm",
+      "id_hex": "B0 00 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ansbach's Attire",
+      "id_hex": "54 F9 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ansbach's Boots",
+      "id_hex": "1C FA 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ansbach's Manchettes",
+      "id_hex": "B8 F9 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Aristocrat Boots",
+      "id_hex": "7C A6 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Aristocrat Coat",
+      "id_hex": "C4 CC 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Aristocrat Garb",
+      "id_hex": "B4 A5 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Aristocrat Hat",
+      "id_hex": "60 CC 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Aristocrat Headband",
+      "id_hex": "50 A5 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Armor of Night",
+      "id_hex": "34 AB 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Armor of Solitude",
+      "id_hex": "74 47 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ascetic's Ankle Guards",
+      "id_hex": "BC 80 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ascetic's Loincloth",
+      "id_hex": "F4 7F 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ascetic's Wrist Guards",
+      "id_hex": "58 80 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ash-of-War Scarab",
+      "id_hex": "E0 FD 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Astrologer Gloves",
+      "id_hex": "B8 9D 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Astrologer Hood",
+      "id_hex": "F0 9C 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Astrologer Robe",
+      "id_hex": "54 9D 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Astrologer Trousers",
+      "id_hex": "1C 9E 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Azur's Glintstone Crown",
+      "id_hex": "88 DD 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Azur's Glintstone Robe",
+      "id_hex": "EC DD 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Azur's Manchettes",
+      "id_hex": "50 DE 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bandit Boots",
+      "id_hex": "FC 31 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bandit Garb",
+      "id_hex": "1C 35 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bandit Manchettes",
+      "id_hex": "98 31 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bandit Mask",
+      "id_hex": "A8 60 15 10",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight Armor",
+      "id_hex": "A4 0D 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight Gauntlets",
+      "id_hex": "08 0E 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight Greaves",
+      "id_hex": "6C 0E 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Banished Knight Helm",
+      "id_hex": "40 0D 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Battlemage Legwraps",
+      "id_hex": "6C 43 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Battlemage Manchettes",
+      "id_hex": "08 43 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Battlemage Robe",
+      "id_hex": "A4 42 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Beast Champion Armor",
+      "id_hex": "E4 FC 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Beast Champion Gauntlets",
+      "id_hex": "48 FD 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Beast Champion Greaves",
+      "id_hex": "AC FD 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Beast Champion Helm",
+      "id_hex": "80 FC 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Dumpling",
+      "id_hex": "A0 D2 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Hood",
+      "id_hex": "C0 5C 15 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knife Armor",
+      "id_hex": "84 BF 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knife Gauntlets",
+      "id_hex": "E8 BF 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knife Greaves",
+      "id_hex": "4C C0 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knife Hood",
+      "id_hex": "20 BF 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knight Armor",
+      "id_hex": "94 95 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knight Gauntlets",
+      "id_hex": "F8 95 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knight Greaves",
+      "id_hex": "5C 96 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Knight Helm",
+      "id_hex": "30 95 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Black Wolf Mask",
+      "id_hex": "10 98 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blackflame Monk Armor",
+      "id_hex": "7C 5B 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blackflame Monk Gauntlets",
+      "id_hex": "E0 5B 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blackflame Monk Greaves",
+      "id_hex": "44 5C 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blackflame Monk Hood",
+      "id_hex": "18 5B 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blackguard's Iron Mask",
+      "id_hex": "78 98 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blaidd's Armor",
+      "id_hex": "74 98 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blaidd's Gauntlets",
+      "id_hex": "D8 98 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blaidd's Greaves",
+      "id_hex": "3C 99 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodhound Knight Armor",
+      "id_hex": "54 0E 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodhound Knight Gauntlets",
+      "id_hex": "B8 0E 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodhound Knight Greaves",
+      "id_hex": "1C 0F 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodhound Knight Helm",
+      "id_hex": "F0 0D 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodsoaked Manchettes",
+      "id_hex": "80 B2 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodsoaked Mask",
+      "id_hex": "A0 B5 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bloodsoaked Tabard",
+      "id_hex": "14 89 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Cloth Cowl",
+      "id_hex": "30 39 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Cloth Vest",
+      "id_hex": "94 39 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Festive Garb",
+      "id_hex": "34 3D 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Festive Hood",
+      "id_hex": "D0 3C 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Silver Bracelets",
+      "id_hex": "48 AA 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Silver Mail Armor",
+      "id_hex": "E4 A9 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Silver Mail Hood",
+      "id_hex": "80 A9 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Blue Silver Mail Skirt",
+      "id_hex": "AC AA 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Braided Arm Wraps",
+      "id_hex": "78 5D 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Braided Cord Robe",
+      "id_hex": "14 5D 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Brave's Battlewear",
+      "id_hex": "C4 AE 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Brave's Bracer",
+      "id_hex": "28 AF 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Brave's Cord Circlet",
+      "id_hex": "60 AE 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Brave's Leather Helm",
+      "id_hex": "48 B2 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Brave's Legwraps",
+      "id_hex": "8C AF 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Briar Armor",
+      "id_hex": "B4 34 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Briar Gauntlets",
+      "id_hex": "18 35 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Briar Greaves",
+      "id_hex": "7C 35 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Briar Helm",
+      "id_hex": "50 34 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bull-Goat Armor",
+      "id_hex": "44 23 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bull-Goat Gauntlets",
+      "id_hex": "A8 23 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bull-Goat Greaves",
+      "id_hex": "0C 24 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Bull-Goat Helm",
+      "id_hex": "E0 22 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Knight Armor",
+      "id_hex": "84 F4 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Knight Gauntlets",
+      "id_hex": "E8 F4 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Knight Greaves",
+      "id_hex": "4C F5 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Carian Knight Helm",
+      "id_hex": "20 F4 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Caterpillar Mask",
+      "id_hex": "B0 5C 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cerulean Tear Scarab",
+      "id_hex": "00 4C 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Chain Armor",
+      "id_hex": "44 C9 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Chain Coif",
+      "id_hex": "E0 C8 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Chain Gauntlets",
+      "id_hex": "A8 C9 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Chain Leggings",
+      "id_hex": "0C CA 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Chain-Draped Tabard",
+      "id_hex": "D4 EC 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Champion Bracers",
+      "id_hex": "58 24 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Champion Gaiters",
+      "id_hex": "BC 24 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Champion Headband",
+      "id_hex": "90 23 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Champion Pauldron",
+      "id_hex": "F4 23 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Circlet of Light",
+      "id_hex": "C0 71 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cleanrot Armor",
+      "id_hex": "84 30 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cleanrot Gauntlets",
+      "id_hex": "E8 30 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cleanrot Greaves",
+      "id_hex": "4C 31 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cleanrot Helm",
+      "id_hex": "20 30 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cloth Garb",
+      "id_hex": "64 71 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cloth Trousers",
+      "id_hex": "2C 72 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Common Soldier Cloth Armor",
+      "id_hex": "24 F5 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Common Soldier Gauntlets",
+      "id_hex": "88 F5 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Common Soldier Greaves",
+      "id_hex": "EC F5 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Common Soldier Helm",
+      "id_hex": "C0 F4 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Commoner's Garb",
+      "id_hex": "74 5C 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Commoner's Headband",
+      "id_hex": "10 5C 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Commoner's Shoes",
+      "id_hex": "3C 5D 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Commoner's Simple Garb",
+      "id_hex": "E0 63 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Confessor Armor",
+      "id_hex": "E4 6D 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Confessor Boots",
+      "id_hex": "AC 6E 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Confessor Gloves",
+      "id_hex": "48 6E 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Confessor Hood",
+      "id_hex": "80 6D 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Consort's Mask",
+      "id_hex": "00 A6 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Consort's Robe",
+      "id_hex": "64 A6 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Consort's Trousers",
+      "id_hex": "2C A7 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Corhyn's Robe",
+      "id_hex": "44 76 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Hood",
+      "id_hex": "A0 4A 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crimson Tear Scarab",
+      "id_hex": "F0 24 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Axe Armor",
+      "id_hex": "F4 B2 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Axe Helm",
+      "id_hex": "90 B2 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Gauntlets",
+      "id_hex": "58 B3 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Greaves",
+      "id_hex": "BC B3 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Hammer-Helm",
+      "id_hex": "30 06 51 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Tree Armor",
+      "id_hex": "DC B6 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Crucible Tree Helm",
+      "id_hex": "78 B6 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cuckoo Knight Armor",
+      "id_hex": "84 29 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cuckoo Knight Gauntlets",
+      "id_hex": "E8 29 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cuckoo Knight Greaves",
+      "id_hex": "4C 2A 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cuckoo Knight Helm",
+      "id_hex": "20 29 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Cuckoo Surcoat",
+      "id_hex": "14 18 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Curseblade Mask",
+      "id_hex": "90 7F 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dancer's Bracer",
+      "id_hex": "88 84 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dancer's Dress",
+      "id_hex": "24 84 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dancer's Hood",
+      "id_hex": "C0 83 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dancer's Trousers",
+      "id_hex": "EC 84 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dane's Hat",
+      "id_hex": "C0 C6 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Death Knight Armor",
+      "id_hex": "E4 58 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Death Knight Gauntlets",
+      "id_hex": "48 59 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Death Knight Greaves",
+      "id_hex": "AC 59 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Death Knight Helm",
+      "id_hex": "80 58 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Death Mask Helm",
+      "id_hex": "30 12 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Deathbed Dress",
+      "id_hex": "74 73 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Deathbed Smalls",
+      "id_hex": "3C 74 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Depraved Perfumer Headscarf",
+      "id_hex": "60 3D 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Depraved Perfumer Robe",
+      "id_hex": "C4 3D 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Depraved Perfumer Trousers",
+      "id_hex": "8C 3E 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Diallos's Mask",
+      "id_hex": "F8 EE 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dirty Chainmail",
+      "id_hex": "04 2D 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Beast Head",
+      "id_hex": "10 B8 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Beast Helm",
+      "id_hex": "A0 23 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Beast Warrior Armor",
+      "id_hex": "04 24 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Bird Helm",
+      "id_hex": "88 27 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Bird Warrior Armor",
+      "id_hex": "EC 27 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Bird Warrior Gauntlets",
+      "id_hex": "50 28 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Divine Bird Warrior Greaves",
+      "id_hex": "B4 28 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Drake Knight Armor",
+      "id_hex": "C4 EA 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Drake Knight Gauntlets",
+      "id_hex": "28 EB 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Drake Knight Greaves",
+      "id_hex": "8C EB 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Drake Knight Helm",
+      "id_hex": "60 EA 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dryleaf Arm Wraps",
+      "id_hex": "88 C7 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dryleaf Cuissardes",
+      "id_hex": "EC C7 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Dryleaf Robe",
+      "id_hex": "24 C7 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Duelist Greaves",
+      "id_hex": "1C BC 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Duelist Helm",
+      "id_hex": "F0 BA 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Eccentric's Armor",
+      "id_hex": "44 58 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Eccentric's Breeches",
+      "id_hex": "0C 59 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Eccentric's Hood",
+      "id_hex": "E0 57 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Eccentric's Manchettes",
+      "id_hex": "A8 58 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Elden Lord Armor",
+      "id_hex": "44 05 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Elden Lord Bracers",
+      "id_hex": "A8 05 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Elden Lord Greaves",
+      "id_hex": "0C 06 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Envoy Crown",
+      "id_hex": "20 83 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Erdtree Surcoat",
+      "id_hex": "24 3F 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Errant Sorcerer Boots",
+      "id_hex": "5C 1C 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Errant Sorcerer Manchettes",
+      "id_hex": "F8 1B 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Errant Sorcerer Robe",
+      "id_hex": "94 1B 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Exile Armor",
+      "id_hex": "94 E6 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Exile Gauntlets",
+      "id_hex": "F8 E6 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Exile Greaves",
+      "id_hex": "5C E7 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Exile Hood",
+      "id_hex": "30 E6 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Eye Surcoat",
+      "id_hex": "2C CD 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fang Helm",
+      "id_hex": "48 9D 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fell Omen Cloak",
+      "id_hex": "F4 05 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Festive Garb",
+      "id_hex": "64 35 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Festive Hood",
+      "id_hex": "00 35 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fia's Hood",
+      "id_hex": "20 9A 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fia's Robe",
+      "id_hex": "84 9A 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Finger Maiden Fillet",
+      "id_hex": "70 C3 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Finger Maiden Robe",
+      "id_hex": "D4 C3 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Finger Maiden Shoes",
+      "id_hex": "9C C4 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Finger Robe",
+      "id_hex": "D4 3D 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fingerprint Armor",
+      "id_hex": "54 7F 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fingerprint Gauntlets",
+      "id_hex": "B8 7F 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fingerprint Greaves",
+      "id_hex": "1C 80 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fingerprint Helm",
+      "id_hex": "F0 7E 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Knight Armor",
+      "id_hex": "C4 0A 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Knight Gauntlets",
+      "id_hex": "28 0B 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Knight Greaves",
+      "id_hex": "8C 0B 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Knight Helm",
+      "id_hex": "60 0A 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Monk Armor",
+      "id_hex": "94 57 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Monk Gauntlets",
+      "id_hex": "F8 57 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Monk Greaves",
+      "id_hex": "5C 58 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Monk Hood",
+      "id_hex": "30 57 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Prelate Armor",
+      "id_hex": "A4 7E 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Prelate Gauntlets",
+      "id_hex": "08 7F 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fire Prelate Greaves",
+      "id_hex": "6C 7F 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Foot Soldier Cap",
+      "id_hex": "70 EC 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Foot Soldier Gauntlets",
+      "id_hex": "38 ED 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Foot Soldier Greaves",
+      "id_hex": "9C ED 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Foot Soldier Helm",
+      "id_hex": "A0 61 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Foot Soldier Helmet",
+      "id_hex": "80 13 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Foot Soldier Tabard",
+      "id_hex": "E4 13 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Freyja's Armor",
+      "id_hex": "64 20 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Freyja's Gauntlets",
+      "id_hex": "C8 20 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Freyja's Greaves",
+      "id_hex": "2C 21 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Freyja's Helm",
+      "id_hex": "00 20 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fur Leggings",
+      "id_hex": "0C 95 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Fur Raiment",
+      "id_hex": "44 94 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gaius's Armor",
+      "id_hex": "34 EE 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gaius's Gauntlets",
+      "id_hex": "98 EE 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gaius's Greaves",
+      "id_hex": "FC EE 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gaius's Helm",
+      "id_hex": "D0 ED 2D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gauntlets of Night",
+      "id_hex": "98 AB 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gauntlets of Solitude",
+      "id_hex": "D8 47 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gelmir Knight Armor",
+      "id_hex": "64 DB 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gelmir Knight Gauntlets",
+      "id_hex": "C8 DB 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gelmir Knight Greaves",
+      "id_hex": "2C DC 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gelmir Knight Helm",
+      "id_hex": "00 DB 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gilded Foot Soldier Cap",
+      "id_hex": "90 3A 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Glintstone Scarab",
+      "id_hex": "B0 05 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gloried Attire",
+      "id_hex": "D4 31 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Knight Armor",
+      "id_hex": "74 02 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Knight Gauntlets",
+      "id_hex": "D8 02 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Knight Greaves",
+      "id_hex": "3C 03 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Knight Helm",
+      "id_hex": "10 02 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Soldier Gauntlets",
+      "id_hex": "68 F1 19 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Soldier Greaves",
+      "id_hex": "CC F1 19 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godrick Soldier Helm",
+      "id_hex": "A0 F0 19 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Apostle Bracelets",
+      "id_hex": "08 F0 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Apostle Hood",
+      "id_hex": "40 EF 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Apostle Robe",
+      "id_hex": "A4 EF 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Apostle Trousers",
+      "id_hex": "6C F0 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Noble Bracelets",
+      "id_hex": "18 17 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Noble Hood",
+      "id_hex": "50 16 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Noble Robe",
+      "id_hex": "B4 16 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Godskin Noble Trousers",
+      "id_hex": "7C 17 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gold Bracelets",
+      "id_hex": "48 DF 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gold Waistwrap",
+      "id_hex": "AC DF 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Golden Prosthetic",
+      "id_hex": "18 10 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Goldmask's Rags",
+      "id_hex": "E4 DE 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Grass Hair Ornament",
+      "id_hex": "C0 09 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gravebird Anklets",
+      "id_hex": "DC CE 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gravebird Armor",
+      "id_hex": "FC D1 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gravebird Bracelets",
+      "id_hex": "78 CE 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gravebird Helm",
+      "id_hex": "B0 CD 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gravebird's Blackquill Armor",
+      "id_hex": "14 CE 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Gravekeeper Cloak",
+      "id_hex": "54 BB 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Greathelm",
+      "id_hex": "C8 CC 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Greathood",
+      "id_hex": "00 6A 18 10",
+      "quantity": 1
+    },
+    {
+      "name": "Greatjar",
+      "id_hex": "40 2D 51 10",
+      "quantity": 1
+    },
+    {
+      "name": "Greaves of Night",
+      "id_hex": "FC AB 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Greaves of Solitude",
+      "id_hex": "3C 48 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Guardian Bracers",
+      "id_hex": "D8 09 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Guardian Garb",
+      "id_hex": "5C 0D 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Guardian Garb (Full Bloom)",
+      "id_hex": "74 09 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Guardian Greaves",
+      "id_hex": "3C 0A 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Guardian Mask",
+      "id_hex": "10 09 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Guilty Hood",
+      "id_hex": "00 71 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haima Glintstone Crown",
+      "id_hex": "40 42 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Crest Surcoat",
+      "id_hex": "54 B4 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Gauntlets",
+      "id_hex": "B8 B4 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Greaves",
+      "id_hex": "1C B5 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Helm",
+      "id_hex": "F0 B3 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Knight Armor",
+      "id_hex": "C4 C5 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Knight Gauntlets",
+      "id_hex": "28 C6 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Knight Greaves",
+      "id_hex": "8C C6 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Haligtree Knight Helm",
+      "id_hex": "60 C5 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Helm of Night",
+      "id_hex": "D0 AA 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Helm of Solitude",
+      "id_hex": "10 47 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Hierodas Glintstone Crown",
+      "id_hex": "30 1B 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "High Page Clothes",
+      "id_hex": "D4 5D 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "High Page Hood",
+      "id_hex": "70 5D 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "High Priest Gloves",
+      "id_hex": "68 36 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "High Priest Hat",
+      "id_hex": "A0 35 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "High Priest Robe",
+      "id_hex": "04 36 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "High Priest Undergarments",
+      "id_hex": "CC 36 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Highland Attire",
+      "id_hex": "BC 35 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Highwayman Cloth Armor",
+      "id_hex": "C4 36 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Highwayman Gauntlets",
+      "id_hex": "28 37 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Highwayman Hood",
+      "id_hex": "60 36 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Horned Warrior Armor",
+      "id_hex": "34 1C 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Horned Warrior Gauntlets",
+      "id_hex": "98 1C 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Horned Warrior Greaves",
+      "id_hex": "FC 1C 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Horned Warrior Helm",
+      "id_hex": "D0 1B 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Hoslow's Armor",
+      "id_hex": "74 EB 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Hoslow's Gauntlets",
+      "id_hex": "D8 EB 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Hoslow's Greaves",
+      "id_hex": "3C EC 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Hoslow's Helm",
+      "id_hex": "10 EB 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Igon's Armor",
+      "id_hex": "44 D2 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Igon's Gauntlets",
+      "id_hex": "A8 D2 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Igon's Helm",
+      "id_hex": "E0 D1 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Igon's Loincloth",
+      "id_hex": "0C D3 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iji's Mirrorhelm",
+      "id_hex": "08 DA 13 10",
+      "quantity": 1
+    },
+    {
+      "name": "Imp Head (Cat)",
+      "id_hex": "C0 7A 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Imp Head (Corpse)",
+      "id_hex": "78 86 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Imp Head (Fanged)",
+      "id_hex": "A8 7E 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Imp Head (Lion)",
+      "id_hex": "50 54 51 10",
+      "quantity": 1
+    },
+    {
+      "name": "Imp Head (Long-Tongued)",
+      "id_hex": "90 82 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Imp Head (Wolf)",
+      "id_hex": "60 8A 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Incantation Scarab",
+      "id_hex": "C8 01 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Gauntlets",
+      "id_hex": "08 9D 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Helmet",
+      "id_hex": "40 9C 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Kasa",
+      "id_hex": "F0 49 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Rivet Armor",
+      "id_hex": "C4 99 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Rivet Gauntlets",
+      "id_hex": "28 9A 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Iron Rivet Greaves",
+      "id_hex": "8C 9A 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ivory-Draped Tabard",
+      "id_hex": "24 B0 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Jar",
+      "id_hex": "00 17 11 10",
+      "quantity": 1
+    },
+    {
+      "name": "Juvenile Scholar Cap",
+      "id_hex": "70 B7 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Juvenile Scholar Robe",
+      "id_hex": "D4 B7 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Kaiden Armor",
+      "id_hex": "B4 C3 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Kaiden Gauntlets",
+      "id_hex": "18 C4 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Kaiden Helm",
+      "id_hex": "50 C3 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Kaiden Trousers",
+      "id_hex": "7C C4 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Karolos Glintstone Crown",
+      "id_hex": "E8 B5 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Knight Armor",
+      "id_hex": "C4 E3 16 10",
+      "quantity": 1
+    },
+    {
+      "name": "Knight Gauntlets",
+      "id_hex": "28 E4 16 10",
+      "quantity": 1
+    },
+    {
+      "name": "Knight Greaves",
+      "id_hex": "8C E4 16 10",
+      "quantity": 1
+    },
+    {
+      "name": "Knight Helm",
+      "id_hex": "60 E3 16 10",
+      "quantity": 1
+    },
+    {
+      "name": "Land of Reeds Armor",
+      "id_hex": "D4 46 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Land of Reeds Gauntlets",
+      "id_hex": "38 47 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Land of Reeds Greaves",
+      "id_hex": "9C 47 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Land of Reeds Helm",
+      "id_hex": "70 46 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lazuli Glintstone Crown",
+      "id_hex": "00 B2 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lazuli Robe",
+      "id_hex": "B0 F9 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Arm Wraps",
+      "id_hex": "38 32 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Armor",
+      "id_hex": "24 5D 15 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Boots",
+      "id_hex": "EC 5D 15 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Crown",
+      "id_hex": "58 35 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Gloves",
+      "id_hex": "88 5D 15 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Headband",
+      "id_hex": "70 31 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Leg Wraps",
+      "id_hex": "9C 32 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather Trousers",
+      "id_hex": "6C 9D 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leather-Draped Tabard",
+      "id_hex": "F4 3A 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leda's Armor",
+      "id_hex": "A4 4B 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Knight Armor",
+      "id_hex": "94 50 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Knight Gauntlets",
+      "id_hex": "F8 50 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Knight Greaves",
+      "id_hex": "5C 51 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Knight Helm",
+      "id_hex": "30 50 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Soldier Gauntlets",
+      "id_hex": "88 3F 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Soldier Greaves",
+      "id_hex": "EC 3F 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Leyndell Soldier Helm",
+      "id_hex": "C0 3E 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lionel's Armor",
+      "id_hex": "64 C4 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lionel's Gauntlets",
+      "id_hex": "C8 C4 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lionel's Greaves",
+      "id_hex": "2C C5 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lionel's Helm",
+      "id_hex": "00 C4 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lord of Blood's Robe",
+      "id_hex": "64 53 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lusat's Glintstone Crown",
+      "id_hex": "A0 D9 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lusat's Manchettes",
+      "id_hex": "68 DA 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Lusat's Robe",
+      "id_hex": "04 DA 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malenia's Armor",
+      "id_hex": "34 C0 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malenia's Gauntlet",
+      "id_hex": "98 C0 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malenia's Greaves",
+      "id_hex": "FC C0 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malenia's Winged Helm",
+      "id_hex": "D0 BF 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malformed Dragon Armor",
+      "id_hex": "04 F8 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malformed Dragon Gauntlets",
+      "id_hex": "68 F8 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malformed Dragon Greaves",
+      "id_hex": "CC F8 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Malformed Dragon Helm",
+      "id_hex": "A0 F7 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Maliketh's Armor",
+      "id_hex": "24 99 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Maliketh's Gauntlets",
+      "id_hex": "88 99 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Maliketh's Greaves",
+      "id_hex": "EC 99 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Maliketh's Helm",
+      "id_hex": "C0 98 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Marais Mask",
+      "id_hex": "B8 B1 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Marais Robe",
+      "id_hex": "1C B2 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Marionette Soldier Armor",
+      "id_hex": "A4 D1 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Marionette Soldier Birdhelm",
+      "id_hex": "50 F8 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Marionette Soldier Helm",
+      "id_hex": "40 D1 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mask of Confidence",
+      "id_hex": "98 E6 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mausoleum Gauntlets",
+      "id_hex": "A8 8D 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mausoleum Greaves",
+      "id_hex": "0C 8E 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mausoleum Knight Armor",
+      "id_hex": "B4 9E 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mausoleum Knight Gauntlets",
+      "id_hex": "18 9F 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mausoleum Knight Greaves",
+      "id_hex": "7C 9F 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mausoleum Surcoat",
+      "id_hex": "44 8D 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier Armor",
+      "id_hex": "84 6E 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier Gauntlets",
+      "id_hex": "E8 6E 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier Greaves",
+      "id_hex": "4C 6F 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer Soldier Helm",
+      "id_hex": "20 6E 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer's Armor",
+      "id_hex": "04 A7 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer's Gauntlets",
+      "id_hex": "68 A7 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer's Greaves",
+      "id_hex": "CC A7 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Messmer's Helm",
+      "id_hex": "A0 A6 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Millicent's Boots",
+      "id_hex": "5C C2 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Millicent's Gloves",
+      "id_hex": "F8 C1 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Millicent's Robe",
+      "id_hex": "94 C1 1D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Millicent's Tunic",
+      "id_hex": "B4 0F 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mushroom Arms",
+      "id_hex": "D8 3E 11 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mushroom Crown",
+      "id_hex": "90 AB 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Mushroom Legs",
+      "id_hex": "3C 3F 11 10",
+      "quantity": 1
+    },
+    {
+      "name": "Navy Hood",
+      "id_hex": "88 4E 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Night Maiden Armor",
+      "id_hex": "EC 78 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Night Maiden Twin Crown",
+      "id_hex": "88 78 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Night's Cavalry Armor",
+      "id_hex": "D4 82 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Night's Cavalry Gauntlets",
+      "id_hex": "38 83 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Night's Cavalry Greaves",
+      "id_hex": "9C 83 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Night's Cavalry Helm",
+      "id_hex": "70 82 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Noble's Gloves",
+      "id_hex": "68 4B 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Noble's Traveling Garb",
+      "id_hex": "04 4B 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Noble's Trousers",
+      "id_hex": "CC 4B 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nomadic Merchant's Chapeau",
+      "id_hex": "90 D0 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nomadic Merchant's Finery",
+      "id_hex": "F4 D0 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nomadic Merchant's Trousers",
+      "id_hex": "BC D1 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Mirrorhelm",
+      "id_hex": "20 D6 13 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Monk Armor",
+      "id_hex": "34 6D 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Monk Bracelets",
+      "id_hex": "98 6D 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Monk Greaves",
+      "id_hex": "FC 6D 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Monk Hood",
+      "id_hex": "D0 6C 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Swordstress Armor",
+      "id_hex": "04 75 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Nox Swordstress Crown",
+      "id_hex": "A0 74 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Oathseeker Knight Armor",
+      "id_hex": "74 53 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Oathseeker Knight Gauntlets",
+      "id_hex": "08 4C 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Oathseeker Knight Greaves",
+      "id_hex": "6C 4C 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Oathseeker Knight Helm",
+      "id_hex": "40 4B 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Octopus Head",
+      "id_hex": "F0 EF 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Official's Attire",
+      "id_hex": "04 B6 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Okina Mask",
+      "id_hex": "40 4E 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Old Aristocrat Cowl",
+      "id_hex": "70 F3 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Old Aristocrat Gown",
+      "id_hex": "D4 F3 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Old Aristocrat Shoes",
+      "id_hex": "9C F4 05 10",
+      "quantity": 1
+    },
+    {
+      "name": "Old Sorcerer's Legwraps",
+      "id_hex": "CC DA 08 10",
+      "quantity": 1
+    },
+    {
+      "name": "Olivinus Glintstone Crown",
+      "id_hex": "18 AE 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omen Armor",
+      "id_hex": "74 CD 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omen Gauntlets",
+      "id_hex": "D8 CD 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omen Greaves",
+      "id_hex": "3C CE 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omen Helm",
+      "id_hex": "10 CD 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omenkiller Boots",
+      "id_hex": "FC D7 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omenkiller Long Gloves",
+      "id_hex": "98 D7 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omenkiller Robe",
+      "id_hex": "34 D7 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Omensmirk Mask",
+      "id_hex": "D0 D6 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Page Garb",
+      "id_hex": "C4 5B 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Page Hood",
+      "id_hex": "60 5B 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Page Trousers",
+      "id_hex": "8C 5C 03 10",
+      "quantity": 1
+    },
+    {
+      "name": "Pelt of Ralva",
+      "id_hex": "60 99 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer Gloves",
+      "id_hex": "58 60 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer Hood",
+      "id_hex": "90 5F 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer Robe",
+      "id_hex": "F4 5F 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer Sarong",
+      "id_hex": "BC 60 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Perfumer's Traveling Garb",
+      "id_hex": "04 87 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Preceptor's Big Hat",
+      "id_hex": "B0 E2 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Preceptor's Gloves",
+      "id_hex": "78 E3 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Preceptor's Long Gown",
+      "id_hex": "14 E3 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Preceptor's Trousers",
+      "id_hex": "DC E3 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Prisoner Clothing",
+      "id_hex": "F4 94 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Prisoner Iron Mask",
+      "id_hex": "90 94 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Prisoner Trousers",
+      "id_hex": "BC 95 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Prophet Trousers",
+      "id_hex": "0C 77 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Pumpkin Helm",
+      "id_hex": "C0 B6 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Queen's Bracelets",
+      "id_hex": "F8 C8 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Queen's Crescent Crown",
+      "id_hex": "30 C8 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Queen's Leggings",
+      "id_hex": "5C C9 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Queen's Robe",
+      "id_hex": "94 C8 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn Soldier Gauntlets",
+      "id_hex": "98 66 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn Soldier Greaves",
+      "id_hex": "FC 66 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn Soldier Helm",
+      "id_hex": "D0 65 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn's Gauntlets",
+      "id_hex": "B8 2C 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn's Greaves",
+      "id_hex": "1C 2D 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn's Lion Armor",
+      "id_hex": "54 2C 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radahn's Redmane Helm",
+      "id_hex": "F0 2B 07 10",
+      "quantity": 1
+    },
+    {
+      "name": "Radiant Gold Mask",
+      "id_hex": "80 DE 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ragged Armor",
+      "id_hex": "34 4F 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ragged Gloves",
+      "id_hex": "98 4F 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ragged Hat",
+      "id_hex": "D0 4E 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ragged Loincloth",
+      "id_hex": "FC 4F 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raging Wolf Armor",
+      "id_hex": "C4 1F 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raging Wolf Gauntlets",
+      "id_hex": "28 20 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raging Wolf Greaves",
+      "id_hex": "8C 20 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raging Wolf Helm",
+      "id_hex": "60 1F 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rakshasa Armor",
+      "id_hex": "A4 BC 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rakshasa Gauntlets",
+      "id_hex": "08 BD 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rakshasa Greaves",
+      "id_hex": "6C BD 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rakshasa Helm",
+      "id_hex": "40 BC 4E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raptor's Black Feathers",
+      "id_hex": "34 31 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raya Lucarian Gauntlets",
+      "id_hex": "78 18 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raya Lucarian Greaves",
+      "id_hex": "DC 18 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raya Lucarian Helm",
+      "id_hex": "B0 17 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Raya Lucarian Robe",
+      "id_hex": "94 AA 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Redmane Knight Armor",
+      "id_hex": "A4 77 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Redmane Knight Gauntlets",
+      "id_hex": "08 78 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Redmane Knight Greaves",
+      "id_hex": "6C 78 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Redmane Knight Helm",
+      "id_hex": "40 77 1B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Redmane Surcoat",
+      "id_hex": "34 66 1A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rellana's Armor",
+      "id_hex": "44 43 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rellana's Gloves",
+      "id_hex": "A8 43 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rellana's Greaves",
+      "id_hex": "0C 44 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rellana's Helm",
+      "id_hex": "E0 42 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ronin's Armor",
+      "id_hex": "54 4A 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ronin's Gauntlets",
+      "id_hex": "B8 4A 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ronin's Greaves",
+      "id_hex": "1C 4B 02 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Duelist Greaves",
+      "id_hex": "AC 85 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Duelist Helm",
+      "id_hex": "80 84 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Rotten Gravekeeper Cloak",
+      "id_hex": "E4 84 1E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Knight Armor",
+      "id_hex": "24 46 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Knight Gauntlets",
+      "id_hex": "88 46 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Knight Greaves",
+      "id_hex": "EC 46 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Knight Helm",
+      "id_hex": "C0 45 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Remains Armor",
+      "id_hex": "B4 87 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Remains Gauntlets",
+      "id_hex": "18 88 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Remains Greaves",
+      "id_hex": "7C 88 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Royal Remains Helm",
+      "id_hex": "50 87 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ruler's Mask",
+      "id_hex": "E8 A9 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Ruler's Robe",
+      "id_hex": "4C AA 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sacred Crown Helm",
+      "id_hex": "C0 AF 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sage Hood",
+      "id_hex": "B0 8F 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sage Robe",
+      "id_hex": "14 90 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sage Trousers",
+      "id_hex": "DC 90 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Salza's Hood",
+      "id_hex": "00 1A 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sanguine Noble Waistcloth",
+      "id_hex": "2C E3 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Scale Armor",
+      "id_hex": "A4 9C 00 10",
+      "quantity": 1
+    },
+    {
+      "name": "Scaled Gauntlets",
+      "id_hex": "48 39 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Scaled Greaves",
+      "id_hex": "AC 39 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Scaled Helm",
+      "id_hex": "80 38 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Scarlet Tabard",
+      "id_hex": "04 62 1C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shadow Militiaman Armor",
+      "id_hex": "64 91 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shadow Militiaman Gauntlets",
+      "id_hex": "C8 91 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shadow Militiaman Greaves",
+      "id_hex": "2C 92 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shadow Militiaman Helm",
+      "id_hex": "00 91 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shaman Furs",
+      "id_hex": "2C 98 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shaman Leggings",
+      "id_hex": "F4 98 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Shining Horned Headband",
+      "id_hex": "C8 97 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Silver Tear Mask",
+      "id_hex": "D0 A1 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Skeletal Mask",
+      "id_hex": "D0 30 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Snow Witch Hat",
+      "id_hex": "50 69 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Snow Witch Robe",
+      "id_hex": "B4 69 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Snow Witch Skirt",
+      "id_hex": "7C 6A 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Soiled Loincloth",
+      "id_hex": "DC 5D 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sorcerer Leggings",
+      "id_hex": "5C AB 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Sorcerer Manchettes",
+      "id_hex": "F8 AA 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Spellblade's Gloves",
+      "id_hex": "98 FC 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Spellblade's Pointed Hat",
+      "id_hex": "D0 FB 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Spellblade's Traveling Attire",
+      "id_hex": "34 FC 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Spellblade's Trousers",
+      "id_hex": "FC FC 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "St. Trina's Blossom",
+      "id_hex": "20 DF 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Thiollier's Garb",
+      "id_hex": "D4 C0 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Thiollier's Gloves",
+      "id_hex": "38 C1 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Thiollier's Mask",
+      "id_hex": "70 C0 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Thiollier's Trousers",
+      "id_hex": "9C C1 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveler's Boots",
+      "id_hex": "8C 91 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveler's Clothes",
+      "id_hex": "C4 90 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveler's Gloves",
+      "id_hex": "68 87 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveler's Hat",
+      "id_hex": "A0 86 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveler's Manchettes",
+      "id_hex": "28 91 0F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveler's Slops",
+      "id_hex": "CC 87 01 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveling Maiden Boots",
+      "id_hex": "CC BC 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveling Maiden Gloves",
+      "id_hex": "68 BC 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveling Maiden Hood",
+      "id_hex": "A0 BB 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Traveling Maiden Robe",
+      "id_hex": "04 BC 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Tree Sentinel Armor",
+      "id_hex": "14 1F 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Tree Sentinel Gauntlets",
+      "id_hex": "78 1F 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Tree Sentinel Greaves",
+      "id_hex": "DC 1F 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Tree Sentinel Helm",
+      "id_hex": "B0 1E 04 10",
+      "quantity": 1
+    },
+    {
+      "name": "Tree Surcoat",
+      "id_hex": "14 D1 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Tree-and-Beast Surcoat",
+      "id_hex": "04 F1 19 10",
+      "quantity": 1
+    },
+    {
+      "name": "Twinned Armor",
+      "id_hex": "24 28 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Twinned Gauntlets",
+      "id_hex": "88 28 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Twinned Greaves",
+      "id_hex": "EC 28 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Twinned Helm",
+      "id_hex": "C0 27 09 10",
+      "quantity": 1
+    },
+    {
+      "name": "Twinsage Glintstone Crown",
+      "id_hex": "30 AA 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Upper-Class Robe",
+      "id_hex": "34 AE 0E 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vagabond Knight Armor",
+      "id_hex": "84 12 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vagabond Knight Gauntlets",
+      "id_hex": "E8 12 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vagabond Knight Greaves",
+      "id_hex": "4C 13 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vagabond Knight Helm",
+      "id_hex": "20 12 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Verdigris Armor",
+      "id_hex": "B4 72 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Verdigris Gauntlets",
+      "id_hex": "18 73 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Verdigris Greaves",
+      "id_hex": "7C 73 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Verdigris Helm",
+      "id_hex": "50 72 4C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Veteran's Armor",
+      "id_hex": "44 E7 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Veteran's Gauntlets",
+      "id_hex": "A8 E7 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Veteran's Greaves",
+      "id_hex": "0C E8 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Veteran's Helm",
+      "id_hex": "E0 E6 0B 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vulgar Militia Armor",
+      "id_hex": "04 69 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vulgar Militia Gauntlets",
+      "id_hex": "68 69 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vulgar Militia Greaves",
+      "id_hex": "CC 69 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "Vulgar Militia Helm",
+      "id_hex": "A0 68 06 10",
+      "quantity": 1
+    },
+    {
+      "name": "War Surgeon Gloves",
+      "id_hex": "08 61 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "War Surgeon Gown",
+      "id_hex": "A4 60 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "War Surgeon Trousers",
+      "id_hex": "6C 61 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Warrior Gauntlets",
+      "id_hex": "F8 39 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "Warrior Greaves",
+      "id_hex": "5C 3A 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "White Mask",
+      "id_hex": "40 60 0A 10",
+      "quantity": 1
+    },
+    {
+      "name": "White Reed Armor",
+      "id_hex": "A4 4E 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "White Reed Gauntlets",
+      "id_hex": "08 4F 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "White Reed Greaves",
+      "id_hex": "6C 4F 0D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Winged Serpent Helm",
+      "id_hex": "18 16 4F 10",
+      "quantity": 1
+    },
+    {
+      "name": "Wise Man's Mask",
+      "id_hex": "F0 F8 4D 10",
+      "quantity": 1
+    },
+    {
+      "name": "Witch's Glintstone Crown",
+      "id_hex": "D0 B9 0C 10",
+      "quantity": 1
+    },
+    {
+      "name": "Young Lion's Armor",
+      "id_hex": "54 6A 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Young Lion's Gauntlets",
+      "id_hex": "B8 6A 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Young Lion's Greaves",
+      "id_hex": "1C 6B 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Young Lion's Helm",
+      "id_hex": "F0 69 50 10",
+      "quantity": 1
+    },
+    {
+      "name": "Zamor Armor",
+      "id_hex": "14 54 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Zamor Bracelets",
+      "id_hex": "78 54 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Zamor Legwraps",
+      "id_hex": "DC 54 10 10",
+      "quantity": 1
+    },
+    {
+      "name": "Zamor Mask",
+      "id_hex": "B0 53 10 10",
+      "quantity": 1
+    }
+  ],
+  "aow": [
+    {
+      "name": "Ash of War: Aspects of the Crucible: Wings",
+      "id_hex": "A4 0D 03 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Assassin's Gambit",
+      "id_hex": "28 EB 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Barbaric Roar",
+      "id_hex": "E8 FD 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Barrage",
+      "id_hex": "A4 9C 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Barricade Shield",
+      "id_hex": "94 75 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Beast's Roar",
+      "id_hex": "B0 FE 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Black Flame Tornado",
+      "id_hex": "54 56 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Blind Spot",
+      "id_hex": "A8 3D 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Blinkbolt",
+      "id_hex": "48 4D 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Blood Blade",
+      "id_hex": "80 57 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Blood Tax",
+      "id_hex": "30 2A 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Bloodhound's Step",
+      "id_hex": "E4 38 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Bloody Slash",
+      "id_hex": "B0 4F 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Braggart's Roar",
+      "id_hex": "78 FF 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Carian Grandeur",
+      "id_hex": "28 55 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Carian Greatsword",
+      "id_hex": "8C 55 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Carian Retaliation",
+      "id_hex": "24 77 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Carian Sovereignty",
+      "id_hex": "D0 60 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Charge Forth",
+      "id_hex": "04 29 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Chilling Mist",
+      "id_hex": "AC 58 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Cragblade",
+      "id_hex": "1C ED 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Determination",
+      "id_hex": "60 EA 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Divine Beast Frost Stomp",
+      "id_hex": "00 59 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Double Slash",
+      "id_hex": "C0 2B 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Dryleaf Whirlwind",
+      "id_hex": "40 0D 03 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Earthshaker",
+      "id_hex": "D0 52 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Enchanted Shot",
+      "id_hex": "D0 9D 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Endure",
+      "id_hex": "70 11 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Eruption",
+      "id_hex": "DC 50 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Flame Skewer",
+      "id_hex": "30 51 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Flame Spear",
+      "id_hex": "E8 5C 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Flame of the Redmanes",
+      "id_hex": "44 C5 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Flaming Strike",
+      "id_hex": "98 53 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Ghostflame Call",
+      "id_hex": "70 70 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Giant Hunt",
+      "id_hex": "50 2D 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Glintblade Phalanx",
+      "id_hex": "20 4E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Glintstone Pebble",
+      "id_hex": "4C 4F 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Golden Land",
+      "id_hex": "34 53 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Golden Parry",
+      "id_hex": "EC 77 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Golden Slam",
+      "id_hex": "0C C6 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Golden Vow",
+      "id_hex": "8C EB 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Gravitas",
+      "id_hex": "A4 51 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Ground Slam",
+      "id_hex": "A8 C5 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Hoarah Loux's Earthshaker",
+      "id_hex": "D4 C6 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Hoarfrost Stomp",
+      "id_hex": "B4 C3 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Holy Ground",
+      "id_hex": "38 12 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Ice Spear",
+      "id_hex": "E8 4E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Igon's Drake Hunt",
+      "id_hex": "A0 5C 08 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Impaling Thrust",
+      "id_hex": "74 27 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Kick",
+      "id_hex": "7C C4 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Lifesteal Fist",
+      "id_hex": "14 50 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Lightning Ram",
+      "id_hex": "E0 C4 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Lightning Slash",
+      "id_hex": "C4 54 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Lion's Claw",
+      "id_hex": "10 27 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Loretta's Slash",
+      "id_hex": "18 2E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Mighty Shot",
+      "id_hex": "08 9D 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: No Skill",
+      "id_hex": "B4 78 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Overhead Stance",
+      "id_hex": "78 45 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Palm Blast",
+      "id_hex": "68 1E 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Parry",
+      "id_hex": "F8 75 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Phantom Slash",
+      "id_hex": "E4 57 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Piercing Fang",
+      "id_hex": "D8 27 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Piercing Throw",
+      "id_hex": "50 22 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Poison Moth Flight",
+      "id_hex": "7C 2E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Poisonous Mist",
+      "id_hex": "10 59 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Prayerful Strike",
+      "id_hex": "40 51 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Prelate's Charge",
+      "id_hex": "24 2C 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Quickstep",
+      "id_hex": "80 38 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Raging Beast",
+      "id_hex": "F0 31 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Rain of Arrows",
+      "id_hex": "98 9E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Raptor of the Mists",
+      "id_hex": "48 39 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Repeating Thrust",
+      "id_hex": "94 2A 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Rolling Sparks",
+      "id_hex": "08 2E 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Royal Knight's Resolve",
+      "id_hex": "C4 EA 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Sacred Blade",
+      "id_hex": "84 4E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Sacred Order",
+      "id_hex": "F0 EB 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Sacred Ring of Light",
+      "id_hex": "B8 56 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Savage Claws",
+      "id_hex": "D8 35 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Savage Lion's Claw",
+      "id_hex": "18 55 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Scattershot Throw",
+      "id_hex": "38 26 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Seppuku",
+      "id_hex": "B8 EC 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Shared Order",
+      "id_hex": "54 EC 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Shield Bash",
+      "id_hex": "30 75 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Shield Crash",
+      "id_hex": "50 78 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Shield Strike",
+      "id_hex": "00 35 0C 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Shriek of Sorrow",
+      "id_hex": "B8 64 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Sky Shot",
+      "id_hex": "34 9E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Spectral Lance",
+      "id_hex": "48 58 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Spinning Gravity Thrust",
+      "id_hex": "80 1A 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Spinning Slash",
+      "id_hex": "3C 28 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Spinning Strikes",
+      "id_hex": "5C 2B 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Spinning Weapon",
+      "id_hex": "E0 2E 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Square Off",
+      "id_hex": "EC 2C 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Stamp (Sweep)",
+      "id_hex": "CC 29 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Stamp (Upward Cut)",
+      "id_hex": "68 29 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Storm Assault",
+      "id_hex": "A8 2F 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Storm Blade",
+      "id_hex": "08 52 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Storm Stomp",
+      "id_hex": "18 C4 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Storm Wall",
+      "id_hex": "88 77 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Stormcaller",
+      "id_hex": "0C 30 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Swift Slash",
+      "id_hex": "90 41 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Sword Dance",
+      "id_hex": "70 30 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: The Poison Flower Blooms Twice",
+      "id_hex": "A8 B4 07 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Thops's Barrier",
+      "id_hex": "18 79 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Through and Through",
+      "id_hex": "40 9C 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Thunderbolt",
+      "id_hex": "60 54 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Troll's Roar",
+      "id_hex": "14 FF 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Unsheathe",
+      "id_hex": "88 2C 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Vacuum Slice",
+      "id_hex": "F0 55 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Vow of the Indomitable",
+      "id_hex": "D4 11 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Wall of Sparks",
+      "id_hex": "20 2A 06 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: War Cry",
+      "id_hex": "4C FE 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Waves of Darkness",
+      "id_hex": "70 C6 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: White Shadow's Lure",
+      "id_hex": "08 4C 01 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Wild Strikes",
+      "id_hex": "F8 2A 00 80",
+      "quantity": 1
+    },
+    {
+      "name": "Ash of War: Wing Stance",
+      "id_hex": "60 49 06 80",
+      "quantity": 1
+    }
+  ]
+}
