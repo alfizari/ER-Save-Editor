@@ -1,4 +1,4 @@
-#version 2
+#version 2.1
 import json, binascii, hashlib, struct, os
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
@@ -136,7 +136,7 @@ maps_json= load_and_copy_json("maps.json")
 bosses_json= load_and_copy_json("bosses.json")
 weapons_sorted_json = load_and_copy_json("weapons_sorted.json")
 goods_and_magic_sorted_json= load_and_copy_json("goods_sorted.json")
-
+maxall_json= load_and_copy_json("maxall.json")
 
 
 
@@ -1086,7 +1086,7 @@ def sort_list():
     storage_inventory_items.sort(key=lambda x: x[2])
 
 
-def spawn_goods(item_name, item_quantity, item_type, Stack=False):
+def spawn_goods(item_name, item_quantity, item_type, Stack=False, item_id_override=None):
     global data
     global inventory_items, goods
 
@@ -1094,7 +1094,9 @@ def spawn_goods(item_name, item_quantity, item_type, Stack=False):
 
     #incrementing inventory counters
 
-    if item_type == 'goods':
+    if item_id_override:
+        item_id = item_id_override
+    elif item_type == 'goods':
         item_id = goods_and_magic_json.get(item_name)
         if not item_id:
             print(f' missing id for {item_name}')
@@ -1187,7 +1189,7 @@ def add_item_to_storage(data, item_handle, item_quantity):
     _, _, _, start_offset = save_struct(data)
     start_offset = start_offset + 4
 
-    end_storage_offset = start_offset + 0x5a00
+    end_storage_offset = start_offset + 0x5600
 
     last_offset = storage_empty[0][3]
 
@@ -1220,7 +1222,7 @@ def add_item_to_storage(data, item_handle, item_quantity):
     return data, False, True
 #weapons spawn
 
-def spawn_weapons(item_name, item_type):
+def spawn_weapons(item_name, item_type, item_id_override=None):
     global data
     global inventory_items, ga_items, ga_weapons, ga_empty, aow_handle
 
@@ -1230,8 +1232,12 @@ def spawn_weapons(item_name, item_type):
     FULL_GA_FLAG=False
     STORAGE_USED_FLAG=False
 
-    if item_type == 'weapons':
-        item_id = weapons_sorted_json.get(item_name)
+    if item_id_override:
+        item_id = item_id_override
+    elif item_type == 'weapons':
+        # weapons_sorted_json is missing some DLC affinity variants
+        # e.g. Dane's Blood/Cold/Fire Footwork. Fall back to weapons_json.
+        item_id = weapons_sorted_json.get(item_name) or weapons_json.get(item_name)
         if not item_id:
             print(f' missing id for weapon {item_name}')
             print('no id found')
@@ -1362,41 +1368,63 @@ def spawn_weapons(item_name, item_type):
         # delete 13 from end of file
         if item_type == 'weapons' or item_type == 'armors':
 
-            last_ga_empty= 0
-            for _,_, offset_empty in ga_empty:
+            last_ga_empty = 0
+            for _, _, offset_empty in ga_empty:
                 if last_ga_empty < offset_empty:
-                    last_ga_empty=offset_empty
+                    last_ga_empty = offset_empty
 
-            empty_value_at_offset= b'\x00\x00\x00\x00\xFF\xFF\xFF\xFF'
-            if empty_value_at_offset == data[last_ga_empty:last_ga_empty+8]:
-                lenght=len(data)
-                _,critical,wwws,_=save_struct(data)
-                if critical>lenght:
+            empty_value_at_offset = b'\x00\x00\x00\x00\xFF\xFF\xFF\xFF'
+
+            # IMPORTANT:
+            # Do NOT call save_struct() while the GA block is temporarily resized.
+            # The old code inserted 21/16 bytes, deleted only the 8-byte empty GA
+            # entry, then called save_struct() before trimming the extra tail bytes.
+            # During a bulk import that can make save_struct() read bogus section
+            # sizes and explode with huge offsets.
+            if empty_value_at_offset != data[last_ga_empty:last_ga_empty + 8]:
+                print(f"GA empty slot mismatch while spawning {item_name}; rolling back")
+                data = original_data
+                gaprint(data)
+                inventoryprint(data)
+                sort_list()
+                return original_data, False
+
+            # Insert the expanded GA entry at the selected empty slot.
+            # If the deleted empty slot is after the insertion point, its offset
+            # moves forward by len(weapons_slot). The old bulk-import build
+            # deleted at the stale pre-insert offset, which removed bytes from
+            # the middle of the GA table and corrupted later save_struct() reads.
+            inserted_len = len(weapons_slot)
+            delete_empty_offset = last_ga_empty
+            if first_spawn_offset <= last_ga_empty:
+                delete_empty_offset += inserted_len
+
+            data = data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset:]
+            data = data[:delete_empty_offset] + data[delete_empty_offset + 8:]
+
+            if item_type == 'weapons':
+                data = data[:-13]
+            elif item_type == 'armors':
+                data = data[:-8]
+
+            # Validate only after the file length is back to normal.
+            try:
+                _, critical, _, _ = save_struct(data)
+                if critical > len(data):
                     messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
+                    data = original_data
+                    gaprint(data)
+                    inventoryprint(data)
+                    sort_list()
                     return original_data, False
+            except Exception as exc:
+                print(f"spawn_weapons validation failed for {item_name}: {exc}; rolling back")
+                data = original_data
+                gaprint(data)
+                inventoryprint(data)
+                sort_list()
+                return original_data, False
 
-                data = data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset:]
-                data = data[:last_ga_empty] + data[last_ga_empty+8:]
-
-
-                if item_type=='weapons':
-
-                    lenght=len(data)
-                    _,critical,wwws,_=save_struct(data)
-                    if critical>lenght:
-                        messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
-                        return original_data, False
-                    data = data[:-13]
-                    
-                if item_type=='armors':
-                    lenght=len(data)
-                    _,critical,_,_=save_struct(data)
-                    
-                    if critical>lenght:
-                        messagebox.showinfo("Error", "No more data can be deleted without corrupting the save.")
-                        return original_data, False
-                    data= data[:-8]
-        
         if item_type== 'aow': # no deletion is needed
 
             data= data[:first_spawn_offset] + weapons_slot + data[first_spawn_offset+8:]
@@ -1409,7 +1437,8 @@ def spawn_weapons(item_name, item_type):
 
         return data, False
     
-    return original_data, False
+    print(f"No suitable GA empty slot while spawning {item_name}")
+    return original_data, True
 
 
 
@@ -1433,6 +1462,460 @@ def import_save():
 
     # Show character selection window
     display_char_name("imported")  
+
+
+
+### IMPORT MAXALL JSON LOADOUT
+MAX_IMPORT_QUANTITY = 0xFFFFFFFF
+
+
+def _safe_import_quantity(value, default=1):
+    try:
+        quantity = int(value)
+    except (TypeError, ValueError):
+        return default
+
+    if quantity < 1:
+        return 1
+    if quantity > MAX_IMPORT_QUANTITY:
+        return MAX_IMPORT_QUANTITY
+    return quantity
+
+
+def _hex_id_to_int(id_hex):
+    try:
+        item_id_bytes = bytes.fromhex(str(id_hex).strip())
+    except ValueError:
+        return None
+
+    if len(item_id_bytes) != 4:
+        return None
+
+    return int.from_bytes(item_id_bytes, "little")
+
+
+def _known_item_hex(category, name):
+    if category == "goods":
+        return goods_and_magic_json.get(name)
+    if category == "talismans":
+        return talisman_json.get(name)
+    if category == "weapons":
+        return weapons_sorted_json.get(name) or weapons_json.get(name)
+    if category == "armor":
+        return armor_json.get(name)
+    if category == "aow":
+        return aow_json.get(name)
+    return None
+
+
+def _refresh_item_state():
+    gaprint(data)
+    inventoryprint(data)
+    storage_par()
+    sort_list()
+
+
+def _simple_item_offsets(item_id_int):
+    """Goods/talismans use the item id directly as their inventory/storage handle."""
+    matches = []
+    for gaitem_handle, quantity, index, offset in inventory_items:
+        if gaitem_handle == item_id_int:
+            matches.append(("inventory", offset, quantity))
+
+    for gaitem_handle, quantity, index, offset in storage_inventory_items:
+        if gaitem_handle == item_id_int:
+            matches.append(("storage", offset, quantity))
+
+    return matches
+
+
+def _set_simple_item_quantity(item_id_int, quantity):
+    """Update existing goods/talisman quantity in inventory or storage.
+
+    spawn_goods() already updates existing goods in inventory, but not storage.
+    This avoids creating duplicates when the item is already in storage.
+    """
+    global data
+
+    matches = _simple_item_offsets(item_id_int)
+    if not matches:
+        return False
+
+    for _, offset, _ in matches:
+        data = (
+            data[:offset + 4]
+            + quantity.to_bytes(4, "little")
+            + data[offset + 8:]
+        )
+
+    _refresh_item_state()
+    return True
+
+
+def _ga_item_exists(item_id_int):
+    """Weapons/armor/aow are real GA entries; only count them if held or stored."""
+    valid_handles = {gaitem_handle for gaitem_handle, _, _, _ in inventory_items}
+    valid_handles.update(gaitem_handle for gaitem_handle, _, _, _ in storage_inventory_items)
+
+    for gaitem_handle, item_id, _ in ga_items:
+        if gaitem_handle in valid_handles and item_id == item_id_int:
+            return True
+
+    return False
+
+
+
+def maxall_preflight_check(loadout):
+    """Estimate whether the selected loadout can fit before mutating the save.
+
+    This uses the current parsed state and counts only items that do not already
+    exist. Goods/talismans need one inventory/storage entry. Weapons/armor/aow
+    need one inventory/storage entry plus one GA entry.
+    """
+    _refresh_item_state()
+
+    supported_categories = ("goods", "talismans", "weapons", "armor", "aow")
+
+    needed_inventory_storage = 0
+    needed_ga = 0
+    existing = 0
+    bad_entries = 0
+    wanted_by_category = {category: 0 for category in supported_categories}
+    needed_by_category = {category: 0 for category in supported_categories}
+
+    for category in supported_categories:
+        entries = loadout.get(category, [])
+        if not isinstance(entries, list):
+            bad_entries += 1
+            continue
+
+        for item in entries:
+            if not isinstance(item, dict):
+                bad_entries += 1
+                continue
+
+            name = str(item.get("name", "")).strip()
+            if not name or name.startswith("Unknown_"):
+                bad_entries += 1
+                continue
+
+            item_id_int = _hex_id_to_int(item.get("id_hex", ""))
+            if item_id_int is None:
+                bad_entries += 1
+                continue
+
+            wanted_by_category[category] += 1
+
+            if category in ("goods", "talismans"):
+                if _simple_item_offsets(item_id_int):
+                    existing += 1
+                    continue
+
+                needed_inventory_storage += 1
+                needed_by_category[category] += 1
+                continue
+
+            if category in ("weapons", "armor", "aow"):
+                if _ga_item_exists(item_id_int):
+                    existing += 1
+                    continue
+
+                needed_inventory_storage += 1
+                needed_ga += 1
+                needed_by_category[category] += 1
+                continue
+
+    # The add code treats < 2 empties as full, so reserve one slot.
+    usable_inventory = max(0, len(empty) - 1)
+    usable_storage = max(0, len(storage_empty) - 1)
+    usable_ga = max(0, len(ga_empty) - 1)
+
+    fits_inventory_storage = (usable_inventory + usable_storage) >= needed_inventory_storage
+    fits_ga = usable_ga >= needed_ga
+
+    report = {
+        "wanted_by_category": wanted_by_category,
+        "needed_by_category": needed_by_category,
+        "existing": existing,
+        "bad_entries": bad_entries,
+        "needed_inventory_storage": needed_inventory_storage,
+        "needed_ga": needed_ga,
+        "usable_inventory": usable_inventory,
+        "usable_storage": usable_storage,
+        "usable_ga": usable_ga,
+        "fits_inventory_storage": fits_inventory_storage,
+        "fits_ga": fits_ga,
+        "fits": fits_inventory_storage and fits_ga,
+    }
+
+    print("\n=== MAXALL PREFLIGHT ===")
+    print("Wanted by category:", wanted_by_category)
+    print("Need to add by category:", needed_by_category)
+    print(f"Already existing/skipped as owned: {existing}")
+    print(f"Bad/ignored entries:             {bad_entries}")
+    print(f"Need inventory/storage entries: {needed_inventory_storage}")
+    print(f"Need GA entries:                {needed_ga}")
+    print(f"Usable inventory slots:         {usable_inventory}")
+    print(f"Usable storage slots:           {usable_storage}")
+    print(f"Usable GA slots:                {usable_ga}")
+    if not fits_inventory_storage:
+        print("WARNING: Not enough inventory + storage slots.")
+    if not fits_ga:
+        print("WARNING: Not enough GA slots for weapons/armor/aow.")
+
+    return report
+
+
+def _format_maxall_preflight(report):
+    needed = report["needed_inventory_storage"]
+    free_items = report["usable_inventory"] + report["usable_storage"]
+    needed_ga = report["needed_ga"]
+    free_ga = report["usable_ga"]
+
+    lines = [
+        "Maxall preflight:",
+        "",
+        f"Need inventory/storage entries: {needed}",
+        f"Free inventory + storage slots: {free_items}",
+        f"Need GA entries: {needed_ga}",
+        f"Free GA slots: {free_ga}",
+        "",
+        "Need to add by category:",
+    ]
+
+    for category, count in report["needed_by_category"].items():
+        lines.append(f"  {category}: {count}")
+
+    if report["existing"]:
+        lines.append("")
+        lines.append(f"Already owned / existing: {report['existing']}")
+
+    if report["bad_entries"]:
+        lines.append(f"Bad/ignored JSON entries: {report['bad_entries']}")
+
+    if not report["fits"]:
+        lines.append("")
+        lines.append("WARNING: This probably will not fully fit.")
+
+    return "\n".join(lines)
+
+def _import_one_maxall_item(category, item):
+    """Import one item from maxall JSON using the entry's own id_hex.
+
+    This intentionally does not sort or re-resolve through the old resource JSONs.
+    The spawn order and item IDs come from maxall.json.
+    """
+    global data
+
+    name = str(item.get("name", "")).strip()
+    if not name:
+        return "skipped", "empty name"
+
+    # Keep this guard even when using maxall.json.
+    if name.startswith("Unknown_"):
+        return "skipped", "unknown item"
+
+    item_id_hex = str(item.get("id_hex", "")).strip()
+    item_id_int = _hex_id_to_int(item_id_hex)
+    if item_id_int is None:
+        return "skipped", "bad/missing id_hex in maxall JSON"
+
+    if category == "goods":
+        quantity = _safe_import_quantity(item.get("quantity", 1))
+
+        if _set_simple_item_quantity(item_id_int, quantity):
+            return "updated", ""
+
+        result_data, full = spawn_goods(
+            name,
+            quantity,
+            "goods",
+            item_id_override=item_id_hex,
+        )
+        if result_data is None:
+            return "skipped", "spawn_goods could not add item"
+        if full:
+            return "full", "no inventory/storage slots left"
+        _refresh_item_state()
+        if not _simple_item_offsets(item_id_int):
+            return "skipped", "spawn_goods returned but item was not found afterward"
+        return "added", ""
+
+    if category == "talismans":
+        if _simple_item_offsets(item_id_int):
+            return "existing", ""
+
+        result_data, full = spawn_goods(
+            name,
+            1,
+            "talisman",
+            item_id_override=item_id_hex,
+        )
+        if result_data is None:
+            return "skipped", "spawn_goods could not add talisman"
+        if full:
+            return "full", "no inventory/storage slots left"
+        _refresh_item_state()
+        if not _simple_item_offsets(item_id_int):
+            return "skipped", "spawn_goods returned but talisman was not found afterward"
+        return "added", ""
+
+    spawn_type = {
+        "weapons": "weapons",
+        "armor": "armors",
+        "aow": "aow",
+    }.get(category)
+
+    if spawn_type is None:
+        return "skipped", "unknown category"
+
+    if _ga_item_exists(item_id_int):
+        return "existing", ""
+
+    result_data, full = spawn_weapons(
+        name,
+        spawn_type,
+        item_id_override=item_id_hex,
+    )
+    if result_data is None:
+        return "skipped", "spawn_weapons could not add item"
+    if full:
+        return "full", "no GA/inventory/storage slots left"
+
+    _refresh_item_state()
+    if not _ga_item_exists(item_id_int):
+        return "skipped", "spawn_weapons returned but item was not found afterward"
+
+    return "added", ""
+
+def import_maxall(json_path=None):
+    """Import Resources/Json/maxall.json into the selected character.
+
+    Uses existing safe add paths:
+      - goods/talismans -> spawn_goods()
+      - weapons/armor/aow -> spawn_weapons()
+
+    The function imports categories and entries in the exact order they appear
+    in the selected JSON file. It passes each entry's id_hex directly into the
+    spawn function, skips Unknown_* entries, avoids duplicate GA items, and
+    updates existing goods quantities instead of adding another stack.
+    """
+    global data
+
+    answer = messagebox.askyesno(
+        "Spawn All items",
+        "This will attempt to spawn all items from maxall.json into the current save.This could lead to your save getting corrupted. Don't use if you already have a lot of items\n\nContinue?"
+    )
+    if not answer:
+        return
+
+    if data is None:
+        messagebox.showerror("Error", "Load a character/userdata first.")
+        return
+
+    loadout = maxall_json
+
+    # Parse current save once before importing, then check capacity before mutating.
+    _refresh_item_state()
+    preflight = maxall_preflight_check(loadout)
+    preflight_text = _format_maxall_preflight(preflight)
+    print(preflight_text)
+
+    if not preflight["fits"]:
+        proceed = messagebox.askyesno(
+            "Maxall Preflight Warning",
+            preflight_text + "\n\nContinue anyway?"
+        )
+        if not proceed:
+            return
+
+    # Preserve the exact top-level category order from the JSON file.
+    # maxall.json is currently goods -> talismans -> weapons -> armor -> aow.
+    supported_categories = {"goods", "talismans", "weapons", "armor", "aow"}
+    category_order = [category for category in loadout.keys() if category in supported_categories]
+    stats = {
+        "added": 0,
+        "updated": 0,
+        "existing": 0,
+        "skipped": 0,
+        "full": 0,
+        "errors": 0,
+    }
+    problems = []
+
+    for category in category_order:
+        entries = loadout.get(category, [])
+        if not isinstance(entries, list):
+            stats["skipped"] += 1
+            problems.append(f"{category}: section is not a list")
+            continue
+
+        for item in entries:
+            if not isinstance(item, dict):
+                stats["skipped"] += 1
+                problems.append(f"{category}: skipped non-object entry")
+                continue
+
+            name = item.get("name", "<unnamed>")
+
+            try:
+                result, reason = _import_one_maxall_item(category, item)
+            except Exception as exc:
+                stats["errors"] += 1
+                problems.append(f"{category}: {name}: ERROR {exc}")
+                # Re-parse after an exception so later items use fresh offsets.
+                try:
+                    _refresh_item_state()
+                except Exception:
+                    pass
+                continue
+
+            stats[result] = stats.get(result, 0) + 1
+            if reason:
+                problems.append(f"{category}: {name}: {reason}")
+
+            # Stop hard on capacity errors. Continuing after that just spams errors.
+            if result == "full":
+                break
+
+        # Re-parse after each category. spawn_* already does this too, but this
+        # keeps the importer sane if an item was skipped/updated directly.
+        _refresh_item_state()
+        window.update_idletasks()
+
+        if stats["full"]:
+            break
+
+    save_file()
+
+    # Refresh visible views after import.
+    try:
+        display_inventory(inventory_type_var.get())
+        display_storage(storage_type_var.get())
+    except Exception:
+        pass
+
+    summary = (
+        "Maxall import finished.\n\n"
+        f"Added: {stats['added']}\n"
+        f"Updated quantities: {stats['updated']}\n"
+        f"Already existed: {stats['existing']}\n"
+        f"Skipped: {stats['skipped']}\n"
+        f"Errors: {stats['errors']}\n"
+        f"Capacity stops: {stats['full']}"
+    )
+
+    if problems:
+        print("\n--- Maxall import problems/skips ---")
+        for problem in problems:
+            print(problem)
+
+        shown = "\n".join(problems[:20])
+        if len(problems) > 20:
+            shown += f"\n... and {len(problems) - 20} more. Check terminal output."
+        summary += "\n\nProblems/skips:\n" + shown
+
+    messagebox.showinfo("Maxall Import", summary)
 
 
 
@@ -1872,9 +2355,12 @@ type_menu = ttk.OptionMenu(filter_frame, inventory_type_var, type_options[0], *t
 type_menu.pack(side="left", padx=5)
 
 # --- Treeview setup ---
-columns = ("Type", "Name", "Quantity", "Level", "Ash of War")
+# Added "#" column for visual acquisition order
+columns = ("#", "Type", "Name", "Quantity", "Level", "Ash of War")
 inventory_tree = ttk.Treeview(inventory_tab, columns=columns, show="headings", height=20)
-for col in columns:
+inventory_tree.heading("#", text="#")
+inventory_tree.column("#", width=40, anchor="center")
+for col in columns[1:]:
     inventory_tree.heading(col, text=col)
     inventory_tree.column(col, width=150, anchor="center")
 
@@ -1899,9 +2385,11 @@ type_menus = ttk.OptionMenu(filter_storage_frame, storage_type_var, type_options
 type_menus.pack(side="left", padx=5)
 
 # --- Treeview setup ---
-columnss = ("Type", "Name", "Quantity")
+columnss = ("#", "Type", "Name", "Quantity")
 storage_tree = ttk.Treeview(storage_tab, columns=columnss, show="headings", height=20)
-for col in columnss:
+storage_tree.heading("#", text="#")
+storage_tree.column("#", width=40, anchor="center")
+for col in columnss[1:]:
     storage_tree.heading(col, text=col)
     storage_tree.column(col, width=150, anchor="center")
 
@@ -1920,117 +2408,89 @@ def display_storage(item_type=None):
     # Clear previous rows
     storage_tree.delete(*storage_tree.get_children())
 
-    # ✅ Build valid gaitem handles from storage inventory
+    # Build valid gaitem handles from storage inventory
     valid_handles = {g for g, _, _, _ in storage_inventory_items}
 
-    # =========================
-    # GOODS
-    # =========================
+    # Collect all rows for this type, sorted by backend index
+    rows_to_show = []  # list of (display_values_tuple, backend_index, inv_offset)
+
     if item_type == "Goods":
         source_json = goods_and_magic_json
-
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-
-            for item_id, quantity, _, _ in storage_inventory_items:
+            for item_id, quantity, idx, off in storage_inventory_items:
                 if id_int == item_id:
-                    storage_tree.insert(
-                        "", "end",
-                        values=(item_type, name, quantity)
-                    )
+                    rows_to_show.append(((item_type, name, quantity), idx, off))
 
-    # =========================
-    # TALISMANS
-    # =========================
     elif item_type == "Talismans":
         source_json = talisman_json
-
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-
-            for item_id, quantity, _, _ in storage_inventory_items:
+            for item_id, quantity, idx, off in storage_inventory_items:
                 if id_int == item_id:
-                    storage_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1)
-                    )
+                    rows_to_show.append(((item_type, name, 1), idx, off))
 
-    # =========================
-    # WEAPONS (FIXED)
-    # =========================
     elif item_type == "Weapons":
         source_json = weapons_json
-
         for name, id_hex in source_json.items():
             base_id = int.from_bytes(bytes.fromhex(id_hex), "little")
-
             for gaitem_handle, item_id, offset in ga_items:
-
-                # ✅ ONLY if exists in storage
                 if gaitem_handle not in valid_handles:
                     continue
-
                 if (item_id & 0xFFFFFF00) == (base_id & 0xFFFFFF00):
                     if name == "Unarmed":
                         continue
-
                     level = item_id - base_id
-
                     aow_id = int.from_bytes(data[offset+16:offset+20], "little")
                     aow_name = next(
                         (n for n, h in aow_json.items()
                          if int.from_bytes(bytes.fromhex(h), "little") == aow_id),
                         "None"
                     )
-
-                    storage_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1, level, aow_name),
-                        tags=(str(offset), str(item_id))
-                    )
-
+                    # find inv offset/index for this ga handle
+                    for s_gh, qty, idx, s_off in storage_inventory_items:
+                        if s_gh == gaitem_handle:
+                            rows_to_show.append(((item_type, name, 1), idx, s_off))
+                            break
 
     elif item_type == "Armors":
         source_json = armor_json
-
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-
             for gaitem_handle, item_id, offset in ga_items:
-
                 if gaitem_handle not in valid_handles:
                     continue
-
                 if id_int == item_id:
-                    storage_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1, "-", "-")
-                    )
-
+                    for s_gh, qty, idx, s_off in storage_inventory_items:
+                        if s_gh == gaitem_handle:
+                            rows_to_show.append(((item_type, name, 1), idx, s_off))
+                            break
 
     elif item_type == "Ash of War":
         source_json = aow_json
-
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-
             for gaitem_handle, item_id, offset in ga_items:
-
                 if gaitem_handle not in valid_handles:
                     continue
-
                 if id_int == item_id:
-                    storage_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1, "-", "-")
-                    )
+                    for s_gh, qty, idx, s_off in storage_inventory_items:
+                        if s_gh == gaitem_handle:
+                            rows_to_show.append(((item_type, name, 1), idx, s_off))
+                            break
+
+    # Sort by backend index, assign visual position starting at 1
+    rows_to_show.sort(key=lambda x: x[1])
+    for visual_pos, (vals, backend_idx, inv_off) in enumerate(rows_to_show, start=1):
+        storage_tree.insert(
+            "", "end",
+            values=(visual_pos,) + vals,
+            tags=(str(backend_idx), str(inv_off))
+        )
 
     return data
 
 
-###
-
-# --- Display inventory with weapon Level & AOW ---
 def display_inventory(item_type=None):
     global data
 
@@ -2040,96 +2500,80 @@ def display_inventory(item_type=None):
         item_type = inventory_type_var.get()
     inventory_tree.delete(*inventory_tree.get_children())
 
+    rows_to_show = []  # list of (display_values_tuple, backend_index, inv_offset)
+
     if item_type == "Goods":
         source_json = goods_and_magic_json
-        source_items = inventory_items
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-            for item_id, quantity, _, _ in source_items:
+            for item_id, quantity, idx, off in inventory_items:
                 if id_int == item_id:
-                    inventory_tree.insert("", "end", values=(item_type, name, quantity, "-", "-"))
+                    rows_to_show.append(((item_type, name, quantity, "-", "-"), idx, off))
 
     elif item_type == "Weapons":
         source_json = weapons_json
-        source_items = ga_items
-
         for name, id_hex in source_json.items():
             base_id = int.from_bytes(bytes.fromhex(id_hex), "little")
-
-            for gaitem_handle, item_id, offset in source_items:
-
-                #Only show if actually in inventory
+            for gaitem_handle, item_id, offset in ga_items:
                 if gaitem_handle not in valid_handles:
                     continue
-
                 if (item_id & 0xFFFFFF00) == (base_id & 0xFFFFFF00):
                     if name == "Unarmed":
                         continue
-
                     level = item_id - base_id
                     aow_id = int.from_bytes(data[offset+16:offset+20], "little")
-
                     aow_name = next(
                         (n for n, h in aow_json.items()
                         if int.from_bytes(bytes.fromhex(h), "little") == aow_id),
                         "None"
                     )
-
-                    inventory_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1, level, aow_name),
-                        tags=(str(offset), str(item_id))
-                    )
+                    for inv_gh, qty, idx, inv_off in inventory_items:
+                        if inv_gh == gaitem_handle:
+                            rows_to_show.append(((item_type, name, 1, level, aow_name), idx, inv_off))
+                            break
 
     elif item_type == "Armors":
         source_json = armor_json
-        source_items = ga_items
-
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-
-            for gaitem_handle, item_id, offset in source_items:
-
+            for gaitem_handle, item_id, offset in ga_items:
                 if gaitem_handle not in valid_handles:
                     continue
-
                 if id_int == item_id:
-                    inventory_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1, "-", "-")
-                    )
+                    for inv_gh, qty, idx, inv_off in inventory_items:
+                        if inv_gh == gaitem_handle:
+                            rows_to_show.append(((item_type, name, 1, "-", "-"), idx, inv_off))
+                            break
 
     elif item_type == "Ash of War":
         source_json = aow_json
-        source_items = ga_items
-        counter=0
-
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-
-            for gaitem_handle, item_id, offset in source_items:
-
+            for gaitem_handle, item_id, offset in ga_items:
                 if gaitem_handle not in valid_handles:
-                    counter+=1
-                    
                     continue
-
                 if id_int == item_id:
-                    inventory_tree.insert(
-                        "", "end",
-                        values=(item_type, name, 1, "-", "-")
-                    )
-    
+                    for inv_gh, qty, idx, inv_off in inventory_items:
+                        if inv_gh == gaitem_handle:
+                            rows_to_show.append(((item_type, name, 1, "-", "-"), idx, inv_off))
+                            break
+
     elif item_type == "Talismans":
         source_json = talisman_json
-        source_items = inventory_items
         for name, id_hex in source_json.items():
             id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
-            for item_id, quantity, _, _ in source_items:
+            for item_id, quantity, idx, off in inventory_items:
                 if id_int == item_id:
-                    inventory_tree.insert("", "end", values=(item_type, name, 1, "-", "-"))
+                    rows_to_show.append(((item_type, name, 1, "-", "-"), idx, off))
 
-    
+    # Sort by backend index, assign visual position starting at 1
+    rows_to_show.sort(key=lambda x: x[1])
+    for visual_pos, (vals, backend_idx, inv_off) in enumerate(rows_to_show, start=1):
+        inventory_tree.insert(
+            "", "end",
+            values=(visual_pos,) + vals,
+            tags=(str(backend_idx), str(inv_off))
+        )
 
     return data
 
@@ -2143,15 +2587,32 @@ def update_weapon():
         return
 
     item = inventory_tree.item(selected[0])
-    item_type, name, _, _, _ = item["values"]
+    # values now: ("#", "Type", "Name", "Quantity", "Level", "Ash of War")
+    _, item_type, name, _, _, _ = item["values"]
     if item_type != "Weapons":
         print("Selected item is not a weapon")
         return
 
-    # Get offset from tag
-    offset = int(item["tags"][0])
+    # Get ga offset from tags[1] (inv_offset) — but for weapon update we need ga offset
+    # We still need to look up ga offset via the gaitem handle
+    tags = item["tags"]
+    inv_off = int(tags[1])
 
     global data
+
+    # Find the gaitem_handle at this inventory offset
+    inv_gh = struct.unpack_from("<I", data, inv_off)[0]
+
+    # Find the ga entry for this handle to get the ga offset
+    ga_offset = None
+    for gh, item_id, off in ga_items:
+        if gh == inv_gh:
+            ga_offset = off
+            break
+
+    if ga_offset is None:
+        print("Could not find GA entry for selected weapon")
+        return
 
     # --- Update level ---
     try:
@@ -2167,7 +2628,6 @@ def update_weapon():
     if new_aow_name == "None":
         new_aow_id = 0
     else:
-        # spawn handle safely
         _, no_more_slots = spawn_weapons(new_aow_name, "aow")
         if no_more_slots:
             messagebox.showinfo("Info", f"No more slots available for {new_aow_name} Cannot apply Ash of War.")
@@ -2179,32 +2639,125 @@ def update_weapon():
 
     if new_level is not None:
         new_item_id = base_id + new_level
-        data = data[:offset+4] + new_item_id.to_bytes(4, "little") + data[offset+8:]
+        data = data[:ga_offset+4] + new_item_id.to_bytes(4, "little") + data[ga_offset+8:]
 
     if new_aow_id:
-        aow_offset = offset + 16
+        aow_offset = ga_offset + 16
         data = data[:aow_offset] + new_aow_id.to_bytes(4, "little") + data[aow_offset+4:]
     elif new_aow_name == "None":
-        # clear AOW slot
-        aow_offset = offset + 16
+        aow_offset = ga_offset + 16
         data = data[:aow_offset] + (0).to_bytes(4, "little") + data[aow_offset+4:]
-
-
 
     gaprint(data)         
     inventoryprint(data)   
     sort_list()        
 
-    # Update Treeview row directly
-    inventory_tree.item(
-        selected[0],
-        values=(item_type, name, 1, new_level if new_level is not None else "-", new_aow_name)
-    )
+    # Refresh display
+    display_inventory(item_type)
 
 
+# --- Initial load ---
+display_inventory("Ash of War")
+#storage
+display_storage("Talismans")
+# --- Functions ---
+def update_selected_quantity():
+    global data
+    selected = inventory_tree.selection()
+    if not selected:
+        print("No item selected")
+        return
+    item = inventory_tree.item(selected[0])
+    # values: ("#", "Type", "Name", "Quantity", ...)
+    _, item_type, item_name, quantity = item["values"][:4]
+    
+    if item_type != "Goods":
+        print("Quantity can only be updated for Goods")
+        return
 
+    try:
+        new_quantity = int(quantity_entry.get())
+    except ValueError:
+        print("Invalid quantity")
+        return
 
+    for gaitem_handle, quantity_val, index, offset in inventory_items:
+        item_id = goods_and_magic_json[item_name]
+        item_id_bytes = bytes.fromhex(item_id)
+        item_id_int = int.from_bytes(item_id_bytes, "little")
+        if gaitem_handle == item_id_int:
+            quantity_offset = offset + 4
+            data = data[:quantity_offset] + new_quantity.to_bytes(4, "little") + data[quantity_offset+4:]
+            inventoryprint(data)
+            display_inventory()
+            return data
 
+def delete_selected_item():
+    selected = inventory_tree.selection()
+    if not selected:
+        print("No item selected")
+        return
+    item = inventory_tree.item(selected[0])
+    # values: ("#", "Type", "Name", ...)
+    _, item_type, item_name = item["values"][:3]
+    
+    if item_type != "Goods":
+        messagebox.showinfo("Info", "Only Goods can be deleted")
+        return
+    
+    delete_goods(item_name)
+    inventoryprint(data)
+    display_inventory()
+
+##
+def update_selected_quantity_storage():
+    global data
+    selected = storage_tree.selection()
+    if not selected:
+        print("No item selected")
+        return
+    item = storage_tree.item(selected[0])
+    _, item_type, item_name, quantity = item["values"][:4]
+    
+    if item_type != "Goods":
+        messagebox.showinfo("Info", "Quantity can only be updated for Goods")
+        return
+
+    try:
+        new_quantity = int(storage_quantity_entry.get())  
+    except ValueError:
+        messagebox.showerror("Error", "Invalid quantity")
+        return
+
+    for gaitem_handle, quantity_val, index, offset in storage_inventory_items:
+        item_id = goods_and_magic_json[item_name]
+        item_id_bytes = bytes.fromhex(item_id)
+        item_id_int = int.from_bytes(item_id_bytes, "little")
+        if gaitem_handle == item_id_int:
+            quantity_offset = offset + 4
+            data = data[:quantity_offset] + new_quantity.to_bytes(4, "little") + data[quantity_offset+4:]
+            storage_par()
+            display_storage(storage_type_var.get())  
+            return data
+
+def delete_selected_item_storage():
+    selected = storage_tree.selection()
+    if not selected:
+        print("No item selected")
+        return
+    item = storage_tree.item(selected[0])
+    _, item_type, item_name = item["values"][:3]
+    
+    if item_type != "Goods":
+        messagebox.showinfo("Info", "Only Goods can be deleted")
+        return
+    
+    delete_goods_storage(item_name)
+    storage_par()
+    display_storage(storage_type_var.get())
+    
+    
+    
 
 
 
@@ -2329,6 +2882,20 @@ storage_quantity_entry.pack(side="left", padx=5)
 ttk.Button(storage_frame, text="Update Quantity", command=update_selected_quantity_storage).pack(side="left", padx=5)
 ttk.Button(storage_frame, text="Delete Item", command=delete_selected_item_storage).pack(side="left", padx=5)
 #
+
+# --- Reorder buttons for inventory ---
+reorder_frame = tk.Frame(inventory_tab)
+ttk.Button(reorder_frame, text="▲ Move Up",   command=lambda: reorder_inventory_item(-1)).pack(side="left", padx=5)
+ttk.Button(reorder_frame, text="▼ Move Down", command=lambda: reorder_inventory_item(1)).pack(side="left", padx=5)
+tk.Label(reorder_frame, text="(re-sorts acquisition order within category)", fg="gray").pack(side="left", padx=8)
+
+# --- Reorder buttons for storage ---
+storage_reorder_frame = tk.Frame(storage_tab)
+ttk.Button(storage_reorder_frame, text="▲ Move Up",   command=lambda: reorder_storage_item(-1)).pack(side="left", padx=5)
+ttk.Button(storage_reorder_frame, text="▼ Move Down", command=lambda: reorder_storage_item(1)).pack(side="left", padx=5)
+tk.Label(storage_reorder_frame, text="(re-sorts acquisition order within category)", fg="gray").pack(side="left", padx=8)
+
+
 weapon_frame = tk.Frame(inventory_tab)
 tk.Label(weapon_frame, text="Weapon Level:").pack(side="left", padx=5)
 weapon_level_var = tk.IntVar()
@@ -2359,6 +2926,10 @@ tk.Button(weapon_frame, text="Update Weapon", command=update_weapon).pack(side="
 def update_control_frames(item_type):
     goods_frame.pack_forget()
     weapon_frame.pack_forget()
+    reorder_frame.pack_forget()
+
+    # Reorder always visible
+    reorder_frame.pack(side="bottom", fill="x", padx=10, pady=3)
 
     if item_type == "Goods":
         goods_frame.pack(side="bottom", fill="x", padx=10, pady=5)
@@ -2377,6 +2948,7 @@ inventory_type_var.trace_add("write", on_type_change)
 # --- Function to show correct controls ---
 def update_control_frames_storage(item_type):
     storage_frame.pack()
+    storage_reorder_frame.pack(side="bottom", fill="x", padx=10, pady=3)
 
     if item_type == "Goods":
         goods_frame.pack(side="bottom", fill="x", padx=10, pady=5)
@@ -2388,6 +2960,12 @@ def on_type_change_storage(*args):
     update_control_frames_storage(item_type)
 
 storage_type_var.trace_add("write", on_type_change_storage)
+
+
+# Pack reorder frame initially
+reorder_frame.pack(side="bottom", fill="x", padx=10, pady=3)
+storage_reorder_frame.pack(side="bottom", fill="x", padx=10, pady=3)
+
 
 #Tabs
 notebook.add(name_tab, text="Character")
@@ -2958,6 +3536,12 @@ spawn_items_tab = ttk.Frame(notebook)
 notebook.add(spawn_items_tab, text="Spawn Items")
 
 # --- Internal notebook for Goods, Talismans, Weapons, Armors, AoW ---
+tk.Button(
+    spawn_items_tab,
+    text="Bulk add every item at max quantity",
+    command=import_maxall
+).pack(anchor="w", padx=5, pady=5)
+
 items_notebook = ttk.Notebook(spawn_items_tab)
 items_notebook.pack(fill="both", expand=True)
 
@@ -3092,6 +3676,267 @@ goods_tree.bind("<Button-1>", on_tree_click)
 goods_tree.tag_configure("checked", background="lightblue")
 
 # --- Category-level "Select All" for current category ---
+
+
+# ─── REORDER HELPERS ────────────────────────────────────────────────────────
+
+def _get_category_items_for_type(item_type):
+    """
+    Return a list of (gaitem_handle, quantity, backend_index, offset) tuples
+    that belong to the currently visible category, sorted by backend index.
+    These are the same rows that display_inventory() would show for item_type.
+    """
+    valid_handles = {gh for gh, _, _, _ in inventory_items}
+
+    rows = []
+
+    if item_type == "Goods":
+        for name, id_hex in goods_and_magic_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, qty, idx, off in inventory_items:
+                if id_int == gh:
+                    rows.append((gh, qty, idx, off))
+
+    elif item_type == "Talismans":
+        for name, id_hex in talisman_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, qty, idx, off in inventory_items:
+                if id_int == gh:
+                    rows.append((gh, qty, idx, off))
+
+    elif item_type == "Weapons":
+        for name, id_hex in weapons_json.items():
+            if name == "Unarmed":
+                continue
+            base_id = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, item_id, off in ga_items:
+                if gh not in valid_handles:
+                    continue
+                if (item_id & 0xFFFFFF00) == (base_id & 0xFFFFFF00):
+                    # find the matching inventory entry for this ga handle
+                    for inv_gh, qty, idx, inv_off in inventory_items:
+                        if inv_gh == gh:
+                            rows.append((gh, qty, idx, inv_off))
+                            break
+
+    elif item_type == "Armors":
+        for name, id_hex in armor_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, item_id, off in ga_items:
+                if gh not in valid_handles:
+                    continue
+                if id_int == item_id:
+                    for inv_gh, qty, idx, inv_off in inventory_items:
+                        if inv_gh == gh:
+                            rows.append((gh, qty, idx, inv_off))
+                            break
+
+    elif item_type == "Ash of War":
+        for name, id_hex in aow_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, item_id, off in ga_items:
+                if gh not in valid_handles:
+                    continue
+                if id_int == item_id:
+                    for inv_gh, qty, idx, inv_off in inventory_items:
+                        if inv_gh == gh:
+                            rows.append((gh, qty, idx, inv_off))
+                            break
+
+    # Sort by current backend index so position numbers are consistent
+    rows.sort(key=lambda x: x[2])
+    return rows
+
+
+def swap_inventory_indices(offset_a, offset_b):
+    """Swap the 4-byte index field (bytes 8-12) between two inventory slots."""
+    global data
+    idx_a = struct.unpack_from("<I", data, offset_a + 8)[0]
+    idx_b = struct.unpack_from("<I", data, offset_b + 8)[0]
+    data = (data[:offset_a + 8]
+            + struct.pack("<I", idx_b)
+            + data[offset_a + 12:offset_b + 8]
+            + struct.pack("<I", idx_a)
+            + data[offset_b + 12:])
+
+
+def reorder_inventory_item(direction):
+    """
+    Move the selected inventory row up (-1) or down (+1) within its category.
+    Swaps the backend index values of the two adjacent items.
+    """
+    global data
+    selected = inventory_tree.selection()
+    if not selected:
+        return
+
+    item_type = inventory_type_var.get()
+    category_rows = _get_category_items_for_type(item_type)
+    if len(category_rows) < 2:
+        return
+
+    # The selected row stores backend index and inventory-offset in its tags:
+    #   tags[0] = backend_index   tags[1] = inventory_offset
+    tags = inventory_tree.item(selected[0], "tags")
+    if not tags or len(tags) < 2:
+        return
+
+    try:
+        sel_backend_index = int(tags[0])
+        sel_inv_offset    = int(tags[1])
+    except ValueError:
+        return
+
+    # Find position of selected item in the sorted category list
+    pos = next((i for i, r in enumerate(category_rows) if r[2] == sel_backend_index), None)
+    if pos is None:
+        return
+
+    target_pos = pos + direction
+    if target_pos < 0 or target_pos >= len(category_rows):
+        return  # already at boundary
+
+    target_row = category_rows[target_pos]
+    target_inv_offset = target_row[3]
+
+    # Swap index bytes in save data
+    swap_inventory_indices(sel_inv_offset, target_inv_offset)
+
+    # Refresh internal lists and redisplay
+    inventoryprint(data)
+    sort_list()
+    display_inventory(item_type)
+
+    # Re-select the item that moved (it now has the old target's backend index)
+    # Find it by the inventory offset (unchanged)
+    for row_id in inventory_tree.get_children():
+        t = inventory_tree.item(row_id, "tags")
+        if t and len(t) >= 2 and int(t[1]) == sel_inv_offset:
+            inventory_tree.selection_set(row_id)
+            inventory_tree.see(row_id)
+            break
+
+
+def _get_storage_category_items_for_type(item_type):
+    """Same as _get_category_items_for_type but for storage box."""
+    valid_handles = {gh for gh, _, _, _ in storage_inventory_items}
+    rows = []
+
+    if item_type == "Goods":
+        for name, id_hex in goods_and_magic_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, qty, idx, off in storage_inventory_items:
+                if id_int == gh:
+                    rows.append((gh, qty, idx, off))
+
+    elif item_type == "Talismans":
+        for name, id_hex in talisman_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, qty, idx, off in storage_inventory_items:
+                if id_int == gh:
+                    rows.append((gh, qty, idx, off))
+
+    elif item_type == "Weapons":
+        for name, id_hex in weapons_json.items():
+            if name == "Unarmed":
+                continue
+            base_id = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, item_id, off in ga_items:
+                if gh not in valid_handles:
+                    continue
+                if (item_id & 0xFFFFFF00) == (base_id & 0xFFFFFF00):
+                    for s_gh, qty, idx, s_off in storage_inventory_items:
+                        if s_gh == gh:
+                            rows.append((gh, qty, idx, s_off))
+                            break
+
+    elif item_type == "Armors":
+        for name, id_hex in armor_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, item_id, off in ga_items:
+                if gh not in valid_handles:
+                    continue
+                if id_int == item_id:
+                    for s_gh, qty, idx, s_off in storage_inventory_items:
+                        if s_gh == gh:
+                            rows.append((gh, qty, idx, s_off))
+                            break
+
+    elif item_type == "Ash of War":
+        for name, id_hex in aow_json.items():
+            id_int = int.from_bytes(bytes.fromhex(id_hex), "little")
+            for gh, item_id, off in ga_items:
+                if gh not in valid_handles:
+                    continue
+                if id_int == item_id:
+                    for s_gh, qty, idx, s_off in storage_inventory_items:
+                        if s_gh == gh:
+                            rows.append((gh, qty, idx, s_off))
+                            break
+
+    rows.sort(key=lambda x: x[2])
+    return rows
+
+
+def swap_storage_indices(offset_a, offset_b):
+    """Swap the 4-byte index field between two storage slots."""
+    global data
+    idx_a = struct.unpack_from("<I", data, offset_a + 8)[0]
+    idx_b = struct.unpack_from("<I", data, offset_b + 8)[0]
+    data = (data[:offset_a + 8]
+            + struct.pack("<I", idx_b)
+            + data[offset_a + 12:offset_b + 8]
+            + struct.pack("<I", idx_a)
+            + data[offset_b + 12:])
+
+
+def reorder_storage_item(direction):
+    """Move selected storage row up or down within its category."""
+    global data
+    selected = storage_tree.selection()
+    if not selected:
+        return
+
+    item_type = storage_type_var.get()
+    category_rows = _get_storage_category_items_for_type(item_type)
+    if len(category_rows) < 2:
+        return
+
+    tags = storage_tree.item(selected[0], "tags")
+    if not tags or len(tags) < 2:
+        return
+
+    try:
+        sel_backend_index = int(tags[0])
+        sel_inv_offset    = int(tags[1])
+    except ValueError:
+        return
+
+    pos = next((i for i, r in enumerate(category_rows) if r[2] == sel_backend_index), None)
+    if pos is None:
+        return
+
+    target_pos = pos + direction
+    if target_pos < 0 or target_pos >= len(category_rows):
+        return
+
+    target_row = category_rows[target_pos]
+    target_inv_offset = target_row[3]
+
+    swap_storage_indices(sel_inv_offset, target_inv_offset)
+
+    storage_par()
+    display_storage(item_type)
+
+    for row_id in storage_tree.get_children():
+        t = storage_tree.item(row_id, "tags")
+        if t and len(t) >= 2 and int(t[1]) == sel_inv_offset:
+            storage_tree.selection_set(row_id)
+            storage_tree.see(row_id)
+            break
+
+
+# ─── END REORDER HELPERS ────────────────────────────────────────────────────
 
 
 def toggle_current_category():
