@@ -1,13 +1,23 @@
 # -*- mode: python ; coding: utf-8 -*-
-import os
-from glob import glob
+# Build for Apple Silicon (arm64) macOS as a proper .app bundle (onedir).
+# Run from repo root:
+#   source .venv/bin/activate
+#   pyinstaller src/build_mac.spec
+from pathlib import Path
+
+# Resolve project paths relative to this spec file (src/) and the repo root.
+SPEC_DIR = Path(SPECPATH).resolve()
+SRC_DIR = SPEC_DIR
+ROOT_DIR = SPEC_DIR.parent
+ENTRY = str(SRC_DIR / "Final.py")
+RESOURCES = str(SRC_DIR / "Resources")
 
 a = Analysis(
-    ['Final.py'],
-    pathex=[os.getcwd()],
+    [ENTRY],
+    pathex=[str(SRC_DIR), str(ROOT_DIR)],
     binaries=[],
     datas=[
-        (os.path.join(os.getcwd(), 'src', 'Resources'), 'Resources'),
+        (RESOURCES, "Resources"),
     ],
     hiddenimports=[],
     hookspath=[],
@@ -20,25 +30,46 @@ a = Analysis(
 
 pyz = PYZ(a.pure)
 
+# Onedir EXE (required for a proper macOS .app; onefile+BUNDLE is deprecated).
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
     [],
-    name='Elden_Ring_Save_Editor',
+    exclude_binaries=True,
+    name="Elden_Ring_Save_Editor",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
-    upx=True,
+    upx=False,
     console=False,
     windowed=True,
+    target_arch="arm64",
+    codesign_identity=None,
+    entitlements_file=None,
+)
+
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    strip=False,
+    upx=False,
+    upx_exclude=[],
+    name="Elden_Ring_Save_Editor",
 )
 
 app = BUNDLE(
-    exe,
-    name='Elden_Ring_Save_Editor_App.app',
-    icon=None,  
-    bundle_identifier=None,
+    coll,
+    name="Elden_Ring_Save_Editor_App.app",
+    icon=None,
+    bundle_identifier="com.eldenring.saveeditor",
+    info_plist={
+        "NSHighResolutionCapable": True,
+        "LSMinimumSystemVersion": "11.0",
+        "CFBundleDisplayName": "Elden Ring Save Editor",
+        "CFBundleName": "Elden Ring Save Editor",
+        "CFBundleShortVersionString": "2.1",
+        "CFBundleVersion": "2.1",
+    },
 )
