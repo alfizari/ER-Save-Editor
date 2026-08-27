@@ -1,4 +1,4 @@
-#version 2.1
+#version 2.2
 import json, binascii, hashlib, struct, os
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
@@ -3569,6 +3569,7 @@ items_notebook.add(aow_tab, text="Ashes of War")
 select_all_var = tk.IntVar(value=0)
 goods_category_ranges = {
     "Consumables": (0, 24),
+    "Torrent Skins": (1006, 1009),
     "Meats": (24, 39),
     "Throwables": (39, 56),
     "Grease": (56, 75),
@@ -3587,7 +3588,7 @@ goods_category_ranges = {
     "Spirit Ashes": (305, 369),
     "Sorceries": (369, 440),
     "Incantations": (440, 540),
-    "DLC": (540, 2090)
+    "DLC": (540, 1006)
 }
 goods_names = list(goods_and_magic_sorted_json.keys())
 
