@@ -47,7 +47,9 @@ CLASS_MAP = {
     6: "Confessor",
     7: "Samurai",
     8: "Prisoner",
-    9: "Wretch"
+    9: "Wretch",
+    10: "Idus", 
+    11: "Heavy Knight"
 }
 REVERSE_CLASS_MAP = {v: k for k, v in CLASS_MAP.items()}
 
